@@ -1,0 +1,18 @@
+.body {
+    -fx-background-color: #18181b;
+    -fx-min-width: 0;
+}
+
+.body * {
+    -fx-text-fill: white;
+}
+
+.main-heading {
+    -fx-font-size: 22px;
+    -fx-font-weight: 700;
+    -fx-padding: 48px 0 24px;
+}
+
+.button {
+    -fx-background-color: #2f2f2f;
+}
