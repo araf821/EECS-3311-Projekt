@@ -49,6 +49,12 @@ public abstract class User {
         }
         return count > 3;
     }
+    
+    public int sendRequest(Book book, boolean teaching) 
+    {
+    	Request req = new Request(book,this,teaching);
+    	return req.getPriority();
+    }
 
     // Enum for user types
     public enum UserType {
