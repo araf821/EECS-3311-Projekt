@@ -21,8 +21,6 @@ public abstract class PhysicalItem {
         this.value = value;
     }
 
-    public abstract void add();
-
     public BorrowingRecord borrow(int userId) {
         // Some implementation
         return new BorrowingRecord(0, userId, this.id, new Date());

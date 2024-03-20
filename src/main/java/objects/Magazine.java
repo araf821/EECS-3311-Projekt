@@ -9,10 +9,6 @@ public class Magazine extends PhysicalItem {
         this.edition = edition;
     }
 
-    public void add() {
-        // Some implementation
-    }
-
     public String getEdition() {
         return edition;
     }
