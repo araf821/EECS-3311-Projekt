@@ -8,7 +8,6 @@ public class SystemManager {
     private List<Magazine> Magazines;
     private List<SystemManagerUser> managers;
     private static SystemManager system = new SystemManager();
-    private String secret = "dogcatanimalshark48";
 
     private SystemManager() {
     };
@@ -42,12 +41,7 @@ public class SystemManager {
     }
 
     public void add(SystemManagerUser user) {
-        if (user.getAnswer() == secret){
-            managers.add(user);
-        }
-        else{
-            System.out.println("This user was not able to be added as a verified system manager")
-        }
+        managers.add(user);
 
     }
 
