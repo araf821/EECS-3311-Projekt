@@ -2,22 +2,29 @@ package objects;
 
 public class Subscription 
 {
-	private int userId;
-	private String newsletterName;
-	private double cost;
+	private User user;
+	private Newsletter newsletter;
 	
-	public Subscription(int userId, Newsletter news) 
+	public Subscription(User user, Newsletter news) 
 	{
-		this.newsletterName = newsletterName;
-		this.userId = userId;
+		this.user = user;
+		this.newsletter = news;
 	}
 	
-	public String getNewsLetterName() {
-		return this.newsletterName;
+	public User getUser() 
+	{
+		return this.user;
 	}
 	
-	public double getCost() {
-		return this.cost;
+	public Newsletter getNewsletter() 
+	{
+		return this.newsletter;
 	}
+	
+	public void pay() 
+	{
+		
+	}
+	
 	
 }

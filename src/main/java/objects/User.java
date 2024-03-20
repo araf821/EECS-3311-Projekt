@@ -59,12 +59,13 @@ public abstract class User {
     }
 
     public void subscribe(Newsletter news) {
-        Subscription sub = new Subscription(this.id, news);
+        Subscription sub = new Subscription(this, news);
         this.subscriptions.add(sub);
     }
 
-    public void visit(Newsletter news) {
-        // some implmentation here
+    public void visit(Newsletter news) 
+    {
+        news.displayNews();
     }
 
     // Enum for user types
