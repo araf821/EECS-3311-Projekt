@@ -8,6 +8,7 @@ public abstract class User {
     private String password;
     private UserType userType;
     private ArrayList<BorrowingRecord> borrowingRecords;
+    private ArrayList<Subscription> subscriptions;
 
     // Constructor
     public User(int id, String email, String password, UserType userType) {
@@ -54,6 +55,17 @@ public abstract class User {
     {
     	Request req = new Request(book,this,teaching);
     	return req.getPriority();
+    }
+    
+    public void subscribe(Newsletter news) 
+    {
+    	Subscription sub = new Subscription(this.id, news);
+    	this.subscriptions.add(sub);
+    }
+    
+    public void visit(Newsletter news) 
+    {
+    	//some implmentation here
     }
 
     // Enum for user types
