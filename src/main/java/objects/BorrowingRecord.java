@@ -4,6 +4,7 @@ import java.util.Date;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
+import java.text.SimpleDateFormat;
 
 public class BorrowingRecord {
     private int id;
@@ -66,11 +67,59 @@ public class BorrowingRecord {
         return (int) differenceInDays;
     }
 
-    public static void main(String[] args) {
-        BorrowingRecord borrowingRecord = new BorrowingRecord(1, 2, 3, new Date());
-        System.out.println("Difference in days: " + borrowingRecord.calculateDaysOverdue());
-        System.out.println(borrowingRecord.getBorrowDate());
-        System.out.println(borrowingRecord.getDueDate());
-        System.out.println(borrowingRecord.calculatePenalty());
+    public String toCSVString() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(id).append(",");
+        sb.append(userId).append(",");
+        sb.append(itemId).append(",");
+        sb.append(dateFormat.format(borrowDate)).append(",");
+        sb.append(dateFormat.format(dueDate)).append(",");
+        if (returnDate != null) {
+            sb.append(dateFormat.format(returnDate));
+        }
+        return sb.toString();
+    }
+
+    public static BorrowingRecord fromCSVString(String csvString) {
+        String[] parts = csvString.split(",");
+        int id = Integer.parseInt(parts[0]);
+        int userId = Integer.parseInt(parts[1]);
+        int itemId = Integer.parseInt(parts[2]);
+        Date borrowDate = parseDate(parts[3]);
+        Date returnDate = null;
+        if (parts.length > 5 && !parts[5].isEmpty()) {
+            returnDate = parseDate(parts[5]);
+        }
+
+        BorrowingRecord record = new BorrowingRecord(id, userId, itemId, borrowDate);
+        record.returnDate = returnDate;
+        return record;
+    }
+
+    public static BorrowingRecord fromCSVLine(String line) {
+        String[] parts = line.split(",");
+        int id = Integer.parseInt(parts[0]);
+        int userId = Integer.parseInt(parts[1]);
+        int itemId = Integer.parseInt(parts[2]);
+        Date borrowDate = parseDate(parts[3]);
+        Date dueDate = parseDate(parts[4]);
+        Date returnDate = null;
+        if (parts.length > 5 && !parts[5].isEmpty()) {
+            returnDate = parseDate(parts[5]);
+        }
+
+        return new BorrowingRecord(id, userId, itemId, borrowDate);
+    }
+
+    private static Date parseDate(String dateString) {
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            return dateFormat.parse(dateString);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

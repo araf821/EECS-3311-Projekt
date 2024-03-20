@@ -88,13 +88,24 @@ public class AccountHandling {
                     UserType userType = UserType.valueOf(parts[3]);
                     switch (userType) {
                         case STUDENT:
-                            return new Student(Integer.parseInt(parts[0]), parts[1], parts[2], userType, false);
+                            Student student = new Student(Integer.parseInt(parts[0]), parts[1], parts[2], userType,
+                                    false);
+                            BorrowingRecordHandling.getBorrowingRecordsByUserId(student.getId());
+                            return student;
                         case FACULTY:
-                            return new Faculty(Integer.parseInt(parts[0]), parts[1], parts[2], userType, false);
+                            Faculty faculty = new Faculty(Integer.parseInt(parts[0]), parts[1], parts[2], userType,
+                                    false);
+                            BorrowingRecordHandling.getBorrowingRecordsByUserId(faculty.getId());
+                            return faculty;
                         case NON_FACULTY_STAFF:
-                            return new NonFacultyStaff(Integer.parseInt(parts[0]), parts[1], parts[2], userType, false);
+                            NonFacultyStaff nonFacultyStaff = new NonFacultyStaff(Integer.parseInt(parts[0]), parts[1],
+                                    parts[2], userType, false);
+                            BorrowingRecordHandling.getBorrowingRecordsByUserId(nonFacultyStaff.getId());
+                            return nonFacultyStaff;
                         case VISITOR:
-                            return new Visitor(Integer.parseInt(parts[0]), parts[1], parts[2], userType);
+                            Visitor visitor = new Visitor(Integer.parseInt(parts[0]), parts[1], parts[2], userType);
+                            BorrowingRecordHandling.getBorrowingRecordsByUserId(visitor.getId());
+                            return visitor;
                         default:
                             // Handle unknown user types
                             break;

@@ -2,6 +2,8 @@ package objects;
 
 import java.util.ArrayList;
 
+import userHandling.BorrowingRecordHandling;
+
 public abstract class User {
     private int id;
     private String email;
@@ -36,8 +38,8 @@ public abstract class User {
         return password;
     }
 
-    public ArrayList<BorrowingRecord> getBorrowingRecords() {
-        return borrowingRecords;
+    public ArrayList<BorrowingRecord> updateBorrowingRecords() {
+        return BorrowingRecordHandling.getBorrowingRecordsByUserId(this.id);
     }
     // Other getters and setters...
 
@@ -50,22 +52,19 @@ public abstract class User {
         }
         return count > 3;
     }
-    
-    public int sendRequest(Book book, boolean teaching) 
-    {
-    	Request req = new Request(book,this,teaching);
-    	return req.getPriority();
+
+    public int sendRequest(Book book, boolean teaching) {
+        Request req = new Request(book, this, teaching);
+        return req.getPriority();
     }
-    
-    public void subscribe(Newsletter news) 
-    {
-    	Subscription sub = new Subscription(this.id, news);
-    	this.subscriptions.add(sub);
+
+    public void subscribe(Newsletter news) {
+        Subscription sub = new Subscription(this.id, news);
+        this.subscriptions.add(sub);
     }
-    
-    public void visit(Newsletter news) 
-    {
-    	//some implmentation here
+
+    public void visit(Newsletter news) {
+        // some implmentation here
     }
 
     // Enum for user types
