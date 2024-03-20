@@ -1,13 +1,13 @@
 package objects;
 
 public class Course {
-    private String id;
+    private int id;
     private String courseName;
-    private String facultyId;
+    private int facultyId;
     private Textbook textbook;
     private String term;
 
-    public Course(String id, String courseName, String facultyId, Textbook textbook, String term) {
+    public Course(int id, String courseName, int facultyId, Textbook textbook, String term) {
         this.id = id;
         this.courseName = courseName;
         this.facultyId = facultyId;
@@ -15,7 +15,7 @@ public class Course {
         this.term = term;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -23,7 +23,7 @@ public class Course {
         return courseName;
     }
 
-    public String getFacultyId() {
+    public int getFacultyId() {
         return facultyId;
     }
 

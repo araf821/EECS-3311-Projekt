@@ -6,14 +6,14 @@ import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 
 public class BorrowingRecord {
-    private String id;
-    private String userId;
-    private String itemId;
+    private int id;
+    private int userId;
+    private int itemId;
     private Date borrowDate;
     private Date dueDate;
     private Date returnDate;
 
-    public BorrowingRecord(String id, String userId, String itemId, Date borrowDate) {
+    public BorrowingRecord(int id, int userId, int itemId, Date borrowDate) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(borrowDate);
         calendar.add(Calendar.MONTH, 1);
@@ -24,15 +24,15 @@ public class BorrowingRecord {
         this.dueDate = calendar.getTime();
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public String getItemId() {
+    public int getItemId() {
         return itemId;
     }
 
@@ -67,7 +67,7 @@ public class BorrowingRecord {
     }
 
     public static void main(String[] args) {
-        BorrowingRecord borrowingRecord = new BorrowingRecord("1", "2", "3", new Date());
+        BorrowingRecord borrowingRecord = new BorrowingRecord(1, 2, 3, new Date());
         System.out.println("Difference in days: " + borrowingRecord.calculateDaysOverdue());
         System.out.println(borrowingRecord.getBorrowDate());
         System.out.println(borrowingRecord.getDueDate());
