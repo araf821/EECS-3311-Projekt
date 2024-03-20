@@ -10,9 +10,4 @@ public class Onlinebook extends PhysicalItem {
         // TODO Auto-generated constructor stub
     }
 
-    @Override
-    public void add() {
-        
-    }
-
 }
