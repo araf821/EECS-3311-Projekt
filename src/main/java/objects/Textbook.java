@@ -1,17 +1,17 @@
 package objects;
 
 public class Textbook {
-    private String id;
+    private int id;
     private String courseId;
     private String edition;
 
-    public Textbook(String id, String courseId, String edition) {
+    public Textbook(int id, String courseId, String edition) {
         this.id = id;
         this.courseId = courseId;
         this.edition = edition;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 

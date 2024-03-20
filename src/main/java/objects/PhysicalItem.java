@@ -3,7 +3,7 @@ package objects;
 import java.util.Date;
 
 public abstract class PhysicalItem {
-    private String id;
+    private int id;
     private String title;
     private int remainingCopies;
     private String location;
@@ -11,7 +11,7 @@ public abstract class PhysicalItem {
     private boolean canRent;
     private double value;
 
-    public PhysicalItem(String id, String title, String location, boolean canPurchase, boolean canRent, double value) {
+    public PhysicalItem(int id, String title, String location, boolean canPurchase, boolean canRent, double value) {
         this.id = id;
         this.title = title;
         this.remainingCopies = 20;
@@ -23,12 +23,12 @@ public abstract class PhysicalItem {
 
     public abstract void add();
 
-    public BorrowingRecord borrow(String userId) {
+    public BorrowingRecord borrow(int userId) {
         // Some implementation
-        return new BorrowingRecord("dog", userId, this.id, new Date());
+        return new BorrowingRecord(0, userId, this.id, new Date());
     }
 
-    public String getId() {
+    public int getId() {
         return this.id;
     }
 

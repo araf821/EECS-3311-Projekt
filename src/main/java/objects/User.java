@@ -3,14 +3,14 @@ package objects;
 import java.util.ArrayList;
 
 public abstract class User {
-    private String id;
+    private int id;
     private String email;
     private String password;
     private UserType userType;
     private ArrayList<BorrowingRecord> borrowingRecords;
 
     // Constructor
-    public User(String id, String email, String password, UserType userType) {
+    public User(int id, String email, String password, UserType userType) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -19,7 +19,7 @@ public abstract class User {
     }
 
     // Getters and setters
-    public String getId() {
+    public int getId() {
         return id;
     }
 
