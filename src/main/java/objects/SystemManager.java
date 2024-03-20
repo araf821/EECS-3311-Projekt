@@ -7,6 +7,14 @@ public class SystemManager {
     private List<CD> CDs;
     private List<Magazine> Magazines;
     private List<SystemManagerUser> managers;
+    private static SystemManager system = new SystemManager();
+
+    private SystemManager() {
+    };
+
+    public static SystemManager getInstance() {
+        return system;
+    }
 
     public void add(Book book) {
         library.add(book);
