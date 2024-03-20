@@ -76,6 +76,12 @@ public class SignInController {
         main.switchToCreateAccountPage();
     }
 
+    @FXML
+    private void createManagerAccountButtonClicked() throws IOException {
+        // Switch to the create account page
+        main.switchToCreateManagerAccountPage();
+    }
+
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);

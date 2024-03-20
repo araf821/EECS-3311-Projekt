@@ -5,14 +5,13 @@ import java.util.Arrays;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import objects.User.UserType;
 import userHandling.AccountHandling;
 
-public class CreateAccountController {
+public class CreateManagerAccountController {
 
     @FXML
     private TextField emailField;
@@ -21,31 +20,29 @@ public class CreateAccountController {
     private PasswordField passwordField;
 
     @FXML
-    private ComboBox<UserType> userTypeComboBox;
+    private PasswordField secretKeyField;
 
     @FXML
-    private GridPane createAccountPane;
+    private GridPane createManagerAccountPane;
 
     private Main main;
+
+    private final String SECRET_KEY = "Admin12345";
 
     @FXML
     private void initialize() {
         // Initialize user type combo box
-        createAccountPane.setPadding(new Insets(20));
-        UserType[] enumValuesExcludingSpecificOption = Arrays.stream(UserType.values())
-                .filter(userType -> userType != UserType.SYSTEM_MANAGER) // Exclude the specific option
-                .toArray(UserType[]::new);
-        userTypeComboBox.getItems().addAll(enumValuesExcludingSpecificOption);
+        createManagerAccountPane.setPadding(new Insets(20));
     }
 
     @FXML
-    private void handleCreateAccountButton() {
+    private void handleCreateManagerAccountButton() {
         String email = emailField.getText();
         String password = passwordField.getText();
-        UserType userType = userTypeComboBox.getValue();
+        String secretKey = secretKeyField.getText();
 
         // Call createAccount method with the provided data
-        createAccount(email, password, userType);
+        createManagerAccount(email, password, secretKey);
     }
 
     @FXML
@@ -58,7 +55,7 @@ public class CreateAccountController {
     }
 
     // Method to create account
-    private void createAccount(String email, String password, UserType userType) {
+    private void createManagerAccount(String email, String password, String secretKey) {
 
         if (email.isEmpty() || password.isEmpty()) {
             showAlert("Error", "Please enter your email and password.");
@@ -81,17 +78,17 @@ public class CreateAccountController {
             return;
         }
 
-        if (userType == null) {
-            showAlert("Error", "Please select a user type.");
+        if (!secretKey.equals(SECRET_KEY)) {
+            showAlert("Error", "Incorrect secrey key. Please try again or ask for one from a current system admin.");
             return;
         }
 
-        AccountHandling.createAccount(email, password, userType);
+        AccountHandling.createAccount(email, password, UserType.SYSTEM_MANAGER);
 
         System.out.println("Creating account with:");
         System.out.println("Email: " + email);
         System.out.println("Password: " + password);
-        System.out.println("User Type: " + userType);
+        System.out.println("User Type: " + UserType.SYSTEM_MANAGER);
     }
 
     private void showAlert(String title, String message) {

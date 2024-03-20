@@ -16,6 +16,7 @@ public class Main extends Application {
     private Scene signInScene;
     private SignInController signInController;
     private CreateAccountController createAccountController;
+    private CreateManagerAccountController createManagerAccountController;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -55,6 +56,21 @@ public class Main extends Application {
     public void switchToSignInPage() {
         primaryStage.setScene(signInScene);
         primaryStage.setTitle("Sign In");
+    }
+
+    public void switchToCreateManagerAccountPage() throws IOException {
+        FXMLLoader createManagerAccountLoader = new FXMLLoader(
+                getClass().getResource("fxml/create-manager-account.fxml"));
+        Parent createManagerAccountRoot = createManagerAccountLoader.load();
+        createManagerAccountController = createManagerAccountLoader.getController();
+        createManagerAccountController.setMain(this); // Pass a reference to the main application to the controller
+
+        // Create the scene for the create account page
+        Scene createManagerAccountScene = new Scene(createManagerAccountRoot, 400, 400);
+
+        // Set the scene on the stage
+        primaryStage.setScene(createManagerAccountScene);
+        primaryStage.setTitle("Create Manager Account");
     }
 
     public static void main(String[] args) {
