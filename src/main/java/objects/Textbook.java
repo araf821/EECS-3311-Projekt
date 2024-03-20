@@ -4,6 +4,7 @@ public class Textbook {
     private int id;
     private String courseId;
     private String edition;
+    private List<observer> observers = new ArrayList<observer>();
 
     public Textbook(int id, String courseId, String edition) {
         this.id = id;
@@ -21,5 +22,10 @@ public class Textbook {
 
     public String getEdition() {
         return edition;
+    }
+    public void attachObserver(observer observe){
+        for(observer obs: observe){
+            obs.update();
+        }
     }
 }
