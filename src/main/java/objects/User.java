@@ -62,6 +62,14 @@ public abstract class User {
         Subscription sub = new Subscription(this, news);
         this.subscriptions.add(sub);
     }
+    
+    public void unSubscribe(Newsletter news) 
+    {
+    	if(subscriptions.contains(news)) 
+    	{
+    		subscriptions.remove(news);
+    	}
+    }
 
     public void visit(Newsletter news) 
     {
