@@ -1,5 +1,8 @@
 package objects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Textbook {
     private int id;
     private String courseId;
@@ -23,8 +26,9 @@ public class Textbook {
     public String getEdition() {
         return edition;
     }
-    public void attachObserver(observer observe){
-        for(observer obs: observe){
+
+    public void attachObserver(observer observe) {
+        for (observer obs : observers) {
             obs.update();
         }
     }

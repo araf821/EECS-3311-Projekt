@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Faculty extends User {
 	private boolean validationStatus;
-	private ArrayList<Course> CurrentCourses;
+	private ArrayList<Course> coursesTeaching;
 	private ArrayList<Book> UsedTextbooks;
 
 	public Faculty(int id, String email, String password, UserType userType, boolean validationStatus) {
 		super(id, email, password, userType);
-		CurrentCourses = new ArrayList<Course>();
+		coursesTeaching = new ArrayList<Course>();
 		UsedTextbooks = new ArrayList<Book>();
 		this.validationStatus = validationStatus;
 	}
@@ -22,8 +22,8 @@ public class Faculty extends User {
 		this.validationStatus = validationStatus;
 	}
 
-	public ArrayList<Course> getCurrentCourses() {
-		return CurrentCourses;
+	public ArrayList<Course> getCoursesTeaching() {
+		return coursesTeaching;
 	}
 
 	public ArrayList<Book> getUsedTextbooks() {
