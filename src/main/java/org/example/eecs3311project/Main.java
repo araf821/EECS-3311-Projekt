@@ -89,6 +89,13 @@ public class Main extends Application {
       400,
       400
     );
+    createManagerAccountScene
+      .getStylesheets()
+      .add(
+        getClass()
+          .getResource("/org/example/eecs3311project/styles.css")
+          .toExternalForm()
+      );
 
     // Set the scene on the stage
     primaryStage.setScene(createManagerAccountScene);
