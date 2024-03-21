@@ -1,5 +1,7 @@
 package objects;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class PhysicalItem {
@@ -10,6 +12,7 @@ public abstract class PhysicalItem {
     private boolean canPurchase;
     private boolean canRent;
     private double value;
+    private int count = 0;
 
     public PhysicalItem(int id, String title, String location, boolean canPurchase, boolean canRent, double value) {
         this.id = id;
@@ -21,9 +24,24 @@ public abstract class PhysicalItem {
         this.value = value;
     }
 
-    public BorrowingRecord borrow(int userId) {
-        // Some implementation
-        return new BorrowingRecord(0, userId, this.id, new Date());
+    public BorrowingRecord borrow(User User) {
+        if (User.moreThanThreeOverdueItems() == true) {
+            ArrayList<BorrowingRecord> POG = User.updateBorrowingRecords();
+            if (POG.size() >= 10) {
+                return null; // shouldnt make record if more than 10
+            } else {
+                if (this.canRent == true && remainingCopies >= 1) {
+                    this.remainingCopies = this.remainingCopies - 1;
+                    if (this.remainingCopies == 0) {
+                        this.canRent = false;
+                    }
+                    return new BorrowingRecord(count, User.getId(), this.id, new Date());
+                }
+            }
+
+        }
+        return null;// shouldnt make record if more than 3 overdue
+
     }
 
     public int getId() {
