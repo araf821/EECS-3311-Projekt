@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 
+import userHandling.BorrowingRecordHandling;
+
 public abstract class PhysicalItem {
     private int id;
     private String title;
@@ -24,9 +26,9 @@ public abstract class PhysicalItem {
         this.value = value;
     }
 
-    public BorrowingRecord borrow(User User) {
-        if (User.moreThanThreeOverdueItems() == true) {
-            ArrayList<BorrowingRecord> POG = User.updateBorrowingRecords();
+    public BorrowingRecord borrow(User user) {
+        if (user.moreThanThreeOverdueItems() == true) {
+            ArrayList<BorrowingRecord> POG = user.updateBorrowingRecords();
             if (POG.size() >= 10) {
                 return null; // shouldnt make record if more than 10
             } else {
@@ -35,7 +37,10 @@ public abstract class PhysicalItem {
                     if (this.remainingCopies == 0) {
                         this.canRent = false;
                     }
-                    return new BorrowingRecord(count, User.getId(), this.id, new Date());
+                    BorrowingRecord record = new BorrowingRecord(count, user.getId(), this.id, new Date());
+                    BorrowingRecordHandling.writeBorrowingRecord(record);
+                    user.updateBorrowingRecords();
+                    return record;
                 }
             }
 

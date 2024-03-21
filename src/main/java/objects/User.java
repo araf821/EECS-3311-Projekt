@@ -21,7 +21,7 @@ public abstract class User {
         this.userType = userType;
         this.borrowingRecords = new ArrayList<BorrowingRecord>();
         this.subscriptions = new ArrayList<Subscription>();
-        this.paymentMethod = new ArrayList<PaymentOption>();     
+        this.paymentMethod = new ArrayList<PaymentOption>();
     }
 
     // Getters and setters
@@ -48,6 +48,7 @@ public abstract class User {
 
     public boolean moreThanThreeOverdueItems() {
         int count = 0;
+        this.updateBorrowingRecords();
         for (BorrowingRecord record : borrowingRecords) {
             if (record.isOverdue()) {
                 count++;
@@ -62,15 +63,12 @@ public abstract class User {
     }
 
     public void subscribe(Newsletter news) {
-    	if(this.paymentMethod.isEmpty()) 
-    	{
-    		System.out.println("Please add a payment method");
-    	}
-    	else 
-    	{
-        Subscription sub = new Subscription(this, news, this.paymentMethod.get(0));
-        this.subscriptions.add(sub);
-    	}
+        if (this.paymentMethod.isEmpty()) {
+            System.out.println("Please add a payment method");
+        } else {
+            Subscription sub = new Subscription(this, news, this.paymentMethod.get(0));
+            this.subscriptions.add(sub);
+        }
     }
 
     public void unSubscribe(Newsletter news) {
@@ -78,11 +76,10 @@ public abstract class User {
             subscriptions.remove(news);
         }
     }
-    
-    public void addPaymentMethod(PaymentType type, double balance) 
-    {
-    	PaymentOption payment = new PaymentOption(this.id, balance, type);
-    	this.paymentMethod.add(payment);
+
+    public void addPaymentMethod(PaymentType type, double balance) {
+        PaymentOption payment = new PaymentOption(this.id, balance, type);
+        this.paymentMethod.add(payment);
     }
 
     public void visit(Newsletter news) {
