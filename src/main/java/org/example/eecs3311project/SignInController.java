@@ -67,6 +67,7 @@ public class SignInController {
         System.out.println("Sign-in successful for:\nUser: " + email + "\nPassword: " + password + "\n");
         System.out.println(Main.currentUser.updateBorrowingRecords());
         System.out.println(Main.currentUser.getUserType());
+        System.out.println(Main.currentUser.getValidationStatus());
         // Navigate to another page or perform other actions as needed
     }
 

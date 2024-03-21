@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 import objects.Faculty;
 import objects.NonFacultyStaff;
 import objects.Student;
+import objects.SystemManagerUser;
 import objects.User;
 import objects.Visitor;
 import objects.User.UserType;
@@ -121,6 +122,12 @@ public class AccountHandling {
                             visitor.updateBorrowingRecords();
                             visitor.setValidationStatus(parts[4].equals("true") ? true : false);
                             return visitor;
+                        case SYSTEM_MANAGER:
+                            SystemManagerUser systemManager = new SystemManagerUser(Integer.parseInt(parts[0]),
+                                    parts[1],
+                                    parts[2], userType);
+                            systemManager.setValidationStatus(true);
+                            return systemManager;
                         default:
                             // Handle unknown user types
                             break;
