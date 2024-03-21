@@ -12,8 +12,16 @@ import objects.Visitor;
 import objects.User.UserType;
 
 public class AccountHandling {
+    private static AccountHandling handler = new AccountHandling();
 
     private static final String CSV_FILE = "./users.csv";
+
+    private AccountHandling() {
+    };
+
+    public static AccountHandling getInstance() {
+        return handler;
+    }
 
     public static boolean validatePassword(String password) {
         if (password.length() < 8) {
