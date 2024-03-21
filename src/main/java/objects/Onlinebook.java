@@ -7,7 +7,6 @@ public class Onlinebook extends PhysicalItem {
             String author) {
         super(id, title, location, canPurchase, canRent, value);
         this.author = author;
-        // TODO Auto-generated constructor stub
     }
 
 }

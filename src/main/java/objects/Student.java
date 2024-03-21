@@ -2,6 +2,8 @@ package objects;
 
 import java.util.ArrayList;
 
+import objects.User.UserType;
+
 public class Student extends User {
     private boolean validationStatus;
     private ArrayList<Course> currentCourses;
@@ -23,4 +25,5 @@ public class Student extends User {
     public ArrayList<Course> getCurrentCourses() {
         return currentCourses;
     }
+
 }

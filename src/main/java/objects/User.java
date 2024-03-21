@@ -75,6 +75,13 @@ public abstract class User {
 
     // Enum for user types
     public enum UserType {
-        STUDENT, FACULTY, NON_FACULTY_STAFF, VISITOR, SYSTEM_MANAGER
+        STUDENT, FACULTY, NON_FACULTY_STAFF, VISITOR, SYSTEM_MANAGER;
+
+        private String value;
+
+        @Override
+        public String toString() {
+            return value;
+        }
     }
 }
