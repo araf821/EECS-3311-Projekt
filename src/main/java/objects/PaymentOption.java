@@ -1,14 +1,16 @@
 package objects;
 
-public abstract class PaymentOption 
+public class PaymentOption 
 {
 	private int userId;
 	private double balance;
+	private PaymentType paymentType;
 	
-	public PaymentOption(int userId, double balance) 
+	public PaymentOption(int userId, double balance, PaymentType paymentType) 
 	{
 		this.userId = userId;
 		this.balance = balance;
+		this.paymentType = paymentType;
 	}
 	
 	public void deposit(double amount) 
@@ -25,4 +27,17 @@ public abstract class PaymentOption
 	{
 		return this.balance;
 	}
+	
+	public int getUserId() 
+	{
+		return this.userId;
+	}
+	
+	public enum PaymentType
+	{
+		DEBT, CREDIT, MOBILEWALLET
+	}
+	
 }
+
+
