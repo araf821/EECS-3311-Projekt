@@ -23,4 +23,5 @@
 
     <Button text="Sign In" onAction="#signInButtonClicked" GridPane.columnIndex="1" GridPane.rowIndex="2" defaultButton="true"/>
     <Button text="Create Account" onAction="#createAccountButtonClicked" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <Button text="Create Manager Account" onAction="#createManagerAccountButtonClicked" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
 </GridPane>

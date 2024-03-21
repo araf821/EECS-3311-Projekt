@@ -11,9 +11,18 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import objects.BorrowingRecord;
+import objects.SystemManagerUser;
 
 public class BorrowingRecordHandling {
+    private static BorrowingRecordHandling handling = new BorrowingRecordHandling();
     private static final String CSV_FILE = "./borrowingrecords.csv";
+
+    private BorrowingRecordHandling() {
+    };
+
+    public static BorrowingRecordHandling getInstance() {
+        return handling;
+    }
 
     public static void writeBorrowingRecord(BorrowingRecord record) {
         File file = new File(CSV_FILE);

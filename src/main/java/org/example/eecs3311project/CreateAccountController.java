@@ -1,5 +1,6 @@
 package org.example.eecs3311project;
 
+import java.util.Arrays;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
@@ -30,7 +31,11 @@ public class CreateAccountController {
   private void initialize() {
     // Initialize user type combo box
     createAccountPane.setPadding(new Insets(20));
-    userTypeComboBox.getItems().addAll(UserType.values());
+    UserType[] enumValuesExcludingSpecificOption = Arrays
+      .stream(UserType.values())
+      .filter(userType -> userType != UserType.SYSTEM_MANAGER) // Exclude the specific option
+      .toArray(UserType[]::new);
+    userTypeComboBox.getItems().addAll(enumValuesExcludingSpecificOption);
   }
 
   @FXML

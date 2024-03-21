@@ -9,10 +9,6 @@ public class Book extends PhysicalItem {
         this.isbn = isbn;
     }
 
-    public void add() {
-        // Some implementation
-    }
-
     public String getIsbn() {
         return isbn;
     }

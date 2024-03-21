@@ -9,10 +9,6 @@ public class CD extends PhysicalItem {
         this.artist = artist;
     }
 
-    public void add() {
-        // Some implementation
-    }
-
     public String getArtist() {
         return artist;
     }

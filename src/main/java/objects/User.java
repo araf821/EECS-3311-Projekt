@@ -59,16 +59,22 @@ public abstract class User {
     }
 
     public void subscribe(Newsletter news) {
-        Subscription sub = new Subscription(this.id, news);
+        Subscription sub = new Subscription(this, news);
         this.subscriptions.add(sub);
     }
 
+    public void unSubscribe(Newsletter news) {
+        if (subscriptions.contains(news)) {
+            subscriptions.remove(news);
+        }
+    }
+
     public void visit(Newsletter news) {
-        // some implmentation here
+        news.displayNews();
     }
 
     // Enum for user types
     public enum UserType {
-        STUDENT, FACULTY, NON_FACULTY_STAFF, VISITOR
+        STUDENT, FACULTY, NON_FACULTY_STAFF, VISITOR, SYSTEM_MANAGER
     }
 }
