@@ -39,7 +39,8 @@
 }
 
 /* Text and Items inside ComboBox */
-.combo-box .text-field, .combo-box .cell {
+.combo-box .text-field,
+.combo-box .cell {
   -fx-text-fill: #d4d4d4; /* Text color */
 }
 
@@ -58,13 +59,14 @@
   -fx-text-fill: #d4d4d4;
 }
 
-.combo-box .list-cell:filled:selected, .combo-box .list-cell:filled:selected:hover {
+.combo-box .list-cell:filled:selected,
+.combo-box .list-cell:filled:selected:hover {
   -fx-text-fill: #d4d4d4;
 }
 
 /* Button Styling */
 .button {
-  -fx-background-color: transparent;
+  -fx-background-color: #27272a;
   -fx-text-fill: white;
   -fx-border-radius: 4;
   -fx-background-radius: 4;
@@ -73,7 +75,7 @@
 }
 
 .button:hover {
-  -fx-background-color: #27272a;
+  -fx-background-color: #303033;
 }
 
 .button:default {
@@ -83,7 +85,7 @@
 }
 
 .button:default:hover {
--fx-background-color: #0ea5e9;
+  -fx-background-color: #0ea5e9;
 }
 
 .button:focused {

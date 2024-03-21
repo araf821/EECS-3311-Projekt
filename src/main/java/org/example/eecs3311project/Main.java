@@ -31,6 +31,13 @@ public class Main extends Application {
 
     // Create the scene for the sign-in page
     signInScene = new Scene(signInRoot, 400, 400);
+    signInScene
+      .getStylesheets()
+      .add(
+        getClass()
+          .getResource("/org/example/eecs3311project/styles.css")
+          .toExternalForm()
+      );
 
     // Set the scene and show the stage
     primaryStage.setScene(signInScene);
