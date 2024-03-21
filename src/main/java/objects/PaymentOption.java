@@ -12,7 +12,7 @@ public class PaymentOption
 		this.balance = balance;
 		this.paymentType = paymentType;
 	}
-	
+
 	public void deposit(double amount) 
 	{
 		balance += amount;
@@ -33,9 +33,8 @@ public class PaymentOption
 		return this.userId;
 	}
 	
-	public enum PaymentType
-	{
-		DEBT, CREDIT, MOBILEWALLET
+	public PaymentType getPaymentType() {
+		return this.paymentType;
 	}
 	
 }

@@ -5,11 +5,11 @@ import java.util.Date;
 
 public class Notification {
     private int notificationID;
-    private String UserID;
+    private int UserID;
     private String message;
     private Date date;
 
-    public Notification(int notiID, String Userid, String message, LocalDate date) {
+    public Notification(int notiID, int Userid, String message, LocalDate date) {
         this.notificationID = notiID;
         this.UserID = Userid;
         this.message = message;
@@ -20,7 +20,7 @@ public class Notification {
         return notificationID;
     }
 
-    public String getUserID() {
+    public int getUserID() {
         return UserID;
     }
 

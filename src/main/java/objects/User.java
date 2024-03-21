@@ -11,6 +11,7 @@ public abstract class User {
     private UserType userType;
     private ArrayList<BorrowingRecord> borrowingRecords;
     private ArrayList<Subscription> subscriptions;
+    private ArrayList<PaymentOption> paymentMethod;
 
     // Constructor
     public User(int id, String email, String password, UserType userType) {
@@ -19,6 +20,8 @@ public abstract class User {
         this.password = password;
         this.userType = userType;
         this.borrowingRecords = new ArrayList<BorrowingRecord>();
+        this.subscriptions = new ArrayList<Subscription>();
+        this.paymentMethod = new ArrayList<PaymentOption>();     
     }
 
     // Getters and setters
@@ -59,14 +62,27 @@ public abstract class User {
     }
 
     public void subscribe(Newsletter news) {
-        Subscription sub = new Subscription(this, news);
+    	if(this.paymentMethod.isEmpty()) 
+    	{
+    		System.out.println("Please add a payment method");
+    	}
+    	else 
+    	{
+        Subscription sub = new Subscription(this, news, this.paymentMethod.get(0));
         this.subscriptions.add(sub);
+    	}
     }
 
     public void unSubscribe(Newsletter news) {
         if (subscriptions.contains(news)) {
             subscriptions.remove(news);
         }
+    }
+    
+    public void addPaymentMethod(PaymentType type, double balance) 
+    {
+    	PaymentOption payment = new PaymentOption(this.id, balance, type);
+    	this.paymentMethod.add(payment);
     }
 
     public void visit(Newsletter news) {
