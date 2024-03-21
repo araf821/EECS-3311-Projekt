@@ -62,7 +62,12 @@ public class AccountHandling {
 
     public static void createAccount(String email, String password, UserType userType) {
         int id = getLastId() + 1;
-        String line = id + "," + email + "," + password + "," + userType;
+        String line;
+        if (userType == UserType.SYSTEM_MANAGER) {
+            line = id + "," + email + "," + password + "," + userType + ",true";
+        } else {
+            line = id + "," + email + "," + password + "," + userType + ",false";
+        }
 
         // Check if the file exists
         File file = new File(CSV_FILE);
@@ -96,23 +101,25 @@ public class AccountHandling {
                     UserType userType = UserType.valueOf(parts[3]);
                     switch (userType) {
                         case STUDENT:
-                            Student student = new Student(Integer.parseInt(parts[0]), parts[1], parts[2], userType,
-                                    false);
-                            BorrowingRecordHandling.getBorrowingRecordsByUserId(student.getId());
+                            Student student = new Student(Integer.parseInt(parts[0]), parts[1], parts[2], userType);
+                            student.updateBorrowingRecords();
+                            student.setValidationStatus(parts[4].equals("true") ? true : false);
                             return student;
                         case FACULTY:
-                            Faculty faculty = new Faculty(Integer.parseInt(parts[0]), parts[1], parts[2], userType,
-                                    false);
-                            BorrowingRecordHandling.getBorrowingRecordsByUserId(faculty.getId());
+                            Faculty faculty = new Faculty(Integer.parseInt(parts[0]), parts[1], parts[2], userType);
+                            faculty.updateBorrowingRecords();
+                            faculty.setValidationStatus(parts[4].equals("true") ? true : false);
                             return faculty;
                         case NON_FACULTY_STAFF:
                             NonFacultyStaff nonFacultyStaff = new NonFacultyStaff(Integer.parseInt(parts[0]), parts[1],
-                                    parts[2], userType, false);
-                            BorrowingRecordHandling.getBorrowingRecordsByUserId(nonFacultyStaff.getId());
+                                    parts[2], userType);
+                            nonFacultyStaff.updateBorrowingRecords();
+                            nonFacultyStaff.setValidationStatus(parts[4].equals("true") ? true : false);
                             return nonFacultyStaff;
                         case VISITOR:
                             Visitor visitor = new Visitor(Integer.parseInt(parts[0]), parts[1], parts[2], userType);
-                            BorrowingRecordHandling.getBorrowingRecordsByUserId(visitor.getId());
+                            visitor.updateBorrowingRecords();
+                            visitor.setValidationStatus(parts[4].equals("true") ? true : false);
                             return visitor;
                         default:
                             // Handle unknown user types
@@ -126,7 +133,7 @@ public class AccountHandling {
         return null;
     }
 
-    private static int getLastId() {
+    public static int getLastId() {
         File file = new File(CSV_FILE);
         if (!file.exists()) {
             // File does not exist, return null

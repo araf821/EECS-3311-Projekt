@@ -7,11 +7,11 @@ public class Faculty extends User {
 	private ArrayList<Course> coursesTeaching;
 	private ArrayList<Book> UsedTextbooks;
 
-	public Faculty(int id, String email, String password, UserType userType, boolean validationStatus) {
+	public Faculty(int id, String email, String password, UserType userType) {
 		super(id, email, password, userType);
 		coursesTeaching = new ArrayList<Course>();
 		UsedTextbooks = new ArrayList<Book>();
-		this.validationStatus = validationStatus;
+		this.validationStatus = false;
 	}
 
 	public boolean getValidationStatus() {

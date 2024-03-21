@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 
+import objects.User.UserType;
 import userHandling.BorrowingRecordHandling;
 
 public abstract class PhysicalItem {
@@ -14,7 +15,6 @@ public abstract class PhysicalItem {
     private boolean canPurchase;
     private boolean canRent;
     private double value;
-    private int count = 0;
 
     public PhysicalItem(int id, String title, String location, boolean canPurchase, boolean canRent, double value) {
         this.id = id;
@@ -27,7 +27,7 @@ public abstract class PhysicalItem {
     }
 
     public BorrowingRecord borrow(User user) {
-        if (user.moreThanThreeOverdueItems() == true) {
+        if (user.moreThanThreeOverdueItems() == false && user.getValidationStatus() == true) {
             ArrayList<BorrowingRecord> POG = user.updateBorrowingRecords();
             if (POG.size() >= 10) {
                 return null; // shouldnt make record if more than 10
@@ -37,7 +37,8 @@ public abstract class PhysicalItem {
                     if (this.remainingCopies == 0) {
                         this.canRent = false;
                     }
-                    BorrowingRecord record = new BorrowingRecord(count, user.getId(), this.id, new Date());
+                    int newRecordId = BorrowingRecordHandling.getLastId() + 1;
+                    BorrowingRecord record = new BorrowingRecord(newRecordId, user.getId(), this.id, new Date());
                     BorrowingRecordHandling.writeBorrowingRecord(record);
                     user.updateBorrowingRecords();
                     return record;
@@ -95,6 +96,12 @@ public abstract class PhysicalItem {
 
     public void setValue(double value) {
         this.value = value;
+    }
+
+    public static void main(String[] args) {
+        CD item = new CD(1, "title", "location", true, true, 10.0, "aasdlaskjdas");
+        Student user = new Student(7, "email", "password", UserType.STUDENT);
+        BorrowingRecord userRecord = item.borrow(user);
     }
 
 }

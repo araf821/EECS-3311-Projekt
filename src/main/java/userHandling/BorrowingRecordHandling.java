@@ -63,4 +63,28 @@ public class BorrowingRecordHandling {
         System.out.println(userRecords.toString());
         return userRecords;
     }
+
+    public static int getLastId() {
+        File file = new File(CSV_FILE);
+        if (!file.exists()) {
+            // File does not exist, return null
+            return 0;
+        }
+
+        int lastId = 0;
+        try (BufferedReader reader = new BufferedReader(new FileReader(CSV_FILE))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                int userId = Integer.parseInt(parts[0]);
+                if (userId > lastId) {
+                    lastId = userId;
+                }
+            }
+        } catch (IOException | NumberFormatException e) {
+            // Handle exceptions
+            e.printStackTrace();
+        }
+        return lastId;
+    }
 }

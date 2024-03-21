@@ -7,11 +7,11 @@ public class UserCreationFactory {
     public static User getDetails(int id, String email, String password, UserType userType) {
 
         if (userType.toString().equals("STUDENT")) {
-            return new Student(id, email, password, userType, false);
+            return new Student(id, email, password, userType);
         } else if (userType.toString().equals("FACULTY")) {
-            return new Faculty(id, email, password, userType, false);
+            return new Faculty(id, email, password, userType);
         } else if (userType.toString().equals("NON_FACULTY_STAFF")) {
-            return new NonFacultyStaff(id, email, password, userType, false);
+            return new NonFacultyStaff(id, email, password, userType);
         } else if (userType.toString().equals("VISITOR")) {
             return new Visitor(id, email, password, userType);
         } else if (userType.toString().equals("SYSTEM_MANAGER")) {

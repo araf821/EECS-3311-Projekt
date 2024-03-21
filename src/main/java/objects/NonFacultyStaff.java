@@ -3,9 +3,9 @@ package objects;
 public class NonFacultyStaff extends User {
     private boolean validationStatus;
 
-    public NonFacultyStaff(int id, String email, String password, UserType userType, boolean validationStatus) {
+    public NonFacultyStaff(int id, String email, String password, UserType userType) {
         super(id, email, password, userType);
-        this.validationStatus = validationStatus;
+        this.validationStatus = false;
     }
 
     public boolean getValidationStatus() {

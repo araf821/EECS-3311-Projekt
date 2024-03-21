@@ -9,6 +9,7 @@ public abstract class User {
     private String email;
     private String password;
     private UserType userType;
+    private boolean validationStatus;
     private ArrayList<BorrowingRecord> borrowingRecords;
     private ArrayList<Subscription> subscriptions;
     private ArrayList<PaymentOption> paymentMethod;
@@ -19,6 +20,7 @@ public abstract class User {
         this.email = email;
         this.password = password;
         this.userType = userType;
+        this.validationStatus = userType == UserType.SYSTEM_MANAGER ? true : false;
         this.borrowingRecords = new ArrayList<BorrowingRecord>();
         this.subscriptions = new ArrayList<Subscription>();
         this.paymentMethod = new ArrayList<PaymentOption>();
@@ -39,6 +41,14 @@ public abstract class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public boolean getValidationStatus() {
+        return validationStatus;
+    }
+
+    public void setValidationStatus(boolean validationStatus) {
+        this.validationStatus = validationStatus;
     }
 
     public ArrayList<BorrowingRecord> updateBorrowingRecords() {
@@ -89,12 +99,5 @@ public abstract class User {
     // Enum for user types
     public enum UserType {
         STUDENT, FACULTY, NON_FACULTY_STAFF, VISITOR, SYSTEM_MANAGER;
-
-        private String value;
-
-        @Override
-        public String toString() {
-            return value;
-        }
     }
 }

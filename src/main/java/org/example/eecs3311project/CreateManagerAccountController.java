@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import objects.User;
 import objects.User.UserType;
 import userHandling.AccountHandling;
 
@@ -85,10 +86,7 @@ public class CreateManagerAccountController {
 
         AccountHandling.createAccount(email, password, UserType.SYSTEM_MANAGER);
 
-        System.out.println("Creating account with:");
-        System.out.println("Email: " + email);
-        System.out.println("Password: " + password);
-        System.out.println("User Type: " + UserType.SYSTEM_MANAGER);
+        System.out.println(UserType.SYSTEM_MANAGER);
     }
 
     private void showAlert(String title, String message) {
