@@ -128,12 +128,14 @@ public class Main extends Application {
     primaryStage.setTitle("Dashboard");
   }
   public void openSearch() throws IOException{
+    
     FXMLLoader searchloader = new FXMLLoader(
     getClass().getResource("fxml/searchpage.fxml")
     );
     Parent searchRoot = searchloader.load();
     searchController = searchloader.getController();
     searchController.setMain(this);
+    searchController.initialize();
 
     Scene searchscene = new Scene(searchRoot, 800, 450);
     searchscene
@@ -145,6 +147,7 @@ public class Main extends Application {
     );
     primaryStage.setScene(searchscene);
     primaryStage.setTitle("Search");
+    
 
 
   }
