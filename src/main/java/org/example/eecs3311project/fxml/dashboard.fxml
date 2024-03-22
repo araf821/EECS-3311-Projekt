@@ -30,8 +30,8 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <ScrollPane fx:id="itemsScrollPane" layoutX="48.0" layoutY="140.0" prefHeight="231.0" prefWidth="753.0" style="-fx-border-radius: 10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="104.0" />
-      <HBox alignment="CENTER" layoutX="48.0" layoutY="364.0" prefHeight="60.0" prefWidth="752.0" spacing="48.0" style="-fx-background-color: #3b82f6; -fx-background-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <ScrollPane fx:id="itemsScrollPane" hbarPolicy="NEVER"  layoutX="48.0" layoutY="140.0" prefHeight="231.0" prefWidth="753.0" style="-fx-border-radius: 10; -fx-background-radius: 10; -fx-border-color: #222; -fx-border-width: 2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="104.0" />
+      <HBox alignment="CENTER" layoutX="48.0" layoutY="364.0" prefHeight="60.0" prefWidth="752.0" spacing="48.0" style="-fx-background-radius: 10; -fx-background-color: #3b82f6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Button graphicTextGap="8.0" minWidth="-Infinity" mnemonicParsing="false" style="-fx-background-color: #2563eb; -fx-font-size: 14;" text="Dashboard">
                <HBox.margin>
