@@ -50,8 +50,12 @@ public class BorrowingRecord {
     }
 
     public double calculatePenalty() {
-        double penalty = calculateDaysOverdue() * 0.5;
-        return penalty > 0 ? penalty : 0;
+        if (isOverdue()) {
+        	LatePenaltyStrategy late = new LatePenaltyStrategy();
+        	return late.calculate(this.dueDate, this.returnDate);
+        }
+        OnTimePenaltyStrategy onTime = new OnTimePenaltyStrategy();
+        return onTime.calculate(this.dueDate, this.returnDate);
     }
 
     public boolean isOverdue() {
