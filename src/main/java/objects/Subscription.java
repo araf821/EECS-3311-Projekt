@@ -3,46 +3,48 @@ package objects;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class Subscription 
-{
+import userHandling.SubscriptionHandling;
+
+public class Subscription {
 	private User user;
 	private Newsletter newsletter;
 	private PaymentOption paymentOption;
-	
-	public Subscription(User user, Newsletter news, PaymentOption paymentOption) 
-	{
+
+	public Subscription(User user, Newsletter news, PaymentOption paymentOption) {
 		this.user = user;
 		this.newsletter = news;
 		this.paymentOption = paymentOption;
 	}
-	
-	public User getUser() 
-	{
+
+	public User getUser() {
 		return this.user;
 	}
-	
-	public Newsletter getNewsletter() 
-	{
+
+	public Newsletter getNewsletter() {
 		return this.newsletter;
 	}
-	
-	public void pay() 
-	{
-		if(paymentOption.getBalance() >= newsletter.getCost()) 
-		{
+
+	public String toCSVString() {
+		String csvString = (SubscriptionHandling.getLastId() + 1) + "," + this.user.getId() + ","
+				+ this.newsletter.getName() + "," + this.newsletter.getCost() + ","
+				+ this.paymentOption.getPaymentType();
+		return csvString;
+	}
+
+	public void pay() {
+		if (paymentOption.getBalance() >= newsletter.getCost()) {
 			paymentOption.withdraw(newsletter.getCost());
-			
-			String message = "Your subscription has been renewed; withdrew "+newsletter.getCost()+" from your account";
+
+			String message = "Your subscription has been renewed; withdrew " + newsletter.getCost()
+					+ " from your account";
 			LocalDate date = LocalDate.now();
 			Notification SubRenewal = new Notification(101, this.getUser().getId(), message, date);
-		}
-		else
-		{
+		} else {
 			String message = "Insufficent funds";
 			LocalDate date = LocalDate.now();
 			Notification insufficentFunds = new Notification(102, this.getUser().getId(), message, date);
 		}
-		
+
 	}
-	
+
 }
