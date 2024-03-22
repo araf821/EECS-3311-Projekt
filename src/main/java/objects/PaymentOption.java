@@ -20,7 +20,7 @@ public class PaymentOption
 	
 	public void withdraw(double amount) 
 	{
-		balance -= amount;
+			balance -= amount;
 	}
 	
 	public double getBalance() 
