@@ -1,8 +1,17 @@
 package org.example.eecs3311project;
 
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
@@ -12,16 +21,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import objects.BorrowingRecord;
 import objects.PhysicalItem;
-import userHandling.AccountHandling;
 import userHandling.BorrowingRecordHandling;
 import userHandling.PhysicalItemHandling;
-
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
 
 public class DashboardController {
 
@@ -29,6 +30,7 @@ public class DashboardController {
 
   @FXML
   private Text userEmail;
+
   @FXML
   private ScrollPane itemsScrollPane;
 
@@ -47,8 +49,11 @@ public class DashboardController {
 
   @FXML
   private void initialize() {
-    String emailText = (Main.currentUser != null && Main.currentUser.getEmail() != null) ? Main.currentUser.getEmail()
-        : "User not recognized";
+    String emailText = (
+        Main.currentUser != null && Main.currentUser.getEmail() != null
+      )
+      ? Main.currentUser.getEmail()
+      : "User not recognized";
     userEmail.setText("Welcome back, " + emailText);
 
     VBox itemsContainer = new VBox(10);
@@ -56,17 +61,39 @@ public class DashboardController {
     itemsContainer.setPadding(new Insets(10, 0, 10, 10));
 
     ArrayList<PhysicalItem> items = new ArrayList<>();
-    ArrayList<BorrowingRecord> records = BorrowingRecordHandling.getBorrowingRecordsByUserId(Main.currentUser.getId());
+    ArrayList<BorrowingRecord> records = BorrowingRecordHandling.getBorrowingRecordsByUserId(
+      Main.currentUser.getId()
+    );
+
+    if (records.isEmpty()) {
+      AnchorPane parentContainer = (AnchorPane) itemsScrollPane.getParent();
+      parentContainer.getChildren().remove(itemsScrollPane);
+
+      Label noItemsLabel = new Label("You have not rented any items yet.");
+      noItemsLabel.setStyle(
+        "-fx-text-fill: #a1a1aa; -fx-font-size: 14;"
+      );
+
+      // Apply the same anchor constraints as the ScrollPane
+      AnchorPane.setTopAnchor(noItemsLabel, 100.0);
+      AnchorPane.setLeftAnchor(noItemsLabel, 0.0);
+
+      parentContainer.getChildren().add(noItemsLabel);
+    }
 
     HBox headerBox = new HBox();
     headerBox.prefWidthProperty().bind(itemsScrollPane.widthProperty());
     headerBox.setPadding(new Insets(10));
-    headerBox.setStyle("-fx-background-color: #252525; -fx-background-radius: 5;");
+    headerBox.setStyle(
+      "-fx-background-color: #252525; -fx-background-radius: 5;"
+    );
 
     Text titleHeader = new Text("Item Name");
     titleHeader.setStyle("-fx-fill: white;");
     titleHeader.setFont(Font.font("Arial", FontWeight.BOLD, 14));
-    titleHeader.wrappingWidthProperty().bind(itemsScrollPane.widthProperty().subtract(125));
+    titleHeader
+      .wrappingWidthProperty()
+      .bind(itemsScrollPane.widthProperty().subtract(125));
 
     Text dateHeader = new Text("Due Date");
     dateHeader.setStyle("-fx-fill: white;");
@@ -80,20 +107,31 @@ public class DashboardController {
     itemsContainer.getChildren().add(headerBox);
 
     for (BorrowingRecord record : records) {
-      PhysicalItem item = PhysicalItemHandling.getPhysicalItemById(record.getItemId());
+      PhysicalItem item = PhysicalItemHandling.getPhysicalItemById(
+        record.getItemId()
+      );
       items.add(item);
 
       HBox itemBox = new HBox();
       itemBox.prefWidthProperty().bind(itemsScrollPane.widthProperty());
       itemBox.setPadding(new Insets(10));
-      itemBox.setStyle("-fx-background-color: #252525; -fx-background-radius: 5;");
+      itemBox.setStyle(
+        "-fx-background-color: #252525; -fx-background-radius: 5;"
+      );
 
-      Text titleText = new Text(item.getTitle() != null ? item.getTitle() : "[Missing Title]");
+      Text titleText = new Text(
+        item.getTitle() != null ? item.getTitle() : "[Missing Title]"
+      );
       titleText.setStyle("-fx-fill: white;");
-      titleText.wrappingWidthProperty().bind(itemsScrollPane.widthProperty().subtract(125));
+      titleText
+        .wrappingWidthProperty()
+        .bind(itemsScrollPane.widthProperty().subtract(125));
 
       Date date = record.getDueDate();
-      LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+      LocalDate localDate = date
+        .toInstant()
+        .atZone(ZoneId.systemDefault())
+        .toLocalDate();
 
       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM dd, yyyy");
       String formattedDate = localDate.format(formatter);

@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import objects.User;
-import objects.User.UserType;
 
 public class Main extends Application {
 
