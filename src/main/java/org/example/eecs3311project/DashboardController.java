@@ -16,6 +16,7 @@ import userHandling.AccountHandling;
 import userHandling.BorrowingRecordHandling;
 import userHandling.PhysicalItemHandling;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -108,5 +109,10 @@ public class DashboardController {
     }
 
     itemsScrollPane.setContent(itemsContainer);
+  }
+
+  @FXML
+  private void handleClickItemRental() throws IOException {
+    main.openItemRentalScreen();
   }
 }
