@@ -6,6 +6,7 @@ import java.util.Date;
 
 import objects.User.UserType;
 import userHandling.BorrowingRecordHandling;
+import userHandling.PhysicalItemHandling;
 
 public abstract class PhysicalItem {
     private int id;
@@ -16,13 +17,13 @@ public abstract class PhysicalItem {
     private boolean canRent;
     private double value;
 
-    public PhysicalItem(int id, String title, String location, boolean canPurchase, boolean canRent, double value) {
+    public PhysicalItem(int id, String title, String location, int remainingCopies, double value) {
         this.id = id;
         this.title = title;
-        this.remainingCopies = 20;
+        this.remainingCopies = remainingCopies;
         this.location = location;
-        this.canPurchase = canPurchase;
-        this.canRent = canRent;
+        this.canPurchase = remainingCopies > 0;
+        this.canRent = remainingCopies > 0;
         this.value = value;
     }
 
@@ -38,6 +39,7 @@ public abstract class PhysicalItem {
                         this.canRent = false;
                     }
                     int newRecordId = BorrowingRecordHandling.getLastId() + 1;
+                    PhysicalItemHandling.decreaseStockOfItem(this.id);
                     BorrowingRecord record = new BorrowingRecord(newRecordId, user.getId(), this.id, new Date());
                     BorrowingRecordHandling.writeBorrowingRecord(record);
                     user.updateBorrowingRecords();
@@ -47,7 +49,76 @@ public abstract class PhysicalItem {
 
         }
         return null;// shouldnt make record if more than 3 overdue
+    }
 
+    public String toCSVString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(this.id).append(",");
+        if (this instanceof Book) {
+            sb.append("BOOK").append(",");
+        } else if (this instanceof Magazine) {
+            sb.append("MAGAZINE").append(",");
+        } else if (this instanceof CD) {
+            sb.append("CD").append(",");
+        }
+        sb.append(this.title).append(",");
+        sb.append(this.location).append(",");
+        sb.append(this.remainingCopies).append(",");
+        sb.append(this.value).append(",");
+        if (this instanceof Book) {
+            sb.append(((Book) this).getIsbn());
+        } else if (this instanceof Magazine) {
+            sb.append(((Magazine) this).getEdition());
+        } else if (this instanceof CD) {
+            sb.append(((CD) this).getArtist());
+        }
+
+        return sb.toString();
+    }
+
+    public static PhysicalItem fromCSVString(String csvLine) {
+        String[] parts = csvLine.split(",");
+        int id = Integer.parseInt(parts[0]);
+        String itemType = parts[1];
+        String title = parts[2];
+        String location = parts[3];
+        int remainingCopies = Integer.parseInt(parts[4]);
+        double value = Double.parseDouble(parts[5]);
+        String extraInfo = parts[6];
+
+        switch (itemType) {
+            case "BOOK":
+                return new Book(id, title, location, remainingCopies, value, extraInfo);
+            case "MAGAZINE":
+                return new Magazine(id, title, location, remainingCopies, value, extraInfo);
+            case "CD":
+                return new CD(id, title, location, remainingCopies, value, extraInfo);
+            default:
+                throw new IllegalArgumentException("Unknown item type: " + itemType);
+        }
+    }
+
+    public static PhysicalItem fromCSVLine(String csvLine) {
+        String[] parts = csvLine.split(",");
+        int id = Integer.parseInt(parts[0]);
+        String itemType = parts[1];
+        String title = parts[2];
+        String location = parts[3];
+        int remainingCopies = Integer.parseInt(parts[4]);
+        double value = Double.parseDouble(parts[5]);
+        String extraInfo = parts[6];
+
+        switch (itemType) {
+            case "BOOK":
+                return new Book(id, title, location, remainingCopies, value, extraInfo);
+            case "MAGAZINE":
+                return new Magazine(id, title, location, remainingCopies, value, extraInfo);
+            case "CD":
+                return new CD(id, title, location, remainingCopies, value, extraInfo);
+            default:
+                throw new IllegalArgumentException("Unknown item type: " + itemType);
+        }
     }
 
     public int getId() {
@@ -98,10 +169,18 @@ public abstract class PhysicalItem {
         this.value = value;
     }
 
-    public static void main(String[] args) {
-        CD item = new CD(1, "title", "location", true, true, 10.0, "aasdlaskjdas");
-        Student user = new Student(7, "email", "password", UserType.STUDENT);
-        BorrowingRecord userRecord = item.borrow(user);
+    public static enum ItemType {
+        BOOK, MAGAZINE, CD
     }
 
+    public static void main(String[] args) {
+        User user = new Student(2, "asds", "asds", UserType.STUDENT);
+        SystemManagerUser user2 = new SystemManagerUser(2, "asds", "asds", UserType.SYSTEM_MANAGER);
+        user.setValidationStatus(true);
+        PhysicalItem item = PhysicalItemHandling.getPhysicalItemById(3);
+        System.out.println("id: " + item.getId());
+        item.borrow(user);
+        PhysicalItemHandling.increaseStockOfItem(1);
+
+    }
 }

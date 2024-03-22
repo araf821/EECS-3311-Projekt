@@ -15,7 +15,7 @@ public class UserCreationFactory {
         } else if (userType.toString().equals("VISITOR")) {
             return new Visitor(id, email, password, userType);
         } else if (userType.toString().equals("SYSTEM_MANAGER")) {
-            return new SystemManagerUser(id, email, password, userType, id);
+            return new SystemManagerUser(id, email, password, userType);
         } else {
             System.out.println("Usertype" + userType + " is not a valid usertype");
             return null;

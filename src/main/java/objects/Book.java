@@ -3,9 +3,9 @@ package objects;
 public class Book extends PhysicalItem {
     private String isbn;
 
-    public Book(int id, String title, String location, boolean canPurchase, boolean canRent, double value,
+    public Book(int id, String title, String location, int remainingCopies, double value,
             String isbn) {
-        super(id, title, location, canPurchase, canRent, value);
+        super(id, title, location, remainingCopies, value);
         this.isbn = isbn;
     }
 

@@ -3,9 +3,9 @@ package objects;
 public class CD extends PhysicalItem {
     private String artist;
 
-    public CD(int id, String title, String location, boolean canPurchase, boolean canRent, double value,
+    public CD(int id, String title, String location, int remainingCopies, double value,
             String artist) {
-        super(id, title, location, canPurchase, canRent, value);
+        super(id, title, location, remainingCopies, value);
         this.artist = artist;
     }
 

@@ -3,9 +3,9 @@ package objects;
 public class Magazine extends PhysicalItem {
     private String edition;
 
-    public Magazine(int id, String title, String location, boolean canPurchase, boolean canRent, double value,
+    public Magazine(int id, String title, String location, int remainingCopies, double value,
             String edition) {
-        super(id, title, location, canPurchase, canRent, value);
+        super(id, title, location, remainingCopies, value);
         this.edition = edition;
     }
 
