@@ -28,11 +28,20 @@ public class Subscription
 	
 	public void pay() 
 	{
-		paymentOption.withdraw(newsletter.getCost());
-		
-		String message = "Your subscribtion has been renewed; withdrew "+newsletter.getCost();
-		LocalDate date = LocalDate.now();
-		Notification SubRenewal = new Notification(101, this.getUser().getId(), message, date);
+		if(paymentOption.getBalance() >= newsletter.getCost()) 
+		{
+			paymentOption.withdraw(newsletter.getCost());
+			
+			String message = "Your subscription has been renewed; withdrew "+newsletter.getCost()+" from your account";
+			LocalDate date = LocalDate.now();
+			Notification SubRenewal = new Notification(101, this.getUser().getId(), message, date);
+		}
+		else
+		{
+			String message = "Insufficent funds";
+			LocalDate date = LocalDate.now();
+			Notification insufficentFunds = new Notification(102, this.getUser().getId(), message, date);
+		}
 		
 	}
 	
