@@ -18,6 +18,7 @@ public class Main extends Application {
   private CreateAccountController createAccountController;
   private CreateManagerAccountController createManagerAccountController;
   private DashboardController dashboardController;
+  private SearchController searchController;
 
   @Override
   public void start(Stage primaryStage) throws Exception {
@@ -126,7 +127,27 @@ public class Main extends Application {
     primaryStage.setScene(dashboardScene);
     primaryStage.setTitle("Dashboard");
   }
+  public void openSearch() throws IOException{
+    FXMLLoader searchloader = new FXMLLoader(
+    getClass().getResource("fxml/searchpage.fxml")
+    );
+    Parent searchRoot = searchloader.load();
+    searchController = searchloader.getController();
+    searchController.setMain(this);
 
+    Scene searchscene = new Scene(searchRoot, 800, 450);
+    searchscene
+    .getStylesheets()
+    .add(
+      getClass()
+        .getResource("/org/example/eecs3311project/globals.css")
+        .toExternalForm()
+    );
+    primaryStage.setScene(searchscene);
+    primaryStage.setTitle("Search");
+
+
+  }
   public static void main(String[] args) {
     System.out.println(UserType.STUDENT);
     launch();
