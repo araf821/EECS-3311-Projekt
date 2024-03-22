@@ -31,7 +31,7 @@ public abstract class PhysicalItem {
         if (user.moreThanThreeOverdueItems() == false && user.getValidationStatus() == true) {
             ArrayList<BorrowingRecord> recordd = user.updateBorrowingRecords();
             if (recordd.size() >= 10) {
-                return null; // shouldnt make record if more than 10
+                return null; // shouldn't make record if more than 10
             } else {
                 if (this.canRent == true && remainingCopies >= 1) {
                     this.remainingCopies = this.remainingCopies - 1;
