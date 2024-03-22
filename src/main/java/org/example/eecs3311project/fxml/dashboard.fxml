@@ -51,7 +51,7 @@
                   <Font name="Avenir Next Regular" size="24.0" />
                </font>
             </Button>
-            <Button graphicTextGap="8.0" minWidth="-Infinity" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-font-size: 16;" text="Item Rental">
+            <Button onAction="#handleClickItemRental" graphicTextGap="8.0" minWidth="-Infinity" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-font-size: 16;" text="Item Rental">
                <font>
                   <Font name="Avenir Next Regular" size="24.0" />
                </font>

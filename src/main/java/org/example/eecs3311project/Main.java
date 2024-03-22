@@ -18,6 +18,7 @@ public class Main extends Application {
   private CreateAccountController createAccountController;
   private CreateManagerAccountController createManagerAccountController;
   private DashboardController dashboardController;
+  private ItemRentalController itemRentalController;
 
   @Override
   public void start(Stage primaryStage) throws Exception {
@@ -125,6 +126,21 @@ public class Main extends Application {
     // Set the scene on the stage
     primaryStage.setScene(dashboardScene);
     primaryStage.setTitle("Dashboard");
+  }
+
+  public void openItemRentalScreen() throws IOException {
+    FXMLLoader itemRentalLoader = new FXMLLoader(
+            getClass().getResource("fxml/item-rental.fxml")
+    );
+    Parent itemRentalRoot = itemRentalLoader.load();
+    itemRentalController = itemRentalLoader.getController();
+    itemRentalController.setMain(this);
+
+    Scene itemRentalScene = new Scene(itemRentalRoot, 1000, 625);
+
+    // Set the scene on the stage
+    primaryStage.setScene(itemRentalScene);
+    primaryStage.setTitle("Item Rental");
   }
 
   public static void main(String[] args) {
