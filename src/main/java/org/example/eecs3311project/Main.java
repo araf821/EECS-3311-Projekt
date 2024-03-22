@@ -130,12 +130,13 @@ public class Main extends Application {
   }
 
   public void openSearch() throws IOException {
-    FXMLLoader searchloader = new FXMLLoader(
+    FXMLLoader searchLoader = new FXMLLoader(
       getClass().getResource("fxml/searchpage.fxml")
     );
-    Parent searchRoot = searchloader.load();
-    searchController = searchloader.getController();
+    Parent searchRoot = searchLoader.load();
+    searchController = searchLoader.getController();
     searchController.setMain(this);
+    searchController.initialize();
 
     Scene searchscene = new Scene(searchRoot, 800, 450);
     searchscene
@@ -165,7 +166,6 @@ public class Main extends Application {
   }
 
   public static void main(String[] args) {
-    System.out.println(UserType.STUDENT);
     launch();
   }
 }
