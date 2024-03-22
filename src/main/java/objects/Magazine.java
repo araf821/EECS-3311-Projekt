@@ -1,6 +1,6 @@
 package objects;
 
-public class Magazine extends PhysicalItem {
+public class Magazine extends PhysicalItem implements CompositeItem {
     private String edition;
 
     public Magazine(int id, String title, String location, int remainingCopies, double value,
