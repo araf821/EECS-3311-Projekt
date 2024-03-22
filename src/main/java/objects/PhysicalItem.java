@@ -55,7 +55,7 @@ public abstract class PhysicalItem {
         ArrayList<BorrowingRecord> record = user.updateBorrowingRecords();
         BorrowingRecord object = record.get(this.id);
         BorrowingRecordHandling foo = BorrowingRecordHandling.getInstance();
-        foo.RemoveBorrowingRecord(object);
+        BorrowingRecordHandling.RemoveBorrowingRecord(object);
         
         
         
@@ -190,8 +190,8 @@ public abstract class PhysicalItem {
         user.setValidationStatus(true);
         PhysicalItem item = PhysicalItemHandling.getPhysicalItemById(3);
         System.out.println("id: " + item.getId());
-        item.borrow(user);
-        PhysicalItemHandling.increaseStockOfItem(1);
+        item.returnObject(user);
+        
 
     }
 }

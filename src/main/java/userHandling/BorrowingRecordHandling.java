@@ -45,7 +45,8 @@ public class BorrowingRecordHandling {
         File file = new File(CSV_FILE);
         File file2 = new File("tempfile.txt");
         boolean fileExists = file.exists();
-        String Remove = record.toString();
+        String Remove = record.toCSVString();
+        System.out.println(Remove + "REMOVE");
         try (BufferedReader reader = new BufferedReader(new FileReader(file));
             BufferedWriter writer = new BufferedWriter(new FileWriter(file2))) {
                 String line;
