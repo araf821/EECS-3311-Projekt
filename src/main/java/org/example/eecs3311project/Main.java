@@ -19,6 +19,7 @@ public class Main extends Application {
   private CreateManagerAccountController createManagerAccountController;
   private DashboardController dashboardController;
   private ItemRentalController itemRentalController;
+  private SearchController searchController;
 
   @Override
   public void start(Stage primaryStage) throws Exception {
@@ -128,9 +129,29 @@ public class Main extends Application {
     primaryStage.setTitle("Dashboard");
   }
 
+  public void openSearch() throws IOException {
+    FXMLLoader searchloader = new FXMLLoader(
+      getClass().getResource("fxml/searchpage.fxml")
+    );
+    Parent searchRoot = searchloader.load();
+    searchController = searchloader.getController();
+    searchController.setMain(this);
+
+    Scene searchscene = new Scene(searchRoot, 800, 450);
+    searchscene
+      .getStylesheets()
+      .add(
+        getClass()
+          .getResource("/org/example/eecs3311project/globals.css")
+          .toExternalForm()
+      );
+    primaryStage.setScene(searchscene);
+    primaryStage.setTitle("Search");
+  }
+
   public void openItemRentalScreen() throws IOException {
     FXMLLoader itemRentalLoader = new FXMLLoader(
-            getClass().getResource("fxml/item-rental.fxml")
+      getClass().getResource("fxml/item-rental.fxml")
     );
     Parent itemRentalRoot = itemRentalLoader.load();
     itemRentalController = itemRentalLoader.getController();

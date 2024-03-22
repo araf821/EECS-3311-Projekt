@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.eecs3311project.SearchController"
+      spacing="10"
+      alignment="CENTER">
+
+    <children>
+        <ScrollPane fx:id="itemsScrollPane" VBox.vgrow="ALWAYS">
+            <!-- Add any content for the ScrollPane here -->
+        </ScrollPane>
+        
+        <VBox fx:id="searchContainer" spacing="10" alignment="CENTER">
+            <!-- The text field -->
+            <TextField fx:id="searchTextField"
+                       promptText="Type here..."
+                       style="-fx-background-color: white; -fx-prompt-text-fill: gray;">
+                <VBox.margin>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </VBox.margin>
+                <VBox.vgrow>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </VBox.vgrow>
+            </TextField>
+            
+            <!-- Add any additional UI elements here -->
+        </VBox>
+    </children>
+</VBox>

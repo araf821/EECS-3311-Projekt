@@ -35,7 +35,14 @@ public class DashboardController {
   public void setMain(Main main) {
     this.main = main;
   }
-
+  @FXML
+  private void handleSearchButton(){
+    try{
+      main.openSearch();
+    }catch(Exception e){
+      e.printStackTrace();
+    }
+  }
   @FXML
   private void initialize() {
     String emailText = (Main.currentUser != null && Main.currentUser.getEmail() != null) ? Main.currentUser.getEmail() : "User not recognized";
