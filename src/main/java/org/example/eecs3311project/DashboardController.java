@@ -16,6 +16,7 @@ import userHandling.AccountHandling;
 import userHandling.BorrowingRecordHandling;
 import userHandling.PhysicalItemHandling;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -34,17 +35,20 @@ public class DashboardController {
   public void setMain(Main main) {
     this.main = main;
   }
+
   @FXML
-  private void handleSearchButton(){
-    try{
+  private void handleSearchButton() {
+    try {
       main.openSearch();
-    }catch(Exception e){
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
+
   @FXML
   private void initialize() {
-    String emailText = (Main.currentUser != null && Main.currentUser.getEmail() != null) ? Main.currentUser.getEmail() : "User not recognized";
+    String emailText = (Main.currentUser != null && Main.currentUser.getEmail() != null) ? Main.currentUser.getEmail()
+        : "User not recognized";
     userEmail.setText("Welcome back, " + emailText);
 
     VBox itemsContainer = new VBox(10);
@@ -52,7 +56,7 @@ public class DashboardController {
     itemsContainer.setPadding(new Insets(10, 0, 10, 10));
 
     ArrayList<PhysicalItem> items = new ArrayList<>();
-    ArrayList<BorrowingRecord> records = BorrowingRecordHandling.getBorrowingRecordsByUserId(1);
+    ArrayList<BorrowingRecord> records = BorrowingRecordHandling.getBorrowingRecordsByUserId(Main.currentUser.getId());
 
     HBox headerBox = new HBox();
     headerBox.prefWidthProperty().bind(itemsScrollPane.widthProperty());
@@ -105,5 +109,10 @@ public class DashboardController {
     }
 
     itemsScrollPane.setContent(itemsContainer);
+  }
+
+  @FXML
+  private void handleClickItemRental() throws IOException {
+    main.openItemRentalScreen();
   }
 }
