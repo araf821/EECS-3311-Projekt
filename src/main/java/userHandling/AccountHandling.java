@@ -48,8 +48,6 @@ public class AccountHandling {
     if (!digitMatcher.find()) {
       return false;
     }
-
-    // Check if the password contains at least one symbol
     Pattern symbolPattern = Pattern.compile(
       "[!@#$%^&*()\\-+=_{}|\\[\\]:;<>,.?/~]"
     );
@@ -59,6 +57,40 @@ public class AccountHandling {
     }
 
     return true; // Password meets all criteria
+  }
+
+  public static void updateValidation(String email) {
+    try {
+      File inputFile = new File(CSV_FILE);
+
+      BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+      StringBuilder sb = new StringBuilder();
+      String lineToSearch = email;
+      String currentLine;
+
+      while ((currentLine = reader.readLine()) != null) {
+        String[] userInfo = currentLine.split(",");
+        // Check if the current line contains the provided email
+        if (userInfo.length >= 2 && userInfo[1].equals(lineToSearch)) {
+          userInfo[4] = "true"; // Update the validation status to true
+          currentLine = String.join(",", userInfo);
+        }
+        sb.append(currentLine).append("\n");
+      }
+
+      reader.close();
+
+      // Write the modified contents back to the original file
+      FileWriter writer = new FileWriter(inputFile);
+      writer.write(sb.toString());
+      writer.close();
+
+      System.out.println("User validation status updated successfully.");
+    } catch (IOException e) {
+      System.out.println(
+        "An error occurred while validating user: " + e.getMessage()
+      );
+    }
   }
 
   public static void createAccount(

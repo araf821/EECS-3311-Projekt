@@ -1,6 +1,7 @@
 package objects;
 
 import objects.PhysicalItem.ItemType;
+import userHandling.AccountHandling;
 import userHandling.PhysicalItemHandling;
 
 public class SystemManagerUser extends User {
@@ -28,12 +29,15 @@ public class SystemManagerUser extends User {
         }
 
         PhysicalItemHandling.writePhysicalItem(item);
+    }
 
+    public void validateUser(String email) {
+        AccountHandling.updateValidation(email);
     }
 
     public static void main(String[] args) {
         SystemManagerUser user = new SystemManagerUser(1, "dog@gmail.com", "password", UserType.SYSTEM_MANAGER);
-        user.addPhysicalItem("Harry Potter", ItemType.BOOK, "Library", 20.0, "1234567890");
+        user.validateUser("dog");
     }
 
 }

@@ -1,47 +1,40 @@
 package objects;
 
-public class Newsletter 
-{
-	private String name;
+public class Newsletter {
+	private LetterPublisher name;
 	private double cost;
-	
-	public Newsletter(String name, double cost) 
-	{
+
+	public Newsletter(LetterPublisher name, double cost) {
 		this.name = name;
 		this.cost = cost;
 	}
-	
-	public double getCost() 
-	{
+
+	public double getCost() {
 		return cost;
 	}
-	
-	public void setCost(int cost) 
-	{
+
+	public void setCost(int cost) {
 		this.cost = cost;
 	}
-	
-	public String getName() 
-	{
+
+	public LetterPublisher getName() {
 		return name;
 	}
-	
-	public void setName(String name) 
-	{
+
+	public void setName(LetterPublisher name) {
 		this.name = name;
 	}
-	
-	public void accept(User user) 
-	{
+
+	public void accept(User user) {
 		user.visit(this);
 	}
-	
-	public void displayNews() 
-	{	
-		//implementation
+
+	public void displayNews() {
+		// implementation
 	}
-	
+
+	public static enum LetterPublisher {
+		NYTIMES, WASHINGTONPOST, USATODAY
+	}
 
 }
-
-

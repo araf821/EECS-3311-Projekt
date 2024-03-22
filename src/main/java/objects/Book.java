@@ -1,6 +1,6 @@
 package objects;
 
-public class Book extends PhysicalItem {
+public class Book extends PhysicalItem implements CompositeItem{
     private String isbn;
 
     public Book(int id, String title, String location, int remainingCopies, double value,
@@ -16,4 +16,14 @@ public class Book extends PhysicalItem {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
+    @Override
+    public int getId() {
+        
+        return super.getId();
+    }
+    @Override
+    public String getLocation() {
+        return super.getLocation();
+    }
+    
 }

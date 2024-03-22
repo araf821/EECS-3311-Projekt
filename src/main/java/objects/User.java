@@ -9,6 +9,7 @@ public abstract class User {
     private String email;
     private String password;
     private UserType userType;
+    private double penalty;
     private boolean validationStatus;
     private ArrayList<BorrowingRecord> borrowingRecords;
     private ArrayList<Subscription> subscriptions;
@@ -37,6 +38,9 @@ public abstract class User {
 
     public UserType getUserType() {
         return userType;
+    }
+    public void addPenalty(double pen){
+        this.penalty = this.penalty + pen;
     }
 
     public String getPassword() {
