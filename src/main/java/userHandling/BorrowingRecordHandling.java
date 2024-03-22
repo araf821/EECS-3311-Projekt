@@ -10,6 +10,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 
+
+
 import objects.BorrowingRecord;
 import objects.SystemManagerUser;
 
@@ -39,6 +41,37 @@ public class BorrowingRecordHandling {
             e.printStackTrace();
         }
     }
+    public static void RemoveBorrowingRecord(BorrowingRecord record){
+        File file = new File(CSV_FILE);
+        File file2 = new File("tempfile.txt");
+        boolean fileExists = file.exists();
+        String Remove = record.toString();
+        try (BufferedReader reader = new BufferedReader(new FileReader(file));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file2))) {
+                String line;
+                while((line = reader.readLine() )!= null){
+                    if(line.equals(Remove)){
+                        continue;
+                    }
+                    writer.write(line + System.lineSeparator());
+                }
+
+       
+   } catch (IOException e) {
+       e.printStackTrace(); 
+   }
+   
+   if (!file.delete()) {
+       System.out.println("Could not delete the original file");
+       return;
+   }
+
+   if (!file2.renameTo(file)) {
+       System.out.println("Could not rename the temporary file");
+   }
+
+    }
+
 
     public static ArrayList<BorrowingRecord> getBorrowingRecordsByUserId(int id) {
         ArrayList<BorrowingRecord> userRecords = new ArrayList<>();

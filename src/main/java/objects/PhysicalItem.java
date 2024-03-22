@@ -29,8 +29,8 @@ public abstract class PhysicalItem {
 
     public BorrowingRecord borrow(User user) {
         if (user.moreThanThreeOverdueItems() == false && user.getValidationStatus() == true) {
-            ArrayList<BorrowingRecord> POG = user.updateBorrowingRecords();
-            if (POG.size() >= 10) {
+            ArrayList<BorrowingRecord> recordd = user.updateBorrowingRecords();
+            if (recordd.size() >= 10) {
                 return null; // shouldnt make record if more than 10
             } else {
                 if (this.canRent == true && remainingCopies >= 1) {
@@ -49,6 +49,17 @@ public abstract class PhysicalItem {
 
         }
         return null;// shouldnt make record if more than 3 overdue
+    }
+
+    public void returnObject(User user){
+        ArrayList<BorrowingRecord> record = user.updateBorrowingRecords();
+        BorrowingRecord object = record.get(this.id);
+        BorrowingRecordHandling foo = BorrowingRecordHandling.getInstance();
+        foo.RemoveBorrowingRecord(object);
+        
+        
+        
+
     }
 
     public String toCSVString() {
