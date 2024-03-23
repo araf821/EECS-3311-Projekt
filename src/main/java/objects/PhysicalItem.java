@@ -180,14 +180,4 @@ public abstract class PhysicalItem {
     public static enum ItemType {
         BOOK, MAGAZINE, CD
     }
-
-    public static void main(String[] args) {
-        User user = new Student(2, "asds", "asds", UserType.STUDENT);
-        SystemManagerUser user2 = new SystemManagerUser(2, "asds", "asds", UserType.SYSTEM_MANAGER);
-        user.setValidationStatus(true);
-        PhysicalItem item = PhysicalItemHandling.getPhysicalItemById(3);
-        System.out.println("id: " + item.getId());
-        item.returnObject(user);
-
-    }
 }

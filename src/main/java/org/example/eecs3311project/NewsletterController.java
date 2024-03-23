@@ -57,23 +57,31 @@ public class NewsletterController {
                     setText(null);
                     setGraphic(null);
                 } else {
-                    Label nameLabel = new Label(newsletter.getName().toString()); // Assuming a getName() method
-                    Button subscribeButton = new Button(newsletter.isSubscribed(main.currentUser) ? "Unsubscribe" : "Subscribe"); // isSubscribed() checks subscription status
+                    Label nameLabel = new Label(newsletter.getName().toString()); // Assuming a getName() method exists
+                    Button subscribeButton = new Button(newsletter.isSubscribed(main.currentUser) ? "Unsubscribe" : "Subscribe");
                     subscribeButton.setOnAction(e -> {
                         // Toggle subscription status
                         toggleSubscription(newsletter);
                         setText(nameLabel.getText());
                         subscribeButton.setText(newsletter.isSubscribed(main.currentUser) ? "Unsubscribe" : "Subscribe");
+                        // Update the cell to reflect changes
+                        updateItem(newsletter, false);
                     });
-
-                    Button openButton = new Button("Open");
-                    openButton.setOnAction(e -> openNewsletterPopup(newsletter.getUrl())); // getContentUrl() gets the URL
-
-                    HBox hBox = new HBox(nameLabel, subscribeButton, openButton);
+        
+                    HBox hBox = new HBox(nameLabel, subscribeButton);
+                    hBox.setSpacing(10); // Add some spacing between elements
+        
+                    // Conditionally add the "Open" button if the user is subscribed
+                    if (newsletter.isSubscribed(main.currentUser)) {
+                        Button openButton = new Button("Open");
+                        openButton.setOnAction(e -> openNewsletterPopup(newsletter.getUrl())); // Assuming getUrl() method exists
+                        hBox.getChildren().add(openButton);
+                    }
+        
                     setGraphic(hBox);
                 }
             }
-        });
+        });        
     }
 
     private void toggleSubscription(Newsletter newsletter) {
