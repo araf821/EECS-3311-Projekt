@@ -19,7 +19,7 @@
             <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
          </padding>
          <children>
-            <Button onAction="#handleClickDashboard" alignment="CENTER" mnemonicParsing="false" style="-fx-font-size: 16; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: Avenir; -fx-background-color: #2563eb;" text="Dashboard" />
+            <Button onAction="#handleClickDashboard" alignment="CENTER" mnemonicParsing="false" style="-fx-font-size: 16; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: Avenir; -fx-background-color: #2563eb;" text="Dashboard"/>
             <Button alignment="CENTER" layoutX="429.0" layoutY="27.0" mnemonicParsing="false" style="-fx-font-size: 16; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: Avenir; -fx-background-color: #2563eb;" text="Newsletters" />
             <Button onAction="#handleClickSearch" layoutX="482.0" layoutY="27.0" mnemonicParsing="false" style="-fx-font-size: 16; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: Avenir; -fx-background-color: #2563eb;" text="Search" />
             <Button onAction="#handleClickItemRental" layoutX="535.0" layoutY="27.0" mnemonicParsing="false" style="-fx-font-size: 16; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: Avenir; -fx-background-color: #18181b;" text="Item Rental" />
@@ -35,7 +35,7 @@
          </padding>
          <children>
             <Text fx:id="userEmail" fill="#59afff" layoutX="16.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16;" text="Currently logged in as {user.name}." />
-            <Text fill="#59b2ffcc" layoutX="16.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14;" text="You're currently rentinng {numOfItems} items. Up to 10 rentals allowed." />
+            <Text fill="#59b2ffcc" layoutX="16.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14;" text="You're currently renting {numOfItems} items. Up to 10 rentals allowed." />
          </children>
       </Pane>
       <Text fill="WHITE" layoutX="43.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-font-family: Avenir;" text="Available Items" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="150.0" />
