@@ -8,7 +8,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import objects.User;
-import objects.User.UserType;
 
 public class Main extends Application {
 
@@ -19,6 +18,7 @@ public class Main extends Application {
   private CreateAccountController createAccountController;
   private CreateManagerAccountController createManagerAccountController;
   private DashboardController dashboardController;
+  private ItemRentalController itemRentalController;
   private SearchController searchController;
   private AddItemController addItemController;
 
@@ -179,7 +179,20 @@ public class Main extends Application {
                 .toExternalForm());
     primaryStage.setScene(searchscene);
     primaryStage.setTitle("Search");
+  }
 
+  public void openItemRentalScreen() throws IOException {
+    FXMLLoader itemRentalLoader = new FXMLLoader(
+        getClass().getResource("fxml/item-rental.fxml"));
+    Parent itemRentalRoot = itemRentalLoader.load();
+    itemRentalController = itemRentalLoader.getController();
+    itemRentalController.setMain(this);
+
+    Scene itemRentalScene = new Scene(itemRentalRoot, 1000, 625);
+
+    // Set the scene on the stage
+    primaryStage.setScene(itemRentalScene);
+    primaryStage.setTitle("Item Rental");
   }
 
   public static void main(String[] args) {

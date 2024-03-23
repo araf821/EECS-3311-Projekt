@@ -21,11 +21,6 @@
             <version>19.0.2</version>
         </dependency>
         <dependency>
-		    <groupId>org.openjfx</groupId>
-		    <artifactId>javafx-web</artifactId>
-		    <version>19.0.2</version>
-		</dependency>
-        <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>19.0.2</version>
@@ -43,7 +38,6 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
