@@ -26,4 +26,12 @@ public class ItemRentalController {
     private void handleClickDashboard() throws IOException {
         main.openDashboardScreen();
     }
+    @FXML
+    private void handleClickItemRental() throws IOException {
+        main.openItemRentalScreen();
+    }
+    @FXML
+    private void handleClickSearch() throws IOException {
+        main.openSearch();
+    }
 }
