@@ -19,9 +19,9 @@
             <Insets bottom="16.0" left="24.0" right="24.0" top="16.0" />
          </padding>
          <children>
-            <Button onAction="#handleClickDashboard" alignment="CENTER" mnemonicParsing="false" style="-fx-font-size: 16; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: Avenir; -fx-background-color: #2563eb;" text="Dashboard" />
+            <Button onAction="#handleClickDashboard" alignment="CENTER" mnemonicParsing="false" style="-fx-font-size: 16; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: Avenir; -fx-background-color: #2563eb;" text="Dashboard"/>
             <Button alignment="CENTER" layoutX="429.0" layoutY="27.0" mnemonicParsing="false" style="-fx-font-size: 16; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: Avenir; -fx-background-color: #2563eb;" text="Newsletters" />
-            <Button alignment="CENTER" layoutX="482.0" layoutY="27.0" mnemonicParsing="false" style="-fx-font-size: 16; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: Avenir; -fx-background-color: #2563eb;" text="Search" />
+            <Button onAction="#handleSearchButton" alignment="CENTER" layoutX="482.0" layoutY="27.0" mnemonicParsing="false" style="-fx-font-size: 16; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: Avenir; -fx-background-color: #2563eb;" text="Search"/>
             <Button alignment="CENTER" layoutX="535.0" layoutY="27.0" mnemonicParsing="false" style="-fx-font-size: 16; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: Avenir; -fx-background-color: #18181b;" text="Item Rental" />
             <Button alignment="CENTER" layoutX="588.0" layoutY="27.0" mnemonicParsing="false" style="-fx-font-size: 16; -fx-background-radius: 5; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-family: Avenir; -fx-background-color: #2563eb;" text="Book Request" />
          </children>
