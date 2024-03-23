@@ -94,24 +94,23 @@
 
 .scroll-pane {
   -fx-background-color: #18181b;
-  -fx-focus-color: transparent; /* Remove focus color */
-  -fx-faint-focus-color: transparent; /* Remove focus color's inner border */
+  -fx-focus-color: transparent;
+  -fx-faint-focus-color: transparent;
 }
 
 /* Style the vertical scrollbar */
 .scroll-pane .scroll-bar:vertical {
-  -fx-background-color: #333; /* Background of the scrollbar area */
+  -fx-background-color: #333;
 }
 
 .scroll-pane .scroll-bar:vertical .thumb {
-  -fx-background-color: #666; /* Color of the scrollbar thumb */
+  -fx-background-color: #666;
 }
 
 .scroll-pane .scroll-bar:vertical .track {
-  -fx-background-color: #444; /* Background color of the track */
+  -fx-background-color: #444;
 }
 
-/* Style the horizontal scrollbar similarly if needed */
 .scroll-pane .scroll-bar:horizontal {
   -fx-background-color: #333;
 }

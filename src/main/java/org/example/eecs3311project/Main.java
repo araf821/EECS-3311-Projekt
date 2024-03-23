@@ -158,6 +158,13 @@ public class Main extends Application {
     itemRentalController.setMain(this);
 
     Scene itemRentalScene = new Scene(itemRentalRoot, 1000, 625);
+    itemRentalScene
+            .getStylesheets()
+            .add(
+                    getClass()
+                            .getResource("/org/example/eecs3311project/globals.css")
+                            .toExternalForm()
+            );
 
     // Set the scene on the stage
     primaryStage.setScene(itemRentalScene);
