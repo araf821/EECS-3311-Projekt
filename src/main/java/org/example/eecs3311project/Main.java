@@ -22,6 +22,7 @@ public class Main extends Application {
   private NewsletterController newsletterController;
   private SearchController searchController;
   private AddItemController addItemController;
+  private EmailValidationController emailValidationController;
 
   @Override
   public void start(Stage primaryStage) throws Exception {
@@ -118,6 +119,27 @@ public class Main extends Application {
                 .toExternalForm());
     primaryStage.setScene(addItemScene);
     primaryStage.setTitle("Add Item");
+  }
+
+  public void switchToValidateUserPage() throws IOException {
+    FXMLLoader validateUserLoader = new FXMLLoader(
+        getClass().getResource("fxml/validate-user.fxml"));
+    Parent validateUserRoot = validateUserLoader.load();
+    emailValidationController = validateUserLoader.getController();
+    emailValidationController.setMain(this); // Pass a reference to the main application to the controller
+
+    // Create the scene for the create account page
+    Scene validateUserScene = new Scene(validateUserRoot, 400, 500);
+    validateUserScene
+        .getStylesheets()
+        .add(
+            getClass()
+                .getResource("/org/example/eecs3311project/globals.css")
+                .toExternalForm());
+
+    // Set the scene on the stage
+    primaryStage.setScene(validateUserScene);
+    primaryStage.setTitle("Validate User");
   }
 
   public void openDashboardScreen() throws IOException {

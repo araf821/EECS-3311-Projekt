@@ -35,7 +35,27 @@ public class PhysicalItemHandling {
             e.printStackTrace();
         }
     }
+    public static List<PhysicalItem> Getallitems() {
+        List<PhysicalItem> list = new ArrayList<PhysicalItem>();
+        File file = new File(CSV_FILE);
+        if (!file.exists()) {
+            // File does not exist, return null
+            return null;
+        }
 
+        try (BufferedReader reader = new BufferedReader(new FileReader(CSV_FILE))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                PhysicalItem item = PhysicalItem.fromCSVLine(line);
+               list.add(item);
+            }
+            
+            throw new IllegalArgumentException("Item not found in the inventory.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
     public static PhysicalItem getPhysicalItemById(int id) {
         File file = new File(CSV_FILE);
         if (!file.exists()) {

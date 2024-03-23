@@ -18,12 +18,27 @@ public class ItemRentalController {
 
     @FXML
     private void initialize() {
-        String emailText = (Main.currentUser != null && Main.currentUser.getEmail() != null) ? Main.currentUser.getEmail() : "User not recognized";
+        String emailText = (Main.currentUser != null && Main.currentUser.getEmail() != null)
+                ? Main.currentUser.getEmail()
+                : "User not recognized";
         userEmail.setText("Welcome back, " + emailText);
     }
 
     @FXML
     private void handleClickDashboard() throws IOException {
         main.openDashboardScreen();
+    }
+    @FXML
+    private void handleClickItemRental() throws IOException {
+        main.openItemRentalScreen();
+    }
+    @FXML
+    private void handleClickSearch() throws IOException {
+        main.openSearch();
+    }
+
+    @FXML
+    private void handleSearchButton() throws IOException {
+        main.openSearch();
     }
 }

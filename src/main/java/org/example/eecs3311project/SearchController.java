@@ -37,7 +37,7 @@ public class SearchController {
 
     @FXML
     public void initialize() {
-        displayAllBooks();
+        
        
     }
      private void displayAllBooks() {
@@ -86,7 +86,12 @@ public class SearchController {
         }
     }
     @FXML
-    private void handleBackButtonfromSearch() throws IOException {
+    private void handleClickDashboard() throws IOException {
         main.openDashboardScreen();
       }
+      @FXML
+      private void handleClickItemRental() throws IOException {
+          main.openItemRentalScreen();
+        }
+      
 }
