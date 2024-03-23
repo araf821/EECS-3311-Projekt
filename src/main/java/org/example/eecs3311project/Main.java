@@ -19,6 +19,7 @@ public class Main extends Application {
   private CreateManagerAccountController createManagerAccountController;
   private DashboardController dashboardController;
   private ItemRentalController itemRentalController;
+  private NewsletterController newsletterController;
   private SearchController searchController;
 
   @Override
@@ -163,6 +164,21 @@ public class Main extends Application {
     // Set the scene on the stage
     primaryStage.setScene(itemRentalScene);
     primaryStage.setTitle("Item Rental");
+  }
+
+  public void openNewsLetter() throws IOException {
+    FXMLLoader newsletterLoader = new FXMLLoader(
+      getClass().getResource("fxml/newsletter.fxml")
+    );
+    Parent newsLetterRoot = newsletterLoader.load();
+    newsletterController = newsletterLoader.getController();
+    newsletterController.setMain(this);
+
+    Scene itemRentalScene = new Scene(newsLetterRoot, 1000, 625);
+
+    // Set the scene on the stage
+    primaryStage.setScene(itemRentalScene);
+    primaryStage.setTitle("Newsletter");
   }
 
   public static void main(String[] args) {

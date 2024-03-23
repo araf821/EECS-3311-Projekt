@@ -115,4 +115,9 @@ public class DashboardController {
   private void handleClickItemRental() throws IOException {
     main.openItemRentalScreen();
   }
+
+  @FXML
+  private void openNewsletterView() throws IOException {
+    main.openNewsLetter();
+  }
 }

@@ -33,6 +33,18 @@ public class Newsletter {
 		// implementation
 	}
 
+	public String getUrl() {
+		if (this.name == LetterPublisher.NYTIMES) {
+			return "https://www.nytimes.com/";
+		}
+		else if (this.name == LetterPublisher.WASHINGTONPOST) {
+			return "https://www.washingtonpost.com/";
+		}
+		else{
+			return "https://www.usatoday.com/";
+		}
+	}
+
 	public static enum LetterPublisher {
 		NYTIMES, WASHINGTONPOST, USATODAY
 	}
