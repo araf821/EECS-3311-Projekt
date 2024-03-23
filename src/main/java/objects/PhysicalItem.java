@@ -51,14 +51,11 @@ public abstract class PhysicalItem {
         return null;// shouldnt make record if more than 3 overdue
     }
 
-    public void returnObject(User user){
+    public void returnObject(User user) {
         ArrayList<BorrowingRecord> record = user.updateBorrowingRecords();
         BorrowingRecord object = record.get(this.id);
         BorrowingRecordHandling foo = BorrowingRecordHandling.getInstance();
         BorrowingRecordHandling.RemoveBorrowingRecord(object);
-        
-        
-        
 
     }
 
@@ -191,7 +188,6 @@ public abstract class PhysicalItem {
         PhysicalItem item = PhysicalItemHandling.getPhysicalItemById(3);
         System.out.println("id: " + item.getId());
         item.returnObject(user);
-        
 
     }
 }
