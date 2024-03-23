@@ -29,6 +29,11 @@ public class ManagerDashboardController {
     }
 
     @FXML
+    private void handleValidateUserButton() throws IOException {
+        main.switchToValidateUserPage();
+    }
+
+    @FXML
     private void initialize() {
         String emailText = (Main.currentUser != null && Main.currentUser.getEmail() != null)
                 ? Main.currentUser.getEmail()

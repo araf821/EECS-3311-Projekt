@@ -17,7 +17,8 @@ public class AccountHandling {
 
   private static final String CSV_FILE = "./users.csv";
 
-  private AccountHandling() {}
+  private AccountHandling() {
+  }
 
   public static AccountHandling getInstance() {
     return handler;
@@ -49,8 +50,7 @@ public class AccountHandling {
       return false;
     }
     Pattern symbolPattern = Pattern.compile(
-      "[!@#$%^&*()\\-+=_{}|\\[\\]:;<>,.?/~]"
-    );
+        "[!@#$%^&*()\\-+=_{}|\\[\\]:;<>,.?/~]");
     Matcher symbolMatcher = symbolPattern.matcher(password);
     if (!symbolMatcher.find()) {
       return false;
@@ -59,7 +59,7 @@ public class AccountHandling {
     return true; // Password meets all criteria
   }
 
-  public static void updateValidation(String email) {
+  public static ValidationStatus updateValidation(String email) {
     try {
       File inputFile = new File(CSV_FILE);
 
@@ -67,6 +67,7 @@ public class AccountHandling {
       StringBuilder sb = new StringBuilder();
       String lineToSearch = email;
       String currentLine;
+      boolean found = false;
 
       while ((currentLine = reader.readLine()) != null) {
         String[] userInfo = currentLine.split(",");
@@ -74,6 +75,7 @@ public class AccountHandling {
         if (userInfo.length >= 2 && userInfo[1].equals(lineToSearch)) {
           userInfo[4] = "true"; // Update the validation status to true
           currentLine = String.join(",", userInfo);
+          found = true;
         }
         sb.append(currentLine).append("\n");
       }
@@ -85,19 +87,22 @@ public class AccountHandling {
       writer.write(sb.toString());
       writer.close();
 
-      System.out.println("User validation status updated successfully.");
+      return found ? ValidationStatus.SUCCESS : ValidationStatus.FAILURE;
     } catch (IOException e) {
-      System.out.println(
-        "An error occurred while validating user: " + e.getMessage()
-      );
+      e.printStackTrace();
+      return ValidationStatus.FAILURE;
     }
   }
 
+  public static enum ValidationStatus {
+    SUCCESS,
+    FAILURE
+  }
+
   public static void createAccount(
-    String email,
-    String password,
-    UserType userType
-  ) {
+      String email,
+      String password,
+      UserType userType) {
     int id = getLastId() + 1;
     String line;
     if (userType == UserType.SYSTEM_MANAGER) {
@@ -139,59 +144,50 @@ public class AccountHandling {
           switch (userType) {
             case STUDENT:
               Student student = new Student(
-                Integer.parseInt(parts[0]),
-                parts[1],
-                parts[2],
-                userType
-              );
+                  Integer.parseInt(parts[0]),
+                  parts[1],
+                  parts[2],
+                  userType);
               student.updateBorrowingRecords();
               student.setValidationStatus(
-                parts[4].equals("true") ? true : false
-              );
+                  parts[4].equals("true") ? true : false);
               return student;
             case FACULTY:
               Faculty faculty = new Faculty(
-                Integer.parseInt(parts[0]),
-                parts[1],
-                parts[2],
-                userType
-              );
+                  Integer.parseInt(parts[0]),
+                  parts[1],
+                  parts[2],
+                  userType);
               faculty.updateBorrowingRecords();
               faculty.setValidationStatus(
-                parts[4].equals("true") ? true : false
-              );
+                  parts[4].equals("true") ? true : false);
               return faculty;
             case NON_FACULTY_STAFF:
               NonFacultyStaff nonFacultyStaff = new NonFacultyStaff(
-                Integer.parseInt(parts[0]),
-                parts[1],
-                parts[2],
-                userType
-              );
+                  Integer.parseInt(parts[0]),
+                  parts[1],
+                  parts[2],
+                  userType);
               nonFacultyStaff.updateBorrowingRecords();
               nonFacultyStaff.setValidationStatus(
-                parts[4].equals("true") ? true : false
-              );
+                  parts[4].equals("true") ? true : false);
               return nonFacultyStaff;
             case VISITOR:
               Visitor visitor = new Visitor(
-                Integer.parseInt(parts[0]),
-                parts[1],
-                parts[2],
-                userType
-              );
+                  Integer.parseInt(parts[0]),
+                  parts[1],
+                  parts[2],
+                  userType);
               visitor.updateBorrowingRecords();
               visitor.setValidationStatus(
-                parts[4].equals("true") ? true : false
-              );
+                  parts[4].equals("true") ? true : false);
               return visitor;
             case SYSTEM_MANAGER:
               SystemManagerUser systemManager = new SystemManagerUser(
-                Integer.parseInt(parts[0]),
-                parts[1],
-                parts[2],
-                userType
-              );
+                  Integer.parseInt(parts[0]),
+                  parts[1],
+                  parts[2],
+                  userType);
               systemManager.setValidationStatus(true);
               return systemManager;
             default:
@@ -254,8 +250,7 @@ public class AccountHandling {
 
   public static boolean validateEmail(String email) {
     // Regular expression for email validation
-    String emailRegex =
-      "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+    String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
     Pattern pattern = Pattern.compile(emailRegex);
     Matcher matcher = pattern.matcher(email);
     return matcher.matches();
