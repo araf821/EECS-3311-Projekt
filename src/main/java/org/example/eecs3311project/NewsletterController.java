@@ -11,20 +11,13 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.scene.web.WebView;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
-import javafx.stage.Window;
-import javafx.scene.Scene;
-import javafx.scene.Node;
 
 
 public class NewsletterController {
@@ -32,7 +25,7 @@ public class NewsletterController {
     private Main main;
 
     @FXML
-    private ListView<Newsletter> newsletterListView; // Assuming Newsletter is your model class
+    private ListView<Newsletter> newsletterListView;
 
     @FXML
     private Text subscriptionStatusText;
@@ -44,8 +37,6 @@ public class NewsletterController {
 
         @FXML
     public void initialize() {
-        // Populate your ListView with available newsletters
-        // The Newsletter object should contain a 'subscribed' property and a 'contentUrl' property
         ObservableList<Newsletter> newsletters = FXCollections.observableArrayList(getAllNewsletters());
         newsletterListView.setItems(newsletters);
 
@@ -57,24 +48,21 @@ public class NewsletterController {
                     setText(null);
                     setGraphic(null);
                 } else {
-                    Label nameLabel = new Label(newsletter.getName().toString()); // Assuming a getName() method exists
+                    Label nameLabel = new Label(newsletter.getName().toString());
                     Button subscribeButton = new Button(newsletter.isSubscribed(main.currentUser) ? "Unsubscribe" : "Subscribe");
                     subscribeButton.setOnAction(e -> {
-                        // Toggle subscription status
                         toggleSubscription(newsletter);
                         setText(nameLabel.getText());
                         subscribeButton.setText(newsletter.isSubscribed(main.currentUser) ? "Unsubscribe" : "Subscribe");
-                        // Update the cell to reflect changes
                         updateItem(newsletter, false);
                     });
         
                     HBox hBox = new HBox(nameLabel, subscribeButton);
-                    hBox.setSpacing(10); // Add some spacing between elements
+                    hBox.setSpacing(10); 
         
-                    // Conditionally add the "Open" button if the user is subscribed
                     if (newsletter.isSubscribed(main.currentUser)) {
                         Button openButton = new Button("Open");
-                        openButton.setOnAction(e -> openNewsletterPopup(newsletter.getUrl())); // Assuming getUrl() method exists
+                        openButton.setOnAction(e -> openNewsletterPopup(newsletter.getUrl()));
                         hBox.getChildren().add(openButton);
                     }
         
@@ -90,17 +78,13 @@ public class NewsletterController {
         } else {
             newsletter.subscribe(main.currentUser);
         }
-        // Update UI or show status message if necessary
         subscriptionStatusText.setText("Subscription updated for " + newsletter.getName());
-        // Refresh the list to reflect the change
         newsletterListView.refresh();
     }
 
 private void openNewsletterPopup(String contentUrl) {
-    // Assuming 'main' is a reference to your primary stage or provides access to it
-    Stage primaryStage = (Stage) newsletterListView.getScene().getWindow(); // or however you access your main stage
+    Stage primaryStage = (Stage) newsletterListView.getScene().getWindow();
 
-    // Create an instance of the decorator and use it
     NewsPageSizeDecorator decorator = new NewsPageSizeDecorator();
     decorator.decorateNews(primaryStage, contentUrl);
 }
