@@ -15,6 +15,13 @@ public class Subscription {
 		this.newsletter = news;
 		this.paymentOption = paymentOption;
 	}
+	
+	public Subscription(User user, Newsletter news) {
+		this.user = user;
+		this.newsletter = news;
+		this.paymentOption = new PaymentOption(user.getId(), 0, PaymentType.OTHER);
+	}
+
 
 	public User getUser() {
 		return this.user;

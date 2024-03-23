@@ -24,8 +24,9 @@ public class NewsPageSizeDecorator {
 
         // Set the size of the popup to 50% of the owner stage size
         Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
-        double popupWidth = primaryStage.getWidth() * 0.5;
-        double popupHeight = primaryStage.getHeight() * 0.5;
+        double popupWidth = primaryStage.getWidth() * 0.8;
+        double popupHeight = (primaryStage.getHeight() * 0.8) - 50;
+
 
         // Ensure the popup is not larger than the screen bounds
         popupWidth = Math.min(popupWidth, screenSize.getWidth());
