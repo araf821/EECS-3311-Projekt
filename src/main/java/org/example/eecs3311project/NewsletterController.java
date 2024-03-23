@@ -118,4 +118,13 @@ private void openNewsletterPopup(String contentUrl) {
     private void handleClickDashboard() throws IOException {
         main.openDashboardScreen();
     }
+    @FXML
+    private void handleClickItemRental() throws IOException {
+        main.openItemRentalScreen();
+      }
+      @FXML
+    private void handleSearchButton() throws IOException {
+        main.openSearch();
+       
+    }
 }

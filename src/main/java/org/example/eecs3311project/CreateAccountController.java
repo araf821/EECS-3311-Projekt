@@ -32,9 +32,9 @@ public class CreateAccountController {
     // Initialize user type combo box
     createAccountPane.setPadding(new Insets(20));
     UserType[] enumValuesExcludingSpecificOption = Arrays
-      .stream(UserType.values())
-      .filter(userType -> userType != UserType.SYSTEM_MANAGER) // Exclude the specific option
-      .toArray(UserType[]::new);
+        .stream(UserType.values())
+        .filter(userType -> userType != UserType.SYSTEM_MANAGER) // Exclude the specific option
+        .toArray(UserType[]::new);
     userTypeComboBox.getItems().addAll(enumValuesExcludingSpecificOption);
   }
 
@@ -76,9 +76,8 @@ public class CreateAccountController {
 
     if (!AccountHandling.validatePassword(password)) {
       showAlert(
-        "Error",
-        "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one symbol."
-      );
+          "Error",
+          "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one symbol.");
       return;
     }
 
@@ -89,10 +88,13 @@ public class CreateAccountController {
 
     AccountHandling.createAccount(email, password, userType);
 
-    System.out.println("Creating account with:");
-    System.out.println("Email: " + email);
-    System.out.println("Password: " + password);
-    System.out.println("User Type: " + userType);
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setTitle("Success");
+    alert.setHeaderText(null);
+    alert.setContentText("Account created successfully.");
+    alert.showAndWait();
+
+    main.switchToSignInPage();
   }
 
   private void showAlert(String title, String message) {
