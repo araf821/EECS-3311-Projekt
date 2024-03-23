@@ -1,5 +1,6 @@
 package org.example.eecs3311project;
 
+import objects.NewsPageSizeDecorator;
 import objects.Newsletter;
 import objects.Newsletter.LetterPublisher;
 
@@ -87,29 +88,14 @@ public class NewsletterController {
         newsletterListView.refresh();
     }
 
-    private void openNewsletterPopup(String contentUrl) {
-        WebView webView = new WebView();
-        webView.getEngine().load(contentUrl);
-    
-        Button closeButton = new Button("X");
-        closeButton.setOnAction(e -> ((Node)e.getSource()).getScene().getWindow().hide());
-    
-        VBox layout = new VBox(closeButton, webView);
-        layout.setAlignment(Pos.TOP_RIGHT);
-    
-        Popup popup = new Popup();
-        popup.getContent().add(layout);
-    
-        popup.show(newsletterListView.getScene().getWindow());
-    
-        Window window = newsletterListView.getScene().getWindow();
-        double centerXPosition = window.getX() + window.getWidth() / 2d;
-        double centerYPosition = window.getY() + window.getHeight() / 2d;
-        double popupWidth = layout.getBoundsInParent().getWidth();
-        double popupHeight = layout.getBoundsInParent().getHeight();
-        popup.setX(centerXPosition - popupWidth / 2d);
-        popup.setY(centerYPosition - popupHeight / 2d);
-    }
+private void openNewsletterPopup(String contentUrl) {
+    // Assuming 'main' is a reference to your primary stage or provides access to it
+    Stage primaryStage = (Stage) newsletterListView.getScene().getWindow(); // or however you access your main stage
+
+    // Create an instance of the decorator and use it
+    NewsPageSizeDecorator decorator = new NewsPageSizeDecorator();
+    decorator.decorateNews(primaryStage, contentUrl);
+}
     
 
     private List<Newsletter> getAllNewsletters() {
