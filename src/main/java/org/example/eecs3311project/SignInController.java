@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import objects.User;
+import objects.User.UserType;
 import userHandling.AccountHandling;
 
 public class SignInController {
@@ -63,18 +64,21 @@ public class SignInController {
 
     // For demonstration purposes, assume sign-in is successful
     System.out.println(
-      "Sign-in successful for:\nUser: " +
-      email +
-      "\nPassword: " +
-      password +
-      "\n"
-    );
+        "Sign-in successful for:\nUser: " +
+            email +
+            "\nPassword: " +
+            password +
+            "\n");
     System.out.println(Main.currentUser.updateBorrowingRecords());
     System.out.println(Main.currentUser.getUserType());
     System.out.println(Main.currentUser.getValidationStatus());
 
     // Navigate to another page or perform other actions as needed
-    main.openDashboardScreen();
+    if (Main.currentUser.getUserType() == UserType.SYSTEM_MANAGER)
+      main.openManagerDashboardScreen();
+    else {
+      main.openDashboardScreen();
+    }
   }
 
   @FXML
