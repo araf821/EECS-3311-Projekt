@@ -1,6 +1,10 @@
 package org.example.eecs3311project;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,8 +15,12 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import objects.BorrowingRecord;
 import objects.PhysicalItem;
 import userHandling.AccountHandling;
@@ -23,13 +31,15 @@ public class SearchController {
 
     private Main main;
     @FXML
-    private VBox itemsContainer;
+    private FlowPane flowPaneItems;
 
     @FXML
     private ScrollPane itemsScrollPane;
 
     @FXML
     private VBox searchContainer;
+    @FXML
+    private TextField searchTextField;
 
     public void setMain(Main main) {
         this.main = main;
@@ -37,44 +47,63 @@ public class SearchController {
 
     @FXML
     public void initialize() {
-        
+       
+        displayItems();
        
     }
-     private void displayAllBooks() {
-        itemsContainer.getChildren().clear(); // Clear previous items
-        ArrayList<BorrowingRecord> records = BorrowingRecordHandling.getBorrowingRecordsByUserId(Main.currentUser.getId());
-        for (BorrowingRecord record : records) {
-            PhysicalItem item = PhysicalItemHandling.getPhysicalItemById(record.getItemId());
-            displayBookItem(item, record);
+     public void displayItems() {
+        List<String> items = readItemsFromCsv();
+        flowPaneItems.getChildren().clear();
+        flowPaneItems.setPadding(new Insets(12));
+
+        for (String itemDetails : items) {
+            Label itemLabel = new Label(itemDetails);
+            itemLabel.setWrapText(true);
+            itemLabel.setMaxWidth(200);
+            itemLabel.setStyle("-fx-background-color: #222; -fx-background-radius: 8; -fx-padding: 16; -fx-text-fill: white;");
+
+            VBox itemCard = new VBox(itemLabel);
+
+            flowPaneItems.getChildren().add(itemCard);
         }
     }
-    private void filterBooks(String query) {
-        itemsContainer.getChildren().clear(); // Clear previous items
-        ArrayList<BorrowingRecord> records = BorrowingRecordHandling.getBorrowingRecordsByUserId(Main.currentUser.getId());
-        List<PhysicalItem> filteredBooks = records.stream()
-                .map(record -> PhysicalItemHandling.getPhysicalItemById(record.getItemId()))
-                .filter(item -> item.getTitle().toLowerCase().contains(query.toLowerCase()))
-                .collect(Collectors.toList());
-        for (PhysicalItem item : filteredBooks) {
-            displayBookItem(item, null);
+    public void displayItems(List<String> items) {
+        flowPaneItems.getChildren().clear();
+        flowPaneItems.setPadding(new Insets(12));
+
+        for (String itemDetails : items) {
+            Label itemLabel = new Label(itemDetails);
+            itemLabel.setWrapText(true);
+            itemLabel.setMaxWidth(200);
+            itemLabel.setStyle("-fx-background-color: #222; -fx-background-radius: 8; -fx-padding: 16; -fx-text-fill: white;");
+
+            VBox itemCard = new VBox(itemLabel);
+
+            flowPaneItems.getChildren().add(itemCard);
         }
     }
 
-    private void displayBookItem(PhysicalItem item, BorrowingRecord record) {
-        Label titleLabel = new Label(item.getTitle());
-    titleLabel.setStyle("-fx-text-fill: white;");
-    titleLabel.setWrapText(true); // Allow wrapping text if it's too long
-    titleLabel.setMaxWidth(300); // Limit the width of the label to avoid stretching
 
-    // Create an HBox to hold the book title
-    HBox itemBox = new HBox(titleLabel);
-    itemBox.setStyle("-fx-background-color: #252525; -fx-background-radius: 5;");
-    itemBox.setPadding(new Insets(10));
-    itemBox.setSpacing(10);
-
-    // Add the HBox to the itemsContainer
-    itemsContainer.getChildren().add(itemBox);
+    public List<String> readItemsFromCsv() {
+        List<String> itemDetails = new ArrayList<>();
+        String filePath = "items.csv";
+    
+        try {
+            List<String> lines = Files.readAllLines(Path.of(filePath));
+            for (String line : lines) {
+                String[] tokens = line.split(",");
+                if (tokens.length >= 3) {
+                    itemDetails.add(tokens[2].trim());
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading items from CSV: " + e.getMessage());
+            e.printStackTrace();
+        }
+    
+        return itemDetails;
     }
+    
 
     
     @FXML
@@ -93,5 +122,20 @@ public class SearchController {
       private void handleClickItemRental() throws IOException {
           main.openItemRentalScreen();
         }
+
+    @FXML
+    private void handleSearchByEnter(){
+            String searchText = searchTextField.getText();
+            System.out.println(searchText);
+            List<String> items = readItemsFromCsv();
+            List<String> pog = new ArrayList<>();
+            for(String item: items){
+            if(item.contains(searchText)){
+                pog.add(item);
+            }
+        }
+            displayItems(pog);
+           
+    }
       
 }
