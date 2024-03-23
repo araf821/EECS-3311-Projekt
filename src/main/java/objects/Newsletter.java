@@ -6,12 +6,10 @@ import java.util.List;
 public class Newsletter {
 	private LetterPublisher name;
 	private double cost;
-	private ArrayList<User> subscribers;
 
 	public Newsletter(LetterPublisher name, double cost) {
 		this.name = name;
 		this.cost = cost;
-		this.subscribers = new ArrayList<>();
 	}
 
 	public double getCost() {
@@ -50,20 +48,16 @@ public class Newsletter {
 		}
 	}
 
-	public ArrayList<User> getSubscribers() {
-		return subscribers;
-	}
-
 	public void subscribe(User user) {
-		subscribers.add(user);
+		userHandling.SubscriptionHandling.writeSubscription(new Subscription(user, this));
 	}
 
 	public void unsubscribe(User user) {
-		subscribers.remove(user);
+		userHandling.SubscriptionHandling.cancelSubscription(user.getId(), this.getName());
 	}
 
 	public boolean isSubscribed(User user) {
-		return subscribers.contains(user);
+		return userHandling.SubscriptionHandling.isSubscribed(user, this);
 	}
 
 	public static enum LetterPublisher {

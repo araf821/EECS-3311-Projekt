@@ -15,6 +15,7 @@ import objects.PaymentOption;
 import objects.PaymentType;
 import objects.Student;
 import objects.Subscription;
+import objects.User;
 import objects.Newsletter.LetterPublisher;
 import objects.User.UserType;
 
@@ -105,6 +106,24 @@ public class SubscriptionHandling {
             e.printStackTrace();
         }
         return lastId;
+    }
+
+    public static boolean isSubscribed(User user, Newsletter newsletter) {
+        String lineToCheck = user.getId() + "," + newsletter.getName();
+        String currentLine;
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(CSV_FILE));
+
+            while ((currentLine = reader.readLine()) != null) {
+                if (currentLine.contains(lineToCheck)) {
+                    return true;
+                }
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public static void main(String[] args) {
