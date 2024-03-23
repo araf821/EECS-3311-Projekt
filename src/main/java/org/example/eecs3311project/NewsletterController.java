@@ -2,6 +2,8 @@ package org.example.eecs3311project;
 
 import objects.Newsletter;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
@@ -61,5 +63,10 @@ public class NewsletterController {
         Stage stage = new Stage();
         stage.setScene(new Scene(webView));
         stage.show();
+    }
+
+    @FXML
+    private void handleClickDashboard() throws IOException {
+        main.openDashboardScreen();
     }
 }
