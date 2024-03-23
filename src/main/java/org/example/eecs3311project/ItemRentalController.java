@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.List;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
@@ -100,7 +102,14 @@ public class ItemRentalController {
 
     private void handleRentButtonClick(String item) {
         PhysicalItem itemObj = PhysicalItem.fromCSVString(item);
-        itemObj.borrow(Main.currentUser);
+        BorrowingRecord record = itemObj.borrow(Main.currentUser);
+
+        if (record == null) {
+            showAlert("Error", "Failed to rent item.", AlertType.ERROR);
+        } else {
+            showAlert("Success", "Item rented successfully.", AlertType.INFORMATION);
+            displayItems();
+        }
     }
 
     public List<String> readItemsFromCsv() {
@@ -114,5 +123,13 @@ public class ItemRentalController {
         }
 
         return itemDetails;
+    }
+
+    private void showAlert(String title, String message, AlertType type) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
