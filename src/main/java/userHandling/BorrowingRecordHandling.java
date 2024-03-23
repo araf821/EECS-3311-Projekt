@@ -51,6 +51,7 @@ public class BorrowingRecordHandling {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (line.equals(Remove)) {
+                    PhysicalItemHandling.increaseStockOfItem(record.getItemId());
                     continue;
                 }
                 writer.write(line + System.lineSeparator());
