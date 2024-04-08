@@ -1135,6 +1135,18 @@ public class RegressionTest0 {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test066");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
+        double double7 = book6.getValue();
+        java.lang.String str8 = book6.getLocation();
+        book6.setIsbn("35,BOOK,,,0,100.0,");
+        org.junit.Assert.assertTrue("'" + double7 + "' != '" + 100.0d + "'", double7 == 100.0d);
+        org.junit.Assert.assertEquals("'" + str8 + "' != '" + "" + "'", str8, "");
+    }
+
+    @Test
+    public void test067() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test067");
+        objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
         java.lang.String str9 = book6.getTitle();
@@ -1159,9 +1171,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test067() throws Throwable {
+    public void test068() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test067");
+            System.out.format("%n%s%n", "RegressionTest0.test068");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1180,9 +1192,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test068() throws Throwable {
+    public void test069() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test068");
+            System.out.format("%n%s%n", "RegressionTest0.test069");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -1200,9 +1212,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test069() throws Throwable {
+    public void test070() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test069");
+            System.out.format("%n%s%n", "RegressionTest0.test070");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -1215,9 +1227,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test070() throws Throwable {
+    public void test071() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test070");
+            System.out.format("%n%s%n", "RegressionTest0.test071");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -1229,9 +1241,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test071() throws Throwable {
+    public void test072() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test071");
+            System.out.format("%n%s%n", "RegressionTest0.test072");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -1243,9 +1255,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test072() throws Throwable {
+    public void test073() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test072");
+            System.out.format("%n%s%n", "RegressionTest0.test073");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -1261,27 +1273,27 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test073() throws Throwable {
+    public void test074() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test073");
+            System.out.format("%n%s%n", "RegressionTest0.test074");
         objects.Book book6 = new objects.Book((int) '#', "35,BOOK,,,-1,-1.0,", "hi!", 1, (double) (short) 0, "35,BOOK,,,10,100.0,");
         int int7 = book6.getRemainingCopies();
         org.junit.Assert.assertTrue("'" + int7 + "' != '" + 1 + "'", int7 == 1);
     }
 
     @Test
-    public void test074() throws Throwable {
+    public void test075() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test074");
+            System.out.format("%n%s%n", "RegressionTest0.test075");
         objects.Book book6 = new objects.Book(35, "35,BOOK,,,0,100.0,", "35,BOOK,,,0,100.0,", (int) (byte) 1, (double) (short) 1, "35,BOOK,,,0,100.0,");
         java.lang.Class<?> wildcardClass7 = book6.getClass();
         org.junit.Assert.assertNotNull(wildcardClass7);
     }
 
     @Test
-    public void test075() throws Throwable {
+    public void test076() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test075");
+            System.out.format("%n%s%n", "RegressionTest0.test076");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -1294,9 +1306,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test076() throws Throwable {
+    public void test077() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test076");
+            System.out.format("%n%s%n", "RegressionTest0.test077");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1326,9 +1338,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test077() throws Throwable {
+    public void test078() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test077");
+            System.out.format("%n%s%n", "RegressionTest0.test078");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -1340,9 +1352,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test078() throws Throwable {
+    public void test079() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test078");
+            System.out.format("%n%s%n", "RegressionTest0.test079");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1372,9 +1384,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test079() throws Throwable {
+    public void test080() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test079");
+            System.out.format("%n%s%n", "RegressionTest0.test080");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -1392,9 +1404,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test080() throws Throwable {
+    public void test081() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test080");
+            System.out.format("%n%s%n", "RegressionTest0.test081");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1419,9 +1431,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test081() throws Throwable {
+    public void test082() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test081");
+            System.out.format("%n%s%n", "RegressionTest0.test082");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1443,9 +1455,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test082() throws Throwable {
+    public void test083() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test082");
+            System.out.format("%n%s%n", "RegressionTest0.test083");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -1462,9 +1474,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test083() throws Throwable {
+    public void test084() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test083");
+            System.out.format("%n%s%n", "RegressionTest0.test084");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -1477,9 +1489,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test084() throws Throwable {
+    public void test085() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test084");
+            System.out.format("%n%s%n", "RegressionTest0.test085");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1495,33 +1507,33 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test085() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test085");
-        objects.Book book6 = new objects.Book(100, "hi!", "hi!", (-1), (double) 10, "35,BOOK,,,0,-1.0,");
-    }
-
-    @Test
     public void test086() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test086");
-        objects.Book book6 = new objects.Book((int) (byte) -1, "hi!", "35,BOOK,,,0,100.0,", (int) (byte) 10, (-1.0d), "35,BOOK,,,-1,-1.0,");
-        java.lang.Class<?> wildcardClass7 = book6.getClass();
-        org.junit.Assert.assertNotNull(wildcardClass7);
+        objects.Book book6 = new objects.Book(100, "hi!", "hi!", (-1), (double) 10, "35,BOOK,,,0,-1.0,");
     }
 
     @Test
     public void test087() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test087");
-        objects.Book book6 = new objects.Book(0, "hi!", "35,BOOK,,,0,100.0,", (int) (short) 0, 0.0d, "hi!");
-        book6.setValue((double) (short) 10);
+        objects.Book book6 = new objects.Book((int) (byte) -1, "hi!", "35,BOOK,,,0,100.0,", (int) (byte) 10, (-1.0d), "35,BOOK,,,-1,-1.0,");
+        java.lang.Class<?> wildcardClass7 = book6.getClass();
+        org.junit.Assert.assertNotNull(wildcardClass7);
     }
 
     @Test
     public void test088() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test088");
+        objects.Book book6 = new objects.Book(0, "hi!", "35,BOOK,,,0,100.0,", (int) (short) 0, 0.0d, "hi!");
+        book6.setValue((double) (short) 10);
+    }
+
+    @Test
+    public void test089() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test089");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1544,9 +1556,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test089() throws Throwable {
+    public void test090() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test089");
+            System.out.format("%n%s%n", "RegressionTest0.test090");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -1560,9 +1572,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test090() throws Throwable {
+    public void test091() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test090");
+            System.out.format("%n%s%n", "RegressionTest0.test091");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         double double8 = book6.getValue();
@@ -1582,9 +1594,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test091() throws Throwable {
+    public void test092() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test091");
+            System.out.format("%n%s%n", "RegressionTest0.test092");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1599,9 +1611,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test092() throws Throwable {
+    public void test093() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test092");
+            System.out.format("%n%s%n", "RegressionTest0.test093");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -1618,9 +1630,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test093() throws Throwable {
+    public void test094() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test093");
+            System.out.format("%n%s%n", "RegressionTest0.test094");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1637,9 +1649,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test094() throws Throwable {
+    public void test095() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test094");
+            System.out.format("%n%s%n", "RegressionTest0.test095");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1657,9 +1669,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test095() throws Throwable {
+    public void test096() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test095");
+            System.out.format("%n%s%n", "RegressionTest0.test096");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1676,9 +1688,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test096() throws Throwable {
+    public void test097() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test096");
+            System.out.format("%n%s%n", "RegressionTest0.test097");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         java.lang.String str8 = book6.getLocation();
@@ -1688,9 +1700,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test097() throws Throwable {
+    public void test098() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test097");
+            System.out.format("%n%s%n", "RegressionTest0.test098");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1721,9 +1733,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test098() throws Throwable {
+    public void test099() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test098");
+            System.out.format("%n%s%n", "RegressionTest0.test099");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -1742,9 +1754,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test099() throws Throwable {
+    public void test100() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test099");
+            System.out.format("%n%s%n", "RegressionTest0.test100");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -1758,9 +1770,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test100() throws Throwable {
+    public void test101() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test100");
+            System.out.format("%n%s%n", "RegressionTest0.test101");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1787,9 +1799,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test101() throws Throwable {
+    public void test102() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test101");
+            System.out.format("%n%s%n", "RegressionTest0.test102");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -1814,9 +1826,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test102() throws Throwable {
+    public void test103() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test102");
+            System.out.format("%n%s%n", "RegressionTest0.test103");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1830,9 +1842,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test103() throws Throwable {
+    public void test104() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test103");
+            System.out.format("%n%s%n", "RegressionTest0.test104");
         objects.Book book6 = new objects.Book(0, "35,BOOK,,,-1,-1.0,", "35,BOOK,,,-1,-1.0,", (int) 'a', (double) 0, "");
         double double7 = book6.getValue();
         boolean boolean8 = book6.isCanPurchase();
@@ -1843,9 +1855,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test104() throws Throwable {
+    public void test105() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test104");
+            System.out.format("%n%s%n", "RegressionTest0.test105");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -1855,9 +1867,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test105() throws Throwable {
+    public void test106() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test105");
+            System.out.format("%n%s%n", "RegressionTest0.test106");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVString("35,BOOK,,,-1,100.0,");
@@ -1868,9 +1880,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test106() throws Throwable {
+    public void test107() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test106");
+            System.out.format("%n%s%n", "RegressionTest0.test107");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVString("10,BOOK,35,BOOK,,,10,100.0,,35,BOOK,,,-1,-1.0,,0,100.0,");
@@ -1881,9 +1893,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test107() throws Throwable {
+    public void test108() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test107");
+            System.out.format("%n%s%n", "RegressionTest0.test108");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         book6.setRemainingCopies((int) (short) -1);
         boolean boolean9 = book6.isCanRent();
@@ -1895,9 +1907,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test108() throws Throwable {
+    public void test109() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test108");
+            System.out.format("%n%s%n", "RegressionTest0.test109");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1915,9 +1927,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test109() throws Throwable {
+    public void test110() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test109");
+            System.out.format("%n%s%n", "RegressionTest0.test110");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -1935,9 +1947,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test110() throws Throwable {
+    public void test111() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test110");
+            System.out.format("%n%s%n", "RegressionTest0.test111");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1959,9 +1971,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test111() throws Throwable {
+    public void test112() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test111");
+            System.out.format("%n%s%n", "RegressionTest0.test112");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -1975,9 +1987,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test112() throws Throwable {
+    public void test113() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test112");
+            System.out.format("%n%s%n", "RegressionTest0.test113");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -1994,27 +2006,27 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test113() throws Throwable {
+    public void test114() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test113");
+            System.out.format("%n%s%n", "RegressionTest0.test114");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getIsbn();
         org.junit.Assert.assertEquals("'" + str7 + "' != '" + "" + "'", str7, "");
     }
 
     @Test
-    public void test114() throws Throwable {
+    public void test115() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test114");
+            System.out.format("%n%s%n", "RegressionTest0.test115");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         book6.setRemainingCopies((int) (short) -1);
         book6.setLocation("");
     }
 
     @Test
-    public void test115() throws Throwable {
+    public void test116() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test115");
+            System.out.format("%n%s%n", "RegressionTest0.test116");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -2029,9 +2041,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test116() throws Throwable {
+    public void test117() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test116");
+            System.out.format("%n%s%n", "RegressionTest0.test117");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2046,9 +2058,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test117() throws Throwable {
+    public void test118() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test117");
+            System.out.format("%n%s%n", "RegressionTest0.test118");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2063,9 +2075,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test118() throws Throwable {
+    public void test119() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test118");
+            System.out.format("%n%s%n", "RegressionTest0.test119");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVLine("35,BOOK,,,0,-1.0,");
@@ -2076,9 +2088,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test119() throws Throwable {
+    public void test120() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test119");
+            System.out.format("%n%s%n", "RegressionTest0.test120");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2097,16 +2109,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test120() throws Throwable {
+    public void test121() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test120");
+            System.out.format("%n%s%n", "RegressionTest0.test121");
         objects.Book book6 = new objects.Book((int) (byte) 100, "35,BOOK,,,0,100.0,", "35,BOOK,,,0,-1.0,", (-1), 0.0d, "35,BOOK,,,0,-1.0,");
     }
 
     @Test
-    public void test121() throws Throwable {
+    public void test122() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test121");
+            System.out.format("%n%s%n", "RegressionTest0.test122");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -2119,9 +2131,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test122() throws Throwable {
+    public void test123() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test122");
+            System.out.format("%n%s%n", "RegressionTest0.test123");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -2141,17 +2153,17 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test123() throws Throwable {
+    public void test124() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test123");
+            System.out.format("%n%s%n", "RegressionTest0.test124");
         objects.Book book6 = new objects.Book((int) 'a', "", "", 10, (double) '4', "35,BOOK,,,10,100.0,");
         book6.setIsbn("");
     }
 
     @Test
-    public void test124() throws Throwable {
+    public void test125() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test124");
+            System.out.format("%n%s%n", "RegressionTest0.test125");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -2167,9 +2179,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test125() throws Throwable {
+    public void test126() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test125");
+            System.out.format("%n%s%n", "RegressionTest0.test126");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2195,9 +2207,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test126() throws Throwable {
+    public void test127() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test126");
+            System.out.format("%n%s%n", "RegressionTest0.test127");
         objects.Book book6 = new objects.Book(0, "35,BOOK,,,-1,-1.0,", "35,BOOK,,,-1,-1.0,", (int) 'a', (double) 0, "");
         double double7 = book6.getValue();
         boolean boolean8 = book6.isCanPurchase();
@@ -2208,9 +2220,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test127() throws Throwable {
+    public void test128() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test127");
+            System.out.format("%n%s%n", "RegressionTest0.test128");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2228,9 +2240,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test128() throws Throwable {
+    public void test129() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test128");
+            System.out.format("%n%s%n", "RegressionTest0.test129");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2254,9 +2266,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test129() throws Throwable {
+    public void test130() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test129");
+            System.out.format("%n%s%n", "RegressionTest0.test130");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -2274,9 +2286,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test130() throws Throwable {
+    public void test131() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test130");
+            System.out.format("%n%s%n", "RegressionTest0.test131");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2288,9 +2300,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test131() throws Throwable {
+    public void test132() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test131");
+            System.out.format("%n%s%n", "RegressionTest0.test132");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -2307,16 +2319,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test132() throws Throwable {
+    public void test133() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test132");
+            System.out.format("%n%s%n", "RegressionTest0.test133");
         objects.Book book6 = new objects.Book((int) (byte) 0, "10,BOOK,35,BOOK,,,10,100.0,,35,BOOK,,,-1,-1.0,,0,100.0,", "", 35, (double) (-1.0f), "hi!");
     }
 
     @Test
-    public void test133() throws Throwable {
+    public void test134() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test133");
+            System.out.format("%n%s%n", "RegressionTest0.test134");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2341,9 +2353,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test134() throws Throwable {
+    public void test135() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test134");
+            System.out.format("%n%s%n", "RegressionTest0.test135");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setIsbn("35,BOOK,,,0,100.0,");
@@ -2355,9 +2367,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test135() throws Throwable {
+    public void test136() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test135");
+            System.out.format("%n%s%n", "RegressionTest0.test136");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         java.lang.String str8 = book6.getLocation();
@@ -2372,9 +2384,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test136() throws Throwable {
+    public void test137() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test136");
+            System.out.format("%n%s%n", "RegressionTest0.test137");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVLine("35,BOOK,,,-1,100.0,");
@@ -2385,9 +2397,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test137() throws Throwable {
+    public void test138() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test137");
+            System.out.format("%n%s%n", "RegressionTest0.test138");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -2401,9 +2413,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test138() throws Throwable {
+    public void test139() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test138");
+            System.out.format("%n%s%n", "RegressionTest0.test139");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -2417,9 +2429,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test139() throws Throwable {
+    public void test140() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test139");
+            System.out.format("%n%s%n", "RegressionTest0.test140");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2435,9 +2447,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test140() throws Throwable {
+    public void test141() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test140");
+            System.out.format("%n%s%n", "RegressionTest0.test141");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -2451,9 +2463,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test141() throws Throwable {
+    public void test142() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test141");
+            System.out.format("%n%s%n", "RegressionTest0.test142");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -2474,9 +2486,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test142() throws Throwable {
+    public void test143() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test142");
+            System.out.format("%n%s%n", "RegressionTest0.test143");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2495,23 +2507,23 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test143() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test143");
-        objects.Book book6 = new objects.Book((int) 'a', "35,BOOK,,,0,-1.0,", "35,BOOK,,,0,100.0,", 35, (double) 35, "35,BOOK,,,-1,-1.0,");
-    }
-
-    @Test
     public void test144() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test144");
-        objects.Book book6 = new objects.Book((int) (short) 1, "35,BOOK,,,0,100.0,", "35,BOOK,,,0,100.0,", (int) (byte) 10, (double) ' ', "");
+        objects.Book book6 = new objects.Book((int) 'a', "35,BOOK,,,0,-1.0,", "35,BOOK,,,0,100.0,", 35, (double) 35, "35,BOOK,,,-1,-1.0,");
     }
 
     @Test
     public void test145() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test145");
+        objects.Book book6 = new objects.Book((int) (short) 1, "35,BOOK,,,0,100.0,", "35,BOOK,,,0,100.0,", (int) (byte) 10, (double) ' ', "");
+    }
+
+    @Test
+    public void test146() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test146");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         book6.setValue((double) (byte) 100);
         objects.User user9 = null;
@@ -2525,9 +2537,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test146() throws Throwable {
+    public void test147() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test146");
+            System.out.format("%n%s%n", "RegressionTest0.test147");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -2541,9 +2553,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test147() throws Throwable {
+    public void test148() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test147");
+            System.out.format("%n%s%n", "RegressionTest0.test148");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -2556,9 +2568,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test148() throws Throwable {
+    public void test149() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test148");
+            System.out.format("%n%s%n", "RegressionTest0.test149");
         objects.Book book6 = new objects.Book((int) (short) 10, "35,BOOK,,,10,100.0,", "35,BOOK,,,-1,-1.0,", 0, (double) 100.0f, "");
         java.lang.String str7 = book6.toCSVString();
         objects.User user8 = null;
@@ -2573,9 +2585,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test149() throws Throwable {
+    public void test150() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test149");
+            System.out.format("%n%s%n", "RegressionTest0.test150");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2598,9 +2610,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test150() throws Throwable {
+    public void test151() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test150");
+            System.out.format("%n%s%n", "RegressionTest0.test151");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         book6.setRemainingCopies((int) (short) -1);
         boolean boolean9 = book6.isCanRent();
@@ -2614,9 +2626,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test151() throws Throwable {
+    public void test152() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test151");
+            System.out.format("%n%s%n", "RegressionTest0.test152");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -2631,9 +2643,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test152() throws Throwable {
+    public void test153() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test152");
+            System.out.format("%n%s%n", "RegressionTest0.test153");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -2650,9 +2662,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test153() throws Throwable {
+    public void test154() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test153");
+            System.out.format("%n%s%n", "RegressionTest0.test154");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         double double8 = book6.getValue();
@@ -2663,9 +2675,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test154() throws Throwable {
+    public void test155() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test154");
+            System.out.format("%n%s%n", "RegressionTest0.test155");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2687,9 +2699,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test155() throws Throwable {
+    public void test156() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test155");
+            System.out.format("%n%s%n", "RegressionTest0.test156");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2706,9 +2718,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test156() throws Throwable {
+    public void test157() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test156");
+            System.out.format("%n%s%n", "RegressionTest0.test157");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -2722,9 +2734,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test157() throws Throwable {
+    public void test158() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test157");
+            System.out.format("%n%s%n", "RegressionTest0.test158");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -2744,9 +2756,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test158() throws Throwable {
+    public void test159() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test158");
+            System.out.format("%n%s%n", "RegressionTest0.test159");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -2769,9 +2781,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test159() throws Throwable {
+    public void test160() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test159");
+            System.out.format("%n%s%n", "RegressionTest0.test160");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         java.lang.String str8 = book6.toCSVString();
@@ -2790,9 +2802,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test160() throws Throwable {
+    public void test161() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test160");
+            System.out.format("%n%s%n", "RegressionTest0.test161");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -2803,9 +2815,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test161() throws Throwable {
+    public void test162() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test161");
+            System.out.format("%n%s%n", "RegressionTest0.test162");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -2819,9 +2831,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test162() throws Throwable {
+    public void test163() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test162");
+            System.out.format("%n%s%n", "RegressionTest0.test163");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2838,9 +2850,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test163() throws Throwable {
+    public void test164() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test163");
+            System.out.format("%n%s%n", "RegressionTest0.test164");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -2853,9 +2865,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test164() throws Throwable {
+    public void test165() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test164");
+            System.out.format("%n%s%n", "RegressionTest0.test165");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2885,9 +2897,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test165() throws Throwable {
+    public void test166() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test165");
+            System.out.format("%n%s%n", "RegressionTest0.test166");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2909,9 +2921,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test166() throws Throwable {
+    public void test167() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test166");
+            System.out.format("%n%s%n", "RegressionTest0.test167");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         double double8 = book6.getValue();
@@ -2924,9 +2936,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test167() throws Throwable {
+    public void test168() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test167");
+            System.out.format("%n%s%n", "RegressionTest0.test168");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         double double8 = book6.getValue();
@@ -2938,9 +2950,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test168() throws Throwable {
+    public void test169() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test168");
+            System.out.format("%n%s%n", "RegressionTest0.test169");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         book6.setRemainingCopies((int) (short) -1);
         boolean boolean9 = book6.isCanRent();
@@ -2955,9 +2967,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test169() throws Throwable {
+    public void test170() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test169");
+            System.out.format("%n%s%n", "RegressionTest0.test170");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -2975,9 +2987,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test170() throws Throwable {
+    public void test171() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test170");
+            System.out.format("%n%s%n", "RegressionTest0.test171");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -2997,9 +3009,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test171() throws Throwable {
+    public void test172() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test171");
+            System.out.format("%n%s%n", "RegressionTest0.test172");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -3012,9 +3024,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test172() throws Throwable {
+    public void test173() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test172");
+            System.out.format("%n%s%n", "RegressionTest0.test173");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -3028,9 +3040,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test173() throws Throwable {
+    public void test174() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test173");
+            System.out.format("%n%s%n", "RegressionTest0.test174");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3051,18 +3063,18 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test174() throws Throwable {
+    public void test175() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test174");
+            System.out.format("%n%s%n", "RegressionTest0.test175");
         objects.Book book6 = new objects.Book((int) (byte) 100, "35,BOOK,,,10,100.0,", "35,BOOK,,,0,-1.0,", (int) (byte) 100, (double) (short) 100, "35,BOOK,,,10,100.0,");
         boolean boolean7 = book6.isCanPurchase();
         org.junit.Assert.assertTrue("'" + boolean7 + "' != '" + true + "'", boolean7 == true);
     }
 
     @Test
-    public void test175() throws Throwable {
+    public void test176() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test175");
+            System.out.format("%n%s%n", "RegressionTest0.test176");
         objects.Book book6 = new objects.Book(0, "hi!", "", 0, (double) (short) 0, "");
         boolean boolean7 = book6.isCanPurchase();
         book6.setRemainingCopies((int) (byte) 10);
@@ -3071,9 +3083,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test176() throws Throwable {
+    public void test177() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test176");
+            System.out.format("%n%s%n", "RegressionTest0.test177");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -3085,9 +3097,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test177() throws Throwable {
+    public void test178() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test177");
+            System.out.format("%n%s%n", "RegressionTest0.test178");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3101,9 +3113,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test178() throws Throwable {
+    public void test179() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test178");
+            System.out.format("%n%s%n", "RegressionTest0.test179");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3116,9 +3128,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test179() throws Throwable {
+    public void test180() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test179");
+            System.out.format("%n%s%n", "RegressionTest0.test180");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3143,9 +3155,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test180() throws Throwable {
+    public void test181() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test180");
+            System.out.format("%n%s%n", "RegressionTest0.test181");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -3158,9 +3170,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test181() throws Throwable {
+    public void test182() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test181");
+            System.out.format("%n%s%n", "RegressionTest0.test182");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -3178,25 +3190,25 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test182() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test182");
-        objects.Book book6 = new objects.Book(0, "hi!", "", 0, (double) (short) 0, "");
-        book6.setRemainingCopies(100);
-    }
-
-    @Test
     public void test183() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test183");
-        objects.Book book6 = new objects.Book((int) (byte) 0, "10,BOOK,35,BOOK,,,10,100.0,,35,BOOK,,,-1,-1.0,,0,100.0,", "35,BOOK,,,0,-1.0,", (int) (byte) 100, (double) 0, "");
-        book6.setLocation("hi!");
+        objects.Book book6 = new objects.Book(0, "hi!", "", 0, (double) (short) 0, "");
+        book6.setRemainingCopies(100);
     }
 
     @Test
     public void test184() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test184");
+        objects.Book book6 = new objects.Book((int) (byte) 0, "10,BOOK,35,BOOK,,,10,100.0,,35,BOOK,,,-1,-1.0,,0,100.0,", "35,BOOK,,,0,-1.0,", (int) (byte) 100, (double) 0, "");
+        book6.setLocation("hi!");
+    }
+
+    @Test
+    public void test185() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test185");
         objects.Book book6 = new objects.Book((int) (byte) -1, "hi!", "35,BOOK,,,0,100.0,", (int) (byte) 10, (-1.0d), "35,BOOK,,,-1,-1.0,");
         book6.setIsbn("hi!");
         boolean boolean9 = book6.isCanPurchase();
@@ -3206,16 +3218,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test185() throws Throwable {
+    public void test186() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test185");
+            System.out.format("%n%s%n", "RegressionTest0.test186");
         objects.Book book6 = new objects.Book(0, "35,BOOK,,,10,100.0,", "", 100, (double) (byte) 0, "hi!");
     }
 
     @Test
-    public void test186() throws Throwable {
+    public void test187() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test186");
+            System.out.format("%n%s%n", "RegressionTest0.test187");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3241,9 +3253,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test187() throws Throwable {
+    public void test188() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test187");
+            System.out.format("%n%s%n", "RegressionTest0.test188");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -3258,9 +3270,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test188() throws Throwable {
+    public void test189() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test188");
+            System.out.format("%n%s%n", "RegressionTest0.test189");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3284,9 +3296,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test189() throws Throwable {
+    public void test190() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test189");
+            System.out.format("%n%s%n", "RegressionTest0.test190");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -3301,9 +3313,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test190() throws Throwable {
+    public void test191() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test190");
+            System.out.format("%n%s%n", "RegressionTest0.test191");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3323,9 +3335,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test191() throws Throwable {
+    public void test192() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test191");
+            System.out.format("%n%s%n", "RegressionTest0.test192");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -3340,9 +3352,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test192() throws Throwable {
+    public void test193() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test192");
+            System.out.format("%n%s%n", "RegressionTest0.test193");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         double double8 = book6.getValue();
@@ -3359,18 +3371,18 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test193() throws Throwable {
+    public void test194() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test193");
+            System.out.format("%n%s%n", "RegressionTest0.test194");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         book6.setValue((double) (byte) 100);
         book6.setCanRent(false);
     }
 
     @Test
-    public void test194() throws Throwable {
+    public void test195() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test194");
+            System.out.format("%n%s%n", "RegressionTest0.test195");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVString("35,BOOK,,,-1,-1.0,");
@@ -3381,9 +3393,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test195() throws Throwable {
+    public void test196() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test195");
+            System.out.format("%n%s%n", "RegressionTest0.test196");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3401,9 +3413,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test196() throws Throwable {
+    public void test197() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test196");
+            System.out.format("%n%s%n", "RegressionTest0.test197");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -3418,9 +3430,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test197() throws Throwable {
+    public void test198() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test197");
+            System.out.format("%n%s%n", "RegressionTest0.test198");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -3433,9 +3445,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test198() throws Throwable {
+    public void test199() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test198");
+            System.out.format("%n%s%n", "RegressionTest0.test199");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3453,9 +3465,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test199() throws Throwable {
+    public void test200() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test199");
+            System.out.format("%n%s%n", "RegressionTest0.test200");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -3471,9 +3483,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test200() throws Throwable {
+    public void test201() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test200");
+            System.out.format("%n%s%n", "RegressionTest0.test201");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3499,9 +3511,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test201() throws Throwable {
+    public void test202() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test201");
+            System.out.format("%n%s%n", "RegressionTest0.test202");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -3515,9 +3527,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test202() throws Throwable {
+    public void test203() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test202");
+            System.out.format("%n%s%n", "RegressionTest0.test203");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3534,9 +3546,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test203() throws Throwable {
+    public void test204() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test203");
+            System.out.format("%n%s%n", "RegressionTest0.test204");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         java.lang.String str8 = book6.getLocation();
@@ -3547,9 +3559,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test204() throws Throwable {
+    public void test205() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test204");
+            System.out.format("%n%s%n", "RegressionTest0.test205");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3564,9 +3576,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test205() throws Throwable {
+    public void test206() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test205");
+            System.out.format("%n%s%n", "RegressionTest0.test206");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -3583,9 +3595,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test206() throws Throwable {
+    public void test207() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test206");
+            System.out.format("%n%s%n", "RegressionTest0.test207");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -3602,9 +3614,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test207() throws Throwable {
+    public void test208() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test207");
+            System.out.format("%n%s%n", "RegressionTest0.test208");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3624,9 +3636,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test208() throws Throwable {
+    public void test209() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test208");
+            System.out.format("%n%s%n", "RegressionTest0.test209");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3654,9 +3666,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test209() throws Throwable {
+    public void test210() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test209");
+            System.out.format("%n%s%n", "RegressionTest0.test210");
         objects.Book book6 = new objects.Book((int) (byte) 0, "10,BOOK,35,BOOK,,,10,100.0,,35,BOOK,,,-1,-1.0,,0,100.0,", "35,BOOK,,,0,-1.0,", (int) (byte) 100, (double) 0, "");
         objects.User user7 = null;
         // The following exception was thrown during execution in test generation
@@ -3669,9 +3681,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test210() throws Throwable {
+    public void test211() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test210");
+            System.out.format("%n%s%n", "RegressionTest0.test211");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3695,9 +3707,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test211() throws Throwable {
+    public void test212() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test211");
+            System.out.format("%n%s%n", "RegressionTest0.test212");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -3710,9 +3722,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test212() throws Throwable {
+    public void test213() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test212");
+            System.out.format("%n%s%n", "RegressionTest0.test213");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -3728,9 +3740,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test213() throws Throwable {
+    public void test214() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test213");
+            System.out.format("%n%s%n", "RegressionTest0.test214");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVString("35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,");
@@ -3741,9 +3753,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test214() throws Throwable {
+    public void test215() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test214");
+            System.out.format("%n%s%n", "RegressionTest0.test215");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3758,9 +3770,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test215() throws Throwable {
+    public void test216() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test215");
+            System.out.format("%n%s%n", "RegressionTest0.test216");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -3775,9 +3787,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test216() throws Throwable {
+    public void test217() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test216");
+            System.out.format("%n%s%n", "RegressionTest0.test217");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3795,9 +3807,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test217() throws Throwable {
+    public void test218() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test217");
+            System.out.format("%n%s%n", "RegressionTest0.test218");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -3810,9 +3822,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test218() throws Throwable {
+    public void test219() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test218");
+            System.out.format("%n%s%n", "RegressionTest0.test219");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3837,9 +3849,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test219() throws Throwable {
+    public void test220() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test219");
+            System.out.format("%n%s%n", "RegressionTest0.test220");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -3852,9 +3864,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test220() throws Throwable {
+    public void test221() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test220");
+            System.out.format("%n%s%n", "RegressionTest0.test221");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         java.lang.String str8 = book6.toCSVString();
@@ -3868,9 +3880,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test221() throws Throwable {
+    public void test222() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test221");
+            System.out.format("%n%s%n", "RegressionTest0.test222");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -3884,9 +3896,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test222() throws Throwable {
+    public void test223() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test222");
+            System.out.format("%n%s%n", "RegressionTest0.test223");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -3902,9 +3914,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test223() throws Throwable {
+    public void test224() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test223");
+            System.out.format("%n%s%n", "RegressionTest0.test224");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -3933,9 +3945,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test224() throws Throwable {
+    public void test225() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test224");
+            System.out.format("%n%s%n", "RegressionTest0.test225");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setIsbn("");
@@ -3944,9 +3956,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test225() throws Throwable {
+    public void test226() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test225");
+            System.out.format("%n%s%n", "RegressionTest0.test226");
         objects.Book book6 = new objects.Book(0, "hi!", "", 0, (double) (short) 0, "");
         boolean boolean7 = book6.isCanPurchase();
         book6.setRemainingCopies((int) (byte) 10);
@@ -3962,9 +3974,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test226() throws Throwable {
+    public void test227() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test226");
+            System.out.format("%n%s%n", "RegressionTest0.test227");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -3976,25 +3988,25 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test227() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test227");
-        objects.Book book6 = new objects.Book(100, "35,BOOK,,,10,100.0,", "35,BOOK,,,1,100.0,", (int) 'a', (double) (-1.0f), "10,BOOK,35,BOOK,,,10,100.0,,35,BOOK,,,-1,-1.0,,0,100.0,");
-    }
-
-    @Test
     public void test228() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test228");
-        objects.Book book6 = new objects.Book((int) (byte) -1, "hi!", "35,BOOK,,,0,100.0,", (int) (byte) 10, (-1.0d), "35,BOOK,,,-1,-1.0,");
-        java.lang.String str7 = book6.getLocation();
-        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "35,BOOK,,,0,100.0," + "'", str7, "35,BOOK,,,0,100.0,");
+        objects.Book book6 = new objects.Book(100, "35,BOOK,,,10,100.0,", "35,BOOK,,,1,100.0,", (int) 'a', (double) (-1.0f), "10,BOOK,35,BOOK,,,10,100.0,,35,BOOK,,,-1,-1.0,,0,100.0,");
     }
 
     @Test
     public void test229() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test229");
+        objects.Book book6 = new objects.Book((int) (byte) -1, "hi!", "35,BOOK,,,0,100.0,", (int) (byte) 10, (-1.0d), "35,BOOK,,,-1,-1.0,");
+        java.lang.String str7 = book6.getLocation();
+        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "35,BOOK,,,0,100.0," + "'", str7, "35,BOOK,,,0,100.0,");
+    }
+
+    @Test
+    public void test230() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test230");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4015,9 +4027,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test230() throws Throwable {
+    public void test231() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test230");
+            System.out.format("%n%s%n", "RegressionTest0.test231");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4035,9 +4047,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test231() throws Throwable {
+    public void test232() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test231");
+            System.out.format("%n%s%n", "RegressionTest0.test232");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -4053,17 +4065,17 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test232() throws Throwable {
+    public void test233() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test232");
+            System.out.format("%n%s%n", "RegressionTest0.test233");
         objects.Book book6 = new objects.Book((int) (byte) 0, "35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,", "35,BOOK,,,0,-1.0,", (int) (byte) -1, (double) (byte) -1, "35,BOOK,,,0,100.0,");
         book6.setCanPurchase(true);
     }
 
     @Test
-    public void test233() throws Throwable {
+    public void test234() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test233");
+            System.out.format("%n%s%n", "RegressionTest0.test234");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVString("35,BOOK,35,BOOK,,,0,100.0,,35,BOOK,,,0,100.0,,1,1.0,35,BOOK,,,0,100.0,");
@@ -4074,9 +4086,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test234() throws Throwable {
+    public void test235() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test234");
+            System.out.format("%n%s%n", "RegressionTest0.test235");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4101,9 +4113,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test235() throws Throwable {
+    public void test236() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test235");
+            System.out.format("%n%s%n", "RegressionTest0.test236");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -4120,9 +4132,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test236() throws Throwable {
+    public void test237() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test236");
+            System.out.format("%n%s%n", "RegressionTest0.test237");
         objects.Book book6 = new objects.Book(0, "hi!", "35,BOOK,,,0,100.0,", (int) (short) 0, 0.0d, "hi!");
         int int7 = book6.getId();
         objects.User user8 = null;
@@ -4137,9 +4149,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test237() throws Throwable {
+    public void test238() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test237");
+            System.out.format("%n%s%n", "RegressionTest0.test238");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -4162,9 +4174,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test238() throws Throwable {
+    public void test239() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test238");
+            System.out.format("%n%s%n", "RegressionTest0.test239");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -4189,9 +4201,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test239() throws Throwable {
+    public void test240() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test239");
+            System.out.format("%n%s%n", "RegressionTest0.test240");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVString("35,BOOK,,,0,-1.0,");
@@ -4202,9 +4214,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test240() throws Throwable {
+    public void test241() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test240");
+            System.out.format("%n%s%n", "RegressionTest0.test241");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4225,9 +4237,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test241() throws Throwable {
+    public void test242() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test241");
+            System.out.format("%n%s%n", "RegressionTest0.test242");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4244,9 +4256,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test242() throws Throwable {
+    public void test243() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test242");
+            System.out.format("%n%s%n", "RegressionTest0.test243");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4270,9 +4282,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test243() throws Throwable {
+    public void test244() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test243");
+            System.out.format("%n%s%n", "RegressionTest0.test244");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4291,18 +4303,18 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test244() throws Throwable {
+    public void test245() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test244");
+            System.out.format("%n%s%n", "RegressionTest0.test245");
         objects.Book book6 = new objects.Book((int) (byte) 0, "35,BOOK,,,10,100.0,", "10,BOOK,35,BOOK,,,10,100.0,,35,BOOK,,,-1,-1.0,,0,100.0,", 10, 100.0d, "35,BOOK,,,1,100.0,");
         double double7 = book6.getValue();
         org.junit.Assert.assertTrue("'" + double7 + "' != '" + 100.0d + "'", double7 == 100.0d);
     }
 
     @Test
-    public void test245() throws Throwable {
+    public void test246() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test245");
+            System.out.format("%n%s%n", "RegressionTest0.test246");
         objects.Book book6 = new objects.Book((int) (short) 10, "35,BOOK,,,10,100.0,", "35,BOOK,,,-1,-1.0,", 0, (double) 100.0f, "");
         java.lang.String str7 = book6.toCSVString();
         java.lang.String str8 = book6.getIsbn();
@@ -4311,18 +4323,18 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test246() throws Throwable {
+    public void test247() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test246");
+            System.out.format("%n%s%n", "RegressionTest0.test247");
         objects.Book book6 = new objects.Book((-1), "35,BOOK,,,0,100.0,", "35,BOOK,,,0,-1.0,", (int) (short) 100, (-1.0d), "35,BOOK,,,-1,-1.0,");
         java.lang.String str7 = book6.getLocation();
         org.junit.Assert.assertEquals("'" + str7 + "' != '" + "35,BOOK,,,0,-1.0," + "'", str7, "35,BOOK,,,0,-1.0,");
     }
 
     @Test
-    public void test247() throws Throwable {
+    public void test248() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test247");
+            System.out.format("%n%s%n", "RegressionTest0.test248");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getLocation();
@@ -4338,9 +4350,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test248() throws Throwable {
+    public void test249() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test248");
+            System.out.format("%n%s%n", "RegressionTest0.test249");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -4356,17 +4368,17 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test249() throws Throwable {
+    public void test250() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test249");
+            System.out.format("%n%s%n", "RegressionTest0.test250");
         objects.Book book6 = new objects.Book(0, "hi!", "", 0, (double) (short) 0, "");
         book6.setCanPurchase(true);
     }
 
     @Test
-    public void test250() throws Throwable {
+    public void test251() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test250");
+            System.out.format("%n%s%n", "RegressionTest0.test251");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -4382,9 +4394,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test251() throws Throwable {
+    public void test252() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test251");
+            System.out.format("%n%s%n", "RegressionTest0.test252");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4416,9 +4428,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test252() throws Throwable {
+    public void test253() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test252");
+            System.out.format("%n%s%n", "RegressionTest0.test253");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -4441,9 +4453,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test253() throws Throwable {
+    public void test254() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test253");
+            System.out.format("%n%s%n", "RegressionTest0.test254");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4463,9 +4475,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test254() throws Throwable {
+    public void test255() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test254");
+            System.out.format("%n%s%n", "RegressionTest0.test255");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4482,9 +4494,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test255() throws Throwable {
+    public void test256() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test255");
+            System.out.format("%n%s%n", "RegressionTest0.test256");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVLine("35,BOOK,,,1,100.0,");
@@ -4495,9 +4507,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test256() throws Throwable {
+    public void test257() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test256");
+            System.out.format("%n%s%n", "RegressionTest0.test257");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4515,9 +4527,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test257() throws Throwable {
+    public void test258() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test257");
+            System.out.format("%n%s%n", "RegressionTest0.test258");
         objects.Book book6 = new objects.Book(0, "35,BOOK,,,-1,-1.0,", "35,BOOK,,,-1,-1.0,", (int) 'a', (double) 0, "");
         double double7 = book6.getValue();
         book6.setValue(0.0d);
@@ -4535,9 +4547,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test258() throws Throwable {
+    public void test259() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test258");
+            System.out.format("%n%s%n", "RegressionTest0.test259");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -4549,18 +4561,18 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test259() throws Throwable {
+    public void test260() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test259");
+            System.out.format("%n%s%n", "RegressionTest0.test260");
         objects.Book book6 = new objects.Book((int) (byte) 0, "35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,", "35,BOOK,,,0,-1.0,", (int) (byte) -1, (double) (byte) -1, "35,BOOK,,,0,100.0,");
         java.lang.String str7 = book6.toCSVString();
         org.junit.Assert.assertEquals("'" + str7 + "' != '" + "0,BOOK,35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,,35,BOOK,,,0,-1.0,,-1,-1.0,35,BOOK,,,0,100.0," + "'", str7, "0,BOOK,35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,,35,BOOK,,,0,-1.0,,-1,-1.0,35,BOOK,,,0,100.0,");
     }
 
     @Test
-    public void test260() throws Throwable {
+    public void test261() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test260");
+            System.out.format("%n%s%n", "RegressionTest0.test261");
         objects.Book book6 = new objects.Book(0, "hi!", "35,BOOK,,,0,100.0,", (int) (short) 0, 0.0d, "hi!");
         book6.setRemainingCopies(35);
         double double9 = book6.getValue();
@@ -4568,26 +4580,26 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test261() throws Throwable {
+    public void test262() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test261");
+            System.out.format("%n%s%n", "RegressionTest0.test262");
         objects.Book book6 = new objects.Book((int) '#', "35,BOOK,,,-1,-1.0,", "hi!", 1, (double) (short) 0, "35,BOOK,,,10,100.0,");
         java.lang.String str7 = book6.getLocation();
         org.junit.Assert.assertEquals("'" + str7 + "' != '" + "hi!" + "'", str7, "hi!");
     }
 
     @Test
-    public void test262() throws Throwable {
+    public void test263() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test262");
+            System.out.format("%n%s%n", "RegressionTest0.test263");
         objects.Book book6 = new objects.Book(10, "hi!", "35,BOOK,,,-1,100.0,", (int) 'a', 0.0d, "35,BOOK,,,-1,-1.0,");
         book6.setValue((double) (short) 100);
     }
 
     @Test
-    public void test263() throws Throwable {
+    public void test264() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test263");
+            System.out.format("%n%s%n", "RegressionTest0.test264");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4612,9 +4624,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test264() throws Throwable {
+    public void test265() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test264");
+            System.out.format("%n%s%n", "RegressionTest0.test265");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -4627,9 +4639,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test265() throws Throwable {
+    public void test266() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test265");
+            System.out.format("%n%s%n", "RegressionTest0.test266");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4642,9 +4654,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test266() throws Throwable {
+    public void test267() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test266");
+            System.out.format("%n%s%n", "RegressionTest0.test267");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -4660,9 +4672,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test267() throws Throwable {
+    public void test268() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test267");
+            System.out.format("%n%s%n", "RegressionTest0.test268");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -4676,9 +4688,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test268() throws Throwable {
+    public void test269() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test268");
+            System.out.format("%n%s%n", "RegressionTest0.test269");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         book6.setRemainingCopies((int) (short) -1);
         boolean boolean9 = book6.isCanRent();
@@ -4690,9 +4702,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test269() throws Throwable {
+    public void test270() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test269");
+            System.out.format("%n%s%n", "RegressionTest0.test270");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4717,9 +4729,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test270() throws Throwable {
+    public void test271() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test270");
+            System.out.format("%n%s%n", "RegressionTest0.test271");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4740,9 +4752,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test271() throws Throwable {
+    public void test272() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test271");
+            System.out.format("%n%s%n", "RegressionTest0.test272");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setIsbn("");
@@ -4752,9 +4764,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test272() throws Throwable {
+    public void test273() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test272");
+            System.out.format("%n%s%n", "RegressionTest0.test273");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -4770,9 +4782,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test273() throws Throwable {
+    public void test274() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test273");
+            System.out.format("%n%s%n", "RegressionTest0.test274");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         java.lang.String str8 = book6.toCSVString();
@@ -4788,9 +4800,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test274() throws Throwable {
+    public void test275() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test274");
+            System.out.format("%n%s%n", "RegressionTest0.test275");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setIsbn("");
@@ -4806,9 +4818,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test275() throws Throwable {
+    public void test276() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test275");
+            System.out.format("%n%s%n", "RegressionTest0.test276");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -4820,9 +4832,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test276() throws Throwable {
+    public void test277() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test276");
+            System.out.format("%n%s%n", "RegressionTest0.test277");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -4836,9 +4848,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test277() throws Throwable {
+    public void test278() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test277");
+            System.out.format("%n%s%n", "RegressionTest0.test278");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4850,9 +4862,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test278() throws Throwable {
+    public void test279() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test278");
+            System.out.format("%n%s%n", "RegressionTest0.test279");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -4864,9 +4876,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test279() throws Throwable {
+    public void test280() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test279");
+            System.out.format("%n%s%n", "RegressionTest0.test280");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4879,16 +4891,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test280() throws Throwable {
+    public void test281() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test280");
+            System.out.format("%n%s%n", "RegressionTest0.test281");
         objects.Book book6 = new objects.Book((int) ' ', "35,BOOK,,,-1,-1.0,", "35,BOOK,,,0,-1.0,", 10, (double) 0.0f, "");
     }
 
     @Test
-    public void test281() throws Throwable {
+    public void test282() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test281");
+            System.out.format("%n%s%n", "RegressionTest0.test282");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         book6.setRemainingCopies((int) (short) -1);
         boolean boolean9 = book6.isCanRent();
@@ -4908,9 +4920,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test282() throws Throwable {
+    public void test283() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test282");
+            System.out.format("%n%s%n", "RegressionTest0.test283");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4933,9 +4945,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test283() throws Throwable {
+    public void test284() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test283");
+            System.out.format("%n%s%n", "RegressionTest0.test284");
         objects.Book book6 = new objects.Book(0, "hi!", "", 0, (double) (short) 0, "");
         boolean boolean7 = book6.isCanPurchase();
         book6.setRemainingCopies((int) (byte) 10);
@@ -4945,9 +4957,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test284() throws Throwable {
+    public void test285() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test284");
+            System.out.format("%n%s%n", "RegressionTest0.test285");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4967,9 +4979,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test285() throws Throwable {
+    public void test286() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test285");
+            System.out.format("%n%s%n", "RegressionTest0.test286");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -4996,9 +5008,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test286() throws Throwable {
+    public void test287() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test286");
+            System.out.format("%n%s%n", "RegressionTest0.test287");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -5012,9 +5024,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test287() throws Throwable {
+    public void test288() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test287");
+            System.out.format("%n%s%n", "RegressionTest0.test288");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5030,9 +5042,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test288() throws Throwable {
+    public void test289() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test288");
+            System.out.format("%n%s%n", "RegressionTest0.test289");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5054,9 +5066,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test289() throws Throwable {
+    public void test290() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test289");
+            System.out.format("%n%s%n", "RegressionTest0.test290");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5070,9 +5082,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test290() throws Throwable {
+    public void test291() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test290");
+            System.out.format("%n%s%n", "RegressionTest0.test291");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setIsbn("35,BOOK,,,0,100.0,");
@@ -5082,9 +5094,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test291() throws Throwable {
+    public void test292() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test291");
+            System.out.format("%n%s%n", "RegressionTest0.test292");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -5098,9 +5110,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test292() throws Throwable {
+    public void test293() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test292");
+            System.out.format("%n%s%n", "RegressionTest0.test293");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -5112,9 +5124,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test293() throws Throwable {
+    public void test294() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test293");
+            System.out.format("%n%s%n", "RegressionTest0.test294");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -5130,16 +5142,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test294() throws Throwable {
+    public void test295() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test294");
+            System.out.format("%n%s%n", "RegressionTest0.test295");
         objects.Book book6 = new objects.Book(35, "", "0,BOOK,35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,,35,BOOK,,,0,-1.0,,-1,-1.0,35,BOOK,,,0,100.0,", (int) (short) 10, (double) (byte) 0, "35,BOOK,,,10,100.0,");
     }
 
     @Test
-    public void test295() throws Throwable {
+    public void test296() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test295");
+            System.out.format("%n%s%n", "RegressionTest0.test296");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setIsbn("35,BOOK,,,0,100.0,");
@@ -5149,9 +5161,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test296() throws Throwable {
+    public void test297() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test296");
+            System.out.format("%n%s%n", "RegressionTest0.test297");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -5165,9 +5177,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test297() throws Throwable {
+    public void test298() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test297");
+            System.out.format("%n%s%n", "RegressionTest0.test298");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5193,9 +5205,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test298() throws Throwable {
+    public void test299() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test298");
+            System.out.format("%n%s%n", "RegressionTest0.test299");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -5220,9 +5232,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test299() throws Throwable {
+    public void test300() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test299");
+            System.out.format("%n%s%n", "RegressionTest0.test300");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setIsbn("35,BOOK,,,0,100.0,");
@@ -5236,9 +5248,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test300() throws Throwable {
+    public void test301() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test300");
+            System.out.format("%n%s%n", "RegressionTest0.test301");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -5255,9 +5267,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test301() throws Throwable {
+    public void test302() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test301");
+            System.out.format("%n%s%n", "RegressionTest0.test302");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -5274,9 +5286,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test302() throws Throwable {
+    public void test303() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test302");
+            System.out.format("%n%s%n", "RegressionTest0.test303");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVString("0,BOOK,10,BOOK,35,BOOK,,,10,100.0,,35,BOOK,,,-1,-1.0,,0,100.0,,35,BOOK,,,0,-1.0,,100,0.0,");
@@ -5287,9 +5299,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test303() throws Throwable {
+    public void test304() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test303");
+            System.out.format("%n%s%n", "RegressionTest0.test304");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -5305,9 +5317,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test304() throws Throwable {
+    public void test305() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test304");
+            System.out.format("%n%s%n", "RegressionTest0.test305");
         objects.Book book6 = new objects.Book(0, "35,BOOK,,,-1,-1.0,", "35,BOOK,,,-1,-1.0,", (int) 'a', (double) 0, "");
         double double7 = book6.getValue();
         book6.setCanRent(true);
@@ -5316,9 +5328,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test305() throws Throwable {
+    public void test306() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test305");
+            System.out.format("%n%s%n", "RegressionTest0.test306");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         book6.setRemainingCopies((int) (short) -1);
         book6.setRemainingCopies((int) '#');
@@ -5327,9 +5339,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test306() throws Throwable {
+    public void test307() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test306");
+            System.out.format("%n%s%n", "RegressionTest0.test307");
         objects.Book book6 = new objects.Book((int) (byte) -1, "hi!", "35,BOOK,,,0,100.0,", (int) (byte) 10, (-1.0d), "35,BOOK,,,-1,-1.0,");
         book6.setIsbn("hi!");
         int int9 = book6.getId();
@@ -5337,9 +5349,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test307() throws Throwable {
+    public void test308() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test307");
+            System.out.format("%n%s%n", "RegressionTest0.test308");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -5363,9 +5375,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test308() throws Throwable {
+    public void test309() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test308");
+            System.out.format("%n%s%n", "RegressionTest0.test309");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -5382,9 +5394,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test309() throws Throwable {
+    public void test310() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test309");
+            System.out.format("%n%s%n", "RegressionTest0.test310");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5403,9 +5415,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test310() throws Throwable {
+    public void test311() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test310");
+            System.out.format("%n%s%n", "RegressionTest0.test311");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -5420,9 +5432,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test311() throws Throwable {
+    public void test312() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test311");
+            System.out.format("%n%s%n", "RegressionTest0.test312");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5436,9 +5448,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test312() throws Throwable {
+    public void test313() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test312");
+            System.out.format("%n%s%n", "RegressionTest0.test313");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5466,9 +5478,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test313() throws Throwable {
+    public void test314() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test313");
+            System.out.format("%n%s%n", "RegressionTest0.test314");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -5481,9 +5493,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test314() throws Throwable {
+    public void test315() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test314");
+            System.out.format("%n%s%n", "RegressionTest0.test315");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5516,9 +5528,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test315() throws Throwable {
+    public void test316() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test315");
+            System.out.format("%n%s%n", "RegressionTest0.test316");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -5534,9 +5546,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test316() throws Throwable {
+    public void test317() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test316");
+            System.out.format("%n%s%n", "RegressionTest0.test317");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVLine("0,BOOK,35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,,35,BOOK,,,0,-1.0,,-1,-1.0,35,BOOK,,,0,100.0,");
@@ -5547,9 +5559,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test317() throws Throwable {
+    public void test318() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test317");
+            System.out.format("%n%s%n", "RegressionTest0.test318");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -5570,9 +5582,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test318() throws Throwable {
+    public void test319() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test318");
+            System.out.format("%n%s%n", "RegressionTest0.test319");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5589,9 +5601,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test319() throws Throwable {
+    public void test320() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test319");
+            System.out.format("%n%s%n", "RegressionTest0.test320");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5607,9 +5619,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test320() throws Throwable {
+    public void test321() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test320");
+            System.out.format("%n%s%n", "RegressionTest0.test321");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -5631,9 +5643,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test321() throws Throwable {
+    public void test322() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test321");
+            System.out.format("%n%s%n", "RegressionTest0.test322");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5660,9 +5672,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test322() throws Throwable {
+    public void test323() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test322");
+            System.out.format("%n%s%n", "RegressionTest0.test323");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -5675,9 +5687,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test323() throws Throwable {
+    public void test324() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test323");
+            System.out.format("%n%s%n", "RegressionTest0.test324");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -5691,9 +5703,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test324() throws Throwable {
+    public void test325() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test324");
+            System.out.format("%n%s%n", "RegressionTest0.test325");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -5705,9 +5717,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test325() throws Throwable {
+    public void test326() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test325");
+            System.out.format("%n%s%n", "RegressionTest0.test326");
         objects.Book book6 = new objects.Book(0, "hi!", "", 0, (double) (short) 0, "");
         boolean boolean7 = book6.isCanPurchase();
         book6.setRemainingCopies((int) (byte) 10);
@@ -5716,9 +5728,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test326() throws Throwable {
+    public void test327() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test326");
+            System.out.format("%n%s%n", "RegressionTest0.test327");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5741,9 +5753,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test327() throws Throwable {
+    public void test328() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test327");
+            System.out.format("%n%s%n", "RegressionTest0.test328");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5768,9 +5780,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test328() throws Throwable {
+    public void test329() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test328");
+            System.out.format("%n%s%n", "RegressionTest0.test329");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5782,16 +5794,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test329() throws Throwable {
+    public void test330() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test329");
+            System.out.format("%n%s%n", "RegressionTest0.test330");
         objects.Book book6 = new objects.Book((int) '4', "", "35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,", 0, (double) (byte) 10, "35,BOOK,,,0,-1.0,");
     }
 
     @Test
-    public void test330() throws Throwable {
+    public void test331() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test330");
+            System.out.format("%n%s%n", "RegressionTest0.test331");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5809,9 +5821,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test331() throws Throwable {
+    public void test332() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test331");
+            System.out.format("%n%s%n", "RegressionTest0.test332");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -5829,9 +5841,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test332() throws Throwable {
+    public void test333() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test332");
+            System.out.format("%n%s%n", "RegressionTest0.test333");
         objects.Book book6 = new objects.Book((int) (byte) 0, "10,BOOK,35,BOOK,,,10,100.0,,35,BOOK,,,-1,-1.0,,0,100.0,", "35,BOOK,,,0,-1.0,", (int) (byte) 100, (double) 0, "");
         java.lang.String str7 = book6.toCSVString();
         java.lang.Class<?> wildcardClass8 = book6.getClass();
@@ -5840,9 +5852,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test333() throws Throwable {
+    public void test334() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test333");
+            System.out.format("%n%s%n", "RegressionTest0.test334");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         book6.setRemainingCopies((int) (short) -1);
         boolean boolean9 = book6.isCanRent();
@@ -5858,9 +5870,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test334() throws Throwable {
+    public void test335() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test334");
+            System.out.format("%n%s%n", "RegressionTest0.test335");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         boolean boolean7 = book6.isCanRent();
         int int8 = book6.getRemainingCopies();
@@ -5871,9 +5883,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test335() throws Throwable {
+    public void test336() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test335");
+            System.out.format("%n%s%n", "RegressionTest0.test336");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5888,9 +5900,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test336() throws Throwable {
+    public void test337() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test336");
+            System.out.format("%n%s%n", "RegressionTest0.test337");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5908,9 +5920,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test337() throws Throwable {
+    public void test338() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test337");
+            System.out.format("%n%s%n", "RegressionTest0.test338");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -5928,9 +5940,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test338() throws Throwable {
+    public void test339() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test338");
+            System.out.format("%n%s%n", "RegressionTest0.test339");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5951,9 +5963,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test339() throws Throwable {
+    public void test340() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test339");
+            System.out.format("%n%s%n", "RegressionTest0.test340");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -5976,9 +5988,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test340() throws Throwable {
+    public void test341() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test340");
+            System.out.format("%n%s%n", "RegressionTest0.test341");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -5991,9 +6003,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test341() throws Throwable {
+    public void test342() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test341");
+            System.out.format("%n%s%n", "RegressionTest0.test342");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6014,9 +6026,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test342() throws Throwable {
+    public void test343() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test342");
+            System.out.format("%n%s%n", "RegressionTest0.test343");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -6028,9 +6040,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test343() throws Throwable {
+    public void test344() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test343");
+            System.out.format("%n%s%n", "RegressionTest0.test344");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6048,9 +6060,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test344() throws Throwable {
+    public void test345() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test344");
+            System.out.format("%n%s%n", "RegressionTest0.test345");
         objects.Book book6 = new objects.Book(35, "35,BOOK,,,0,100.0,", "", (int) (short) 100, (-1.0d), "");
         java.lang.String str7 = book6.getLocation();
         boolean boolean8 = book6.isCanPurchase();
@@ -6059,9 +6071,25 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test345() throws Throwable {
+    public void test346() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test345");
+            System.out.format("%n%s%n", "RegressionTest0.test346");
+        objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
+        book6.setRemainingCopies((int) (short) -1);
+        boolean boolean9 = book6.isCanRent();
+        int int10 = book6.getId();
+        java.lang.String str11 = book6.toCSVString();
+        book6.setLocation("35,BOOK,,,0,-1.0,");
+        book6.setCanRent(true);
+        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
+        org.junit.Assert.assertTrue("'" + int10 + "' != '" + 35 + "'", int10 == 35);
+        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "35,BOOK,,,-1,100.0," + "'", str11, "35,BOOK,,,-1,100.0,");
+    }
+
+    @Test
+    public void test347() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test347");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -6082,9 +6110,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test346() throws Throwable {
+    public void test348() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test346");
+            System.out.format("%n%s%n", "RegressionTest0.test348");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6102,9 +6130,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test347() throws Throwable {
+    public void test349() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test347");
+            System.out.format("%n%s%n", "RegressionTest0.test349");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6129,18 +6157,18 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test348() throws Throwable {
+    public void test350() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test348");
+            System.out.format("%n%s%n", "RegressionTest0.test350");
         objects.Book book6 = new objects.Book(0, "hi!", "35,BOOK,,,0,100.0,", (int) (short) 0, 0.0d, "hi!");
         boolean boolean7 = book6.isCanRent();
         org.junit.Assert.assertTrue("'" + boolean7 + "' != '" + false + "'", boolean7 == false);
     }
 
     @Test
-    public void test349() throws Throwable {
+    public void test351() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test349");
+            System.out.format("%n%s%n", "RegressionTest0.test351");
         objects.Book book6 = new objects.Book(0, "hi!", "", 0, (double) (short) 0, "");
         boolean boolean7 = book6.isCanPurchase();
         book6.setIsbn("35,BOOK,,,0,-1.0,");
@@ -6148,9 +6176,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test350() throws Throwable {
+    public void test352() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test350");
+            System.out.format("%n%s%n", "RegressionTest0.test352");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -6161,9 +6189,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test351() throws Throwable {
+    public void test353() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test351");
+            System.out.format("%n%s%n", "RegressionTest0.test353");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -6180,9 +6208,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test352() throws Throwable {
+    public void test354() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test352");
+            System.out.format("%n%s%n", "RegressionTest0.test354");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6201,9 +6229,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test353() throws Throwable {
+    public void test355() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test353");
+            System.out.format("%n%s%n", "RegressionTest0.test355");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -6215,9 +6243,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test354() throws Throwable {
+    public void test356() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test354");
+            System.out.format("%n%s%n", "RegressionTest0.test356");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -6230,9 +6258,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test355() throws Throwable {
+    public void test357() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test355");
+            System.out.format("%n%s%n", "RegressionTest0.test357");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         boolean boolean7 = book6.isCanRent();
         int int8 = book6.getRemainingCopies();
@@ -6243,9 +6271,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test356() throws Throwable {
+    public void test358() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test356");
+            System.out.format("%n%s%n", "RegressionTest0.test358");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         book6.setRemainingCopies((int) (short) -1);
         boolean boolean9 = book6.isCanRent();
@@ -6259,9 +6287,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test357() throws Throwable {
+    public void test359() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test357");
+            System.out.format("%n%s%n", "RegressionTest0.test359");
         objects.Book book6 = new objects.Book(0, "35,BOOK,,,0,-1.0,", "35,BOOK,,,0,100.0,", 100, (double) (short) -1, "hi!");
         java.lang.String str7 = book6.getTitle();
         java.lang.String str8 = book6.getLocation();
@@ -6270,9 +6298,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test358() throws Throwable {
+    public void test360() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test358");
+            System.out.format("%n%s%n", "RegressionTest0.test360");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6289,9 +6317,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test359() throws Throwable {
+    public void test361() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test359");
+            System.out.format("%n%s%n", "RegressionTest0.test361");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6310,9 +6338,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test360() throws Throwable {
+    public void test362() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test360");
+            System.out.format("%n%s%n", "RegressionTest0.test362");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6331,9 +6359,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test361() throws Throwable {
+    public void test363() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test361");
+            System.out.format("%n%s%n", "RegressionTest0.test363");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6354,9 +6382,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test362() throws Throwable {
+    public void test364() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test362");
+            System.out.format("%n%s%n", "RegressionTest0.test364");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6372,9 +6400,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test363() throws Throwable {
+    public void test365() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test363");
+            System.out.format("%n%s%n", "RegressionTest0.test365");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -6386,9 +6414,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test364() throws Throwable {
+    public void test366() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test364");
+            System.out.format("%n%s%n", "RegressionTest0.test366");
         objects.Book book6 = new objects.Book(35, "35,BOOK,,,0,100.0,", "35,BOOK,,,0,100.0,", (int) (byte) 1, (double) (short) 1, "35,BOOK,,,0,100.0,");
         java.lang.String str7 = book6.toCSVString();
         objects.User user8 = null;
@@ -6403,9 +6431,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test365() throws Throwable {
+    public void test367() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test365");
+            System.out.format("%n%s%n", "RegressionTest0.test367");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         book6.setLocation("");
@@ -6417,9 +6445,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test366() throws Throwable {
+    public void test368() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test366");
+            System.out.format("%n%s%n", "RegressionTest0.test368");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVLine("35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,");
@@ -6430,9 +6458,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test367() throws Throwable {
+    public void test369() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test367");
+            System.out.format("%n%s%n", "RegressionTest0.test369");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6450,9 +6478,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test368() throws Throwable {
+    public void test370() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test368");
+            System.out.format("%n%s%n", "RegressionTest0.test370");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6468,9 +6496,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test369() throws Throwable {
+    public void test371() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test369");
+            System.out.format("%n%s%n", "RegressionTest0.test371");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getLocation();
@@ -6492,9 +6520,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test370() throws Throwable {
+    public void test372() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test370");
+            System.out.format("%n%s%n", "RegressionTest0.test372");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6510,9 +6538,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test371() throws Throwable {
+    public void test373() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test371");
+            System.out.format("%n%s%n", "RegressionTest0.test373");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         book6.setRemainingCopies((int) (short) -1);
         boolean boolean9 = book6.isCanRent();
@@ -6526,9 +6554,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test372() throws Throwable {
+    public void test374() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test372");
+            System.out.format("%n%s%n", "RegressionTest0.test374");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6543,16 +6571,16 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test373() throws Throwable {
+    public void test375() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test373");
+            System.out.format("%n%s%n", "RegressionTest0.test375");
         objects.Book book6 = new objects.Book(100, "hi!", "35,BOOK,,,0,-1.0,", (int) 'a', (double) (short) -1, "35,BOOK,,,0,-1.0,");
     }
 
     @Test
-    public void test374() throws Throwable {
+    public void test376() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test374");
+            System.out.format("%n%s%n", "RegressionTest0.test376");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         double double8 = book6.getValue();
@@ -6566,9 +6594,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test375() throws Throwable {
+    public void test377() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test375");
+            System.out.format("%n%s%n", "RegressionTest0.test377");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -6584,9 +6612,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test376() throws Throwable {
+    public void test378() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test376");
+            System.out.format("%n%s%n", "RegressionTest0.test378");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -6601,9 +6629,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test377() throws Throwable {
+    public void test379() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test377");
+            System.out.format("%n%s%n", "RegressionTest0.test379");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -6618,9 +6646,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test378() throws Throwable {
+    public void test380() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test378");
+            System.out.format("%n%s%n", "RegressionTest0.test380");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6636,9 +6664,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test379() throws Throwable {
+    public void test381() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test379");
+            System.out.format("%n%s%n", "RegressionTest0.test381");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6659,9 +6687,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test380() throws Throwable {
+    public void test382() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test380");
+            System.out.format("%n%s%n", "RegressionTest0.test382");
         // The following exception was thrown during execution in test generation
         try {
             objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVString("0,BOOK,35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,,35,BOOK,,,0,-1.0,,-1,-1.0,35,BOOK,,,0,100.0,");
@@ -6672,9 +6700,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test381() throws Throwable {
+    public void test383() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test381");
+            System.out.format("%n%s%n", "RegressionTest0.test383");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6697,9 +6725,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test382() throws Throwable {
+    public void test384() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test382");
+            System.out.format("%n%s%n", "RegressionTest0.test384");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -6713,9 +6741,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test383() throws Throwable {
+    public void test385() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test383");
+            System.out.format("%n%s%n", "RegressionTest0.test385");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -6727,9 +6755,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test384() throws Throwable {
+    public void test386() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test384");
+            System.out.format("%n%s%n", "RegressionTest0.test386");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6750,9 +6778,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test385() throws Throwable {
+    public void test387() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test385");
+            System.out.format("%n%s%n", "RegressionTest0.test387");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6768,18 +6796,18 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test386() throws Throwable {
+    public void test388() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test386");
+            System.out.format("%n%s%n", "RegressionTest0.test388");
         objects.Book book6 = new objects.Book((int) (byte) 1, "10,BOOK,35,BOOK,,,10,100.0,,35,BOOK,,,-1,-1.0,,0,100.0,", "35,BOOK,35,BOOK,,,0,100.0,,35,BOOK,,,0,100.0,,1,1.0,35,BOOK,,,0,100.0,", (int) (short) 1, 32.0d, "0,BOOK,35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,,35,BOOK,,,0,-1.0,,-1,-1.0,35,BOOK,,,0,100.0,");
         book6.setCanPurchase(false);
         book6.setCanRent(true);
     }
 
     @Test
-    public void test387() throws Throwable {
+    public void test389() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test387");
+            System.out.format("%n%s%n", "RegressionTest0.test389");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -6792,18 +6820,18 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test388() throws Throwable {
+    public void test390() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test388");
+            System.out.format("%n%s%n", "RegressionTest0.test390");
         objects.Book book6 = new objects.Book((int) (short) 100, "35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,", "35,BOOK,,,-1,100.0,", (int) (short) 100, (double) 0L, "35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,");
         java.lang.String str7 = book6.getIsbn();
         org.junit.Assert.assertEquals("'" + str7 + "' != '" + "35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0," + "'", str7, "35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,");
     }
 
     @Test
-    public void test389() throws Throwable {
+    public void test391() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test389");
+            System.out.format("%n%s%n", "RegressionTest0.test391");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -6825,9 +6853,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test390() throws Throwable {
+    public void test392() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test390");
+            System.out.format("%n%s%n", "RegressionTest0.test392");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -6840,9 +6868,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test391() throws Throwable {
+    public void test393() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test391");
+            System.out.format("%n%s%n", "RegressionTest0.test393");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -6862,9 +6890,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test392() throws Throwable {
+    public void test394() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test392");
+            System.out.format("%n%s%n", "RegressionTest0.test394");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         boolean boolean8 = book6.isCanRent();
@@ -6879,9 +6907,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test393() throws Throwable {
+    public void test395() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test393");
+            System.out.format("%n%s%n", "RegressionTest0.test395");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -6898,9 +6926,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test394() throws Throwable {
+    public void test396() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test394");
+            System.out.format("%n%s%n", "RegressionTest0.test396");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         book6.setValue((-1.0d));
@@ -6914,9 +6942,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test395() throws Throwable {
+    public void test397() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test395");
+            System.out.format("%n%s%n", "RegressionTest0.test397");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         java.lang.String str8 = book6.getIsbn();
@@ -6933,9 +6961,9 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test396() throws Throwable {
+    public void test398() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test396");
+            System.out.format("%n%s%n", "RegressionTest0.test398");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         java.lang.String str7 = book6.getTitle();
         int int8 = book6.getId();
@@ -6948,9 +6976,23 @@ public class RegressionTest0 {
     }
 
     @Test
-    public void test397() throws Throwable {
+    public void test399() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test397");
+            System.out.format("%n%s%n", "RegressionTest0.test399");
+        objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
+        double double7 = book6.getValue();
+        book6.setLocation("");
+        int int10 = book6.getId();
+        book6.setRemainingCopies(0);
+        book6.setIsbn("35,BOOK,,,0,-1.0,");
+        org.junit.Assert.assertTrue("'" + double7 + "' != '" + 100.0d + "'", double7 == 100.0d);
+        org.junit.Assert.assertTrue("'" + int10 + "' != '" + 35 + "'", int10 == 35);
+    }
+
+    @Test
+    public void test400() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test400");
         objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
         double double7 = book6.getValue();
         double double8 = book6.getValue();
@@ -6958,177 +7000,6 @@ public class RegressionTest0 {
         book6.setRemainingCopies((int) '4');
         org.junit.Assert.assertTrue("'" + double7 + "' != '" + 100.0d + "'", double7 == 100.0d);
         org.junit.Assert.assertTrue("'" + double8 + "' != '" + 100.0d + "'", double8 == 100.0d);
-    }
-
-    @Test
-    public void test398() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test398");
-        objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
-        double double7 = book6.getValue();
-        book6.setLocation("");
-        int int10 = book6.getId();
-        book6.setRemainingCopies(0);
-        book6.setIsbn("35,BOOK,,,0,-1.0,");
-        int int15 = book6.getId();
-        org.junit.Assert.assertTrue("'" + double7 + "' != '" + 100.0d + "'", double7 == 100.0d);
-        org.junit.Assert.assertTrue("'" + int10 + "' != '" + 35 + "'", int10 == 35);
-        org.junit.Assert.assertTrue("'" + int15 + "' != '" + 35 + "'", int15 == 35);
-    }
-
-    @Test
-    public void test399() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test399");
-        objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
-        java.lang.String str7 = book6.getTitle();
-        boolean boolean8 = book6.isCanRent();
-        book6.setCanRent(false);
-        boolean boolean11 = book6.isCanRent();
-        book6.setCanRent(true);
-        book6.setRemainingCopies((int) (byte) 100);
-        java.lang.String str16 = book6.getTitle();
-        java.lang.String str17 = book6.getIsbn();
-        java.lang.String str18 = book6.getIsbn();
-        book6.setLocation("");
-        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "" + "'", str7, "");
-        org.junit.Assert.assertTrue("'" + boolean8 + "' != '" + false + "'", boolean8 == false);
-        org.junit.Assert.assertTrue("'" + boolean11 + "' != '" + false + "'", boolean11 == false);
-        org.junit.Assert.assertEquals("'" + str16 + "' != '" + "" + "'", str16, "");
-        org.junit.Assert.assertEquals("'" + str17 + "' != '" + "" + "'", str17, "");
-        org.junit.Assert.assertEquals("'" + str18 + "' != '" + "" + "'", str18, "");
-    }
-
-    @Test
-    public void test400() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test400");
-        objects.Book book6 = new objects.Book((int) (short) 1, "35,BOOK,,,10,100.0,", "35,BOOK,,,-1,-1.0,", (int) (byte) 10, (double) 10.0f, "0,BOOK,35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,,35,BOOK,,,0,-1.0,,-1,-1.0,35,BOOK,,,0,100.0,");
-    }
-
-    @Test
-    public void test401() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test401");
-        objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
-        java.lang.String str7 = book6.getTitle();
-        boolean boolean8 = book6.isCanRent();
-        book6.setCanRent(false);
-        boolean boolean11 = book6.isCanRent();
-        java.lang.String str12 = book6.getTitle();
-        book6.setValue((double) (short) -1);
-        java.lang.String str15 = book6.getIsbn();
-        int int16 = book6.getRemainingCopies();
-        boolean boolean17 = book6.isCanRent();
-        boolean boolean18 = book6.isCanRent();
-        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "" + "'", str7, "");
-        org.junit.Assert.assertTrue("'" + boolean8 + "' != '" + false + "'", boolean8 == false);
-        org.junit.Assert.assertTrue("'" + boolean11 + "' != '" + false + "'", boolean11 == false);
-        org.junit.Assert.assertEquals("'" + str12 + "' != '" + "" + "'", str12, "");
-        org.junit.Assert.assertEquals("'" + str15 + "' != '" + "" + "'", str15, "");
-        org.junit.Assert.assertTrue("'" + int16 + "' != '" + 0 + "'", int16 == 0);
-        org.junit.Assert.assertTrue("'" + boolean17 + "' != '" + false + "'", boolean17 == false);
-        org.junit.Assert.assertTrue("'" + boolean18 + "' != '" + false + "'", boolean18 == false);
-    }
-
-    @Test
-    public void test402() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test402");
-        objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
-        book6.setRemainingCopies((int) (short) -1);
-        boolean boolean9 = book6.isCanRent();
-        int int10 = book6.getId();
-        java.lang.String str11 = book6.toCSVString();
-        book6.setLocation("35,BOOK,,,0,-1.0,");
-        book6.setCanRent(true);
-        book6.setIsbn("35,BOOK,,,0,100.0,35,BOOK,,,0,-1.0,");
-        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
-        org.junit.Assert.assertTrue("'" + int10 + "' != '" + 35 + "'", int10 == 35);
-        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "35,BOOK,,,-1,100.0," + "'", str11, "35,BOOK,,,-1,100.0,");
-    }
-
-    @Test
-    public void test403() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test403");
-        objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
-        java.lang.String str7 = book6.getTitle();
-        boolean boolean8 = book6.isCanRent();
-        book6.setCanRent(false);
-        boolean boolean11 = book6.isCanRent();
-        java.lang.String str12 = book6.getTitle();
-        book6.setValue((double) (short) -1);
-        java.lang.String str15 = book6.getIsbn();
-        int int16 = book6.getRemainingCopies();
-        boolean boolean17 = book6.isCanRent();
-        book6.setIsbn("10,BOOK,35,BOOK,,,10,100.0,,35,BOOK,,,-1,-1.0,,0,100.0,");
-        book6.setIsbn("0,BOOK,35,BOOK,,35,BOOK,,,0,-1.0,,-1,100.0,,35,BOOK,,,0,-1.0,,-1,-1.0,35,BOOK,,,0,100.0,");
-        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "" + "'", str7, "");
-        org.junit.Assert.assertTrue("'" + boolean8 + "' != '" + false + "'", boolean8 == false);
-        org.junit.Assert.assertTrue("'" + boolean11 + "' != '" + false + "'", boolean11 == false);
-        org.junit.Assert.assertEquals("'" + str12 + "' != '" + "" + "'", str12, "");
-        org.junit.Assert.assertEquals("'" + str15 + "' != '" + "" + "'", str15, "");
-        org.junit.Assert.assertTrue("'" + int16 + "' != '" + 0 + "'", int16 == 0);
-        org.junit.Assert.assertTrue("'" + boolean17 + "' != '" + false + "'", boolean17 == false);
-    }
-
-    @Test
-    public void test404() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test404");
-        objects.PhysicalItem physicalItem1 = objects.PhysicalItem.fromCSVLine("35,BOOK,,,0,100.0,35,BOOK,,,0,-1.0,");
-        org.junit.Assert.assertNotNull(physicalItem1);
-    }
-
-    @Test
-    public void test405() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test405");
-        objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
-        double double7 = book6.getValue();
-        java.lang.String str8 = book6.getLocation();
-        book6.setIsbn("35,BOOK,,,0,100.0,");
-        int int11 = book6.getRemainingCopies();
-        org.junit.Assert.assertTrue("'" + double7 + "' != '" + 100.0d + "'", double7 == 100.0d);
-        org.junit.Assert.assertEquals("'" + str8 + "' != '" + "" + "'", str8, "");
-        org.junit.Assert.assertTrue("'" + int11 + "' != '" + 0 + "'", int11 == 0);
-    }
-
-    @Test
-    public void test406() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test406");
-        objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
-        double double7 = book6.getValue();
-        book6.setLocation("");
-        int int10 = book6.getId();
-        book6.setRemainingCopies(0);
-        book6.setCanPurchase(true);
-        book6.setIsbn("");
-        org.junit.Assert.assertTrue("'" + double7 + "' != '" + 100.0d + "'", double7 == 100.0d);
-        org.junit.Assert.assertTrue("'" + int10 + "' != '" + 35 + "'", int10 == 35);
-    }
-
-    @Test
-    public void test407() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest0.test407");
-        objects.Book book6 = new objects.Book((int) '#', "", "", 0, (double) (byte) 100, "");
-        java.lang.String str7 = book6.getTitle();
-        boolean boolean8 = book6.isCanRent();
-        book6.setCanRent(false);
-        boolean boolean11 = book6.isCanRent();
-        book6.setCanRent(true);
-        java.lang.String str14 = book6.getLocation();
-        double double15 = book6.getValue();
-        java.lang.String str16 = book6.getIsbn();
-        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "" + "'", str7, "");
-        org.junit.Assert.assertTrue("'" + boolean8 + "' != '" + false + "'", boolean8 == false);
-        org.junit.Assert.assertTrue("'" + boolean11 + "' != '" + false + "'", boolean11 == false);
-        org.junit.Assert.assertEquals("'" + str14 + "' != '" + "" + "'", str14, "");
-        org.junit.Assert.assertTrue("'" + double15 + "' != '" + 100.0d + "'", double15 == 100.0d);
-        org.junit.Assert.assertEquals("'" + str16 + "' != '" + "" + "'", str16, "");
     }
 }
 
