@@ -30,6 +30,21 @@ module org.example.eecs3311project {
     exports Randoop.junits.UserCreationFactoryTest;
     exports Randoop.junits.Usertests;
     exports Randoop.junits.VisitorTest; 	
+
+    exports UsermadeTests.studenttests;
+	exports UsermadeTests.Book;
+	exports UsermadeTests.Usertests;
+	exports UsermadeTests.Accounthandling;
+	exports UsermadeTests.Subscription;
+	exports UsermadeTests.CourseTest;
+	exports UsermadeTests.Borrowingrecordtest;
+	exports UsermadeTests.Physicalitemhandling;
+	exports UsermadeTests.Facultytest;
+	exports UsermadeTests.SystemManagerUser;
+	exports UsermadeTests.UserFactory;
+	exports UsermadeTests.obsevertest;
+	exports UsermadeTests.Subscriptionhandling;
+	
 	
 	
 	
