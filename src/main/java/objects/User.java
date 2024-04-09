@@ -1,107 +1,121 @@
 package objects;
 
 import java.util.ArrayList;
-
 import userHandling.BorrowingRecordHandling;
 
 public abstract class User {
-    private int id;
-    private String email;
-    private String password;
-    private UserType userType;
-    private double penalty;
-    private boolean validationStatus;
-    private ArrayList<BorrowingRecord> borrowingRecords;
-    private ArrayList<Subscription> subscriptions;
-    private ArrayList<PaymentOption> paymentMethod;
 
-    // Constructor
-    public User(int id, String email, String password, UserType userType) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.userType = userType;
-        this.validationStatus = userType == UserType.SYSTEM_MANAGER ? true : false;
-        this.borrowingRecords = new ArrayList<BorrowingRecord>();
-        this.subscriptions = new ArrayList<Subscription>();
-        this.paymentMethod = new ArrayList<PaymentOption>();
-    }
+  private int id;
+  private String email;
+  private String password;
+  private UserType userType;
+  private double penalty;
+  private boolean validationStatus;
+  private ArrayList<BorrowingRecord> borrowingRecords;
+  private ArrayList<Subscription> subscriptions;
+  private ArrayList<PaymentOption> paymentMethod;
 
-    // Getters and setters
-    public int getId() {
-        return id;
-    }
+  // Constructor
+  public User(int id, String email, String password, UserType userType) {
+    this.id = id;
+    this.email = email;
+    this.password = password;
+    this.userType = userType;
+    this.validationStatus = userType == UserType.SYSTEM_MANAGER ? true : false;
+    this.borrowingRecords = new ArrayList<BorrowingRecord>();
+    this.subscriptions = new ArrayList<Subscription>();
+    this.paymentMethod = new ArrayList<PaymentOption>();
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  // Getters and setters
+  public int getId() {
+    return id;
+  }
 
-    public UserType getUserType() {
-        return userType;
-    }
-    public void addPenalty(double pen){
-        this.penalty = this.penalty + pen;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public String getPassword() {
-        return password;
-    }
+  public UserType getUserType() {
+    return userType;
+  }
 
-    public boolean getValidationStatus() {
-        return validationStatus;
-    }
+  public void addPenalty(double pen) {
+    this.penalty = this.penalty + pen;
+  }
 
-    public void setValidationStatus(boolean validationStatus) {
-        this.validationStatus = validationStatus;
-    }
+  public double getPenalty() {
+    return this.penalty;
+  }
 
-    public ArrayList<BorrowingRecord> updateBorrowingRecords() {
-        return BorrowingRecordHandling.getBorrowingRecordsByUserId(this.id);
-    }
-    // Other getters and setters...
+  public String getPassword() {
+    return password;
+  }
 
-    public boolean moreThanThreeOverdueItems() {
-        int count = 0;
-        this.updateBorrowingRecords();
-        for (BorrowingRecord record : borrowingRecords) {
-            if (record.isOverdue()) {
-                count++;
-            }
-        }
-        return count > 3;
-    }
+  public boolean getValidationStatus() {
+    return validationStatus;
+  }
 
-    public int sendRequest(Book book, boolean teaching) {
-        Request req = new Request(book, this, teaching);
-        return req.getPriority();
-    }
+  public void setValidationStatus(boolean validationStatus) {
+    this.validationStatus = validationStatus;
+  }
 
-    public void subscribe(Newsletter news) {
-        if (this.paymentMethod.isEmpty()) {
-            System.out.println("Please add a payment method");
-        } else {
-            Subscription sub = new Subscription(this, news, this.paymentMethod.get(0));
-            this.subscriptions.add(sub);
-        }
-    }
+  public ArrayList<BorrowingRecord> updateBorrowingRecords() {
+    return BorrowingRecordHandling.getBorrowingRecordsByUserId(this.id);
+  }
 
-    public void unSubscribe(Newsletter news) {
-        if (subscriptions.contains(news)) {
-            subscriptions.remove(news);
-        }
-    }
+  // Other getters and setters...
 
-    public void addPaymentMethod(PaymentType type, double balance) {
-        PaymentOption payment = new PaymentOption(this.id, balance, type);
-        this.paymentMethod.add(payment);
+  public boolean moreThanThreeOverdueItems() {
+    int count = 0;
+    this.updateBorrowingRecords();
+    for (BorrowingRecord record : borrowingRecords) {
+      if (record.isOverdue()) {
+        count++;
+      }
     }
+    return count > 3;
+  }
 
-    public void visit(Newsletter news) {
-        news.displayNews();
-    }
+  public int sendRequest(Book book, boolean teaching) {
+    Request req = new Request(book, this, teaching);
+    return req.getPriority();
+  }
 
-    // Enum for user types
-    public enum UserType {
-        STUDENT, FACULTY, NON_FACULTY_STAFF, VISITOR, SYSTEM_MANAGER;
+  public void subscribe(Newsletter news) {
+    if (this.paymentMethod.isEmpty()) {
+      System.out.println("Please add a payment method");
+    } else {
+      Subscription sub = new Subscription(
+        this,
+        news,
+        this.paymentMethod.get(0)
+      );
+      this.subscriptions.add(sub);
     }
+  }
+
+  public void unSubscribe(Newsletter news) {
+    if (subscriptions.contains(news)) {
+      subscriptions.remove(news);
+    }
+  }
+
+  public void addPaymentMethod(PaymentType type, double balance) {
+    PaymentOption payment = new PaymentOption(this.id, balance, type);
+    this.paymentMethod.add(payment);
+  }
+
+  public void visit(Newsletter news) {
+    news.displayNews();
+  }
+
+  // Enum for user types
+  public enum UserType {
+    STUDENT,
+    FACULTY,
+    NON_FACULTY_STAFF,
+    VISITOR,
+    SYSTEM_MANAGER,
+  }
 }
