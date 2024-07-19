@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml" fx:id="createManagerAccountPane" hgap="10" fx:controller="org.example.eecs3311project.CreateManagerAccountController" vgap="10" alignment="center" styleClass="grid-pane">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="25" hgrow="SOMETIMES"/>
+        <ColumnConstraints percentWidth="25" hgrow="SOMETIMES"/>
+        <ColumnConstraints percentWidth="25" hgrow="SOMETIMES"/>
+        <ColumnConstraints percentWidth="25" hgrow="SOMETIMES"/>
+    </columnConstraints>
+
+    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+    <TextField fx:id="emailField" promptText="Enter your email" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2" />
+    <PasswordField fx:id="passwordField" promptText="Enter your password" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.columnSpan="2" />
+
+    <Label text="Secret Authorization Key:" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2" />
+    <PasswordField fx:id="secretKeyField" promptText="Enter your key" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.columnSpan="2" />
+
+    <Button text="Create Account" onAction="#handleCreateManagerAccountButton" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="4" defaultButton="true" maxWidth="Infinity" />
+    <Button text="Back" onAction="#handleBackButton" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="4" maxWidth="Infinity" />
+</GridPane>

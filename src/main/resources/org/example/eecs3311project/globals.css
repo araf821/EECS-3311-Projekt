@@ -1,0 +1,124 @@
+/* General Styles for GridPane */
+.grid-pane {
+  -fx-background-color: #18181b;
+  -fx-text-fill: #f5f5f5;
+}
+
+.heading-text {
+  -fx-font-size: 24px;
+  -fx-font-weight: bold;
+  -fx-fill: #333333;
+}
+
+/* Styles for Labels */
+.label {
+  -fx-font-size: 16px;
+  -fx-text-fill: #d4d4d8;
+}
+
+/* TextField and PasswordField Customization */
+.text-field,
+.password-field {
+  -fx-border-color: #3f3f46;
+  -fx-border-radius: 8;
+  -fx-background-radius: 8;
+  -fx-padding: 8 12;
+  -fx-text-fill: #f5f5f5;
+  -fx-background-color: #27272a;
+}
+
+/* ComboBox Customization */
+/* ComboBox Base */
+.combo-box {
+  -fx-border-color: #3f3f46;
+  -fx-background-color: #27272a;
+  -fx-background-radius: 8;
+  -fx-border-radius: 8;
+  -fx-prompt-text-fill: #d4d4d4;
+  -fx-padding: 4 8;
+}
+
+/* Text and Items inside ComboBox */
+.combo-box .text-field,
+.combo-box .cell {
+  -fx-text-fill: #d4d4d4; /* Text color */
+}
+
+/* Non-editable ComboBox selected item text color */
+.combo-box .label {
+  -fx-text-fill: #d4d4d4; /* Text color for non-editable ComboBox */
+}
+
+/* ComboBox Dropdown List */
+.combo-box .list-view {
+  -fx-background-color: #27272a; /* Dropdown background */
+}
+
+.combo-box .list-cell {
+  -fx-background-color: transparent;
+  -fx-text-fill: #d4d4d4;
+}
+
+.combo-box .list-cell:filled:selected,
+.combo-box .list-cell:filled:selected:hover {
+  -fx-text-fill: #d4d4d4;
+}
+
+/* Button Styling */
+.button {
+  -fx-background-color: #27272a;
+  -fx-text-fill: white;
+  -fx-border-radius: 4;
+  -fx-background-radius: 4;
+  -fx-padding: 8 12;
+  -fx-font-size: 12px;
+}
+
+.button:hover {
+  -fx-background-color: #303033;
+}
+
+.button:default {
+  -fx-background-color: #0284c7;
+  -fx-font-weight: bold;
+  -fx-padding: 8 12;
+}
+
+.button:default:hover {
+  -fx-background-color: #0ea5e9;
+}
+
+.button:focused {
+  -fx-border-color: #4a90e2;
+}
+
+.scroll-pane {
+  -fx-background-color: #18181b;
+  -fx-focus-color: transparent;
+  -fx-faint-focus-color: transparent;
+}
+
+/* Style the vertical scrollbar */
+.scroll-pane .scroll-bar:vertical {
+  -fx-background-color: #333;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+  -fx-background-color: #666;
+}
+
+.scroll-pane .scroll-bar:vertical .track {
+  -fx-background-color: #444;
+}
+
+.scroll-pane .scroll-bar:horizontal {
+  -fx-background-color: #333;
+}
+
+.scroll-pane .scroll-bar:horizontal .thumb {
+  -fx-background-color: #666;
+}
+
+.scroll-pane .scroll-bar:horizontal .track {
+  -fx-background-color: #444;
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.eecs3311project.SignInController" fx:id="signInPane" hgap="10" vgap="10" alignment="center" styleClass="grid-pane">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="25" hgrow="SOMETIMES"/>
+        <ColumnConstraints percentWidth="25" hgrow="SOMETIMES"/>
+        <ColumnConstraints percentWidth="25" hgrow="SOMETIMES"/>
+        <ColumnConstraints percentWidth="25" hgrow="SOMETIMES"/>
+        <!-- <ColumnConstraints minWidth="200" prefWidth="200" hgrow="SOMETIMES"/> -->
+    </columnConstraints>
+
+    <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="usernameField" promptText="Enter your username" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="3"/>
+
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <PasswordField fx:id="passwordField" promptText="Enter your password" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="3"/>
+
+    <Button text="Sign In" onAction="#signInButtonClicked" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="4" maxWidth="Infinity" defaultButton="true"/>
+    <Button text="Create Account" onAction="#createAccountButtonClicked" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2" maxWidth="Infinity"/>
+    <Button text="Create Manager Account" onAction="#createManagerAccountButtonClicked" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.columnSpan="2" maxWidth="Infinity"/>
+
+</GridPane>
