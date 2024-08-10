@@ -46,6 +46,8 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+!**/src/main/java/Randoop
+./src/main/java/Randoop
 
 ### VS Code ###
 .vscode/
